@@ -217,7 +217,7 @@ public class View_TT extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Mã HD", "Mã NV", "Mã KH", "SDT", "Địa Chỉ", "Số Phòng Đặt", "Trạng Thái", "Ngày Xuất Đơn", "Ngày Thanh Toán", "Thuế", "Tiền Cọc", "Tổng Tiền"
+                "Mã HD", "Mã KH", "Mã NV", "SDT", "Địa Chỉ", "Số Phòng Đặt", "Trạng Thái", "Ngày Xuất Đơn", "Ngày Thanh Toán", "Thuế", "Tiền Cọc", "Tổng Tiền"
             }
         ) {
             Class[] types = new Class [] {
