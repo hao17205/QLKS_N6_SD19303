@@ -15,6 +15,7 @@ public class View_Login extends javax.swing.JFrame {
      */
     public View_Login() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
