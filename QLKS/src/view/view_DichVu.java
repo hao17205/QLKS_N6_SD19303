@@ -172,7 +172,7 @@ public class view_DichVu extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         tbl_DV.setModel(new javax.swing.table.DefaultTableModel(
@@ -309,10 +309,6 @@ public class view_DichVu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void XóaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XóaActionPerformed
         // TODO add your handling code here:
         int chon = JOptionPane.showConfirmDialog(this, "bạn có muốn thêm dữ liệu");
@@ -385,13 +381,17 @@ public class view_DichVu extends javax.swing.JFrame {
 
     private void txt_GiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_GiaActionPerformed
         // TODO add your handling code here
-
+        
     }//GEN-LAST:event_txt_GiaActionPerformed
 
     private void txt_MaDVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_MaDVActionPerformed
         // TODO add your handling code here:
 
     }//GEN-LAST:event_txt_MaDVActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
