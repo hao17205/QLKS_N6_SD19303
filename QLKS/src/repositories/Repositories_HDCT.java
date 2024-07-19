@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Repository;
+package repositories;
 
 import dbconnect.DBconnect;
 import Model.Model_TT;
@@ -16,7 +16,7 @@ import java.util.ArrayList;
  *
  * @author ADMIN
  */
-public class Rp_HDCT {
+public class Repositories_HDCT {
 
     private Connection con = null;
     private PreparedStatement pr = null;
@@ -86,7 +86,7 @@ public class Rp_HDCT {
         }
     }
 
-    public int xoa(String maHDCT) {
+    public int xoaHDCT(String maHDCT) {
         sql = "DELETE FROM HOADONCHITIET Where MA_HDCT = ?";
         try {
             con = DBconnect.getConnection();

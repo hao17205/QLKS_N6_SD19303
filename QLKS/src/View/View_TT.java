@@ -5,8 +5,8 @@
 package View;
 
 import Model.Model_TT;
-import Repository.Rp_HD;
-import Repository.Rp_HDCT;
+import repositories.Repositories_HD;
+import repositories.Repositories_HDCT;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -20,8 +20,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class View_TT extends javax.swing.JFrame {
 
-    private Repository.Rp_HD rp_HD = new Rp_HD();
-    private Repository.Rp_HDCT rp_HDCT = new Rp_HDCT();
+    private repositories.Repositories_HD rp_HD = new Repositories_HD();
+    private repositories.Repositories_HDCT rp_HDCT = new Repositories_HDCT();
     private DefaultTableModel mol = new DefaultTableModel();
     private int i = -1;
 
@@ -645,7 +645,7 @@ public class View_TT extends javax.swing.JFrame {
         i = tbl_HD.getSelectedRow();
         if (i != -1) {
             String maHD = String.valueOf(tbl_HD.getValueAt(i, 0));
-            if (rp_HD.xoa(maHD) > 0) {
+            if (rp_HD.xoaHD(maHD) > 0) {
                 JOptionPane.showMessageDialog(this, "Xóa thành công");
                 this.fillTable_HD(rp_HD.getAll_HD());
             } else {
@@ -673,7 +673,7 @@ public class View_TT extends javax.swing.JFrame {
         i = tbl_HDCT.getSelectedRow();
         if (i != -1) {
             String maHDCT = String.valueOf(tbl_HDCT.getValueAt(i, 0));
-            if (rp_HDCT.xoa(maHDCT) > 0) {
+            if (rp_HDCT.xoaHDCT(maHDCT) > 0) {
                 JOptionPane.showMessageDialog(this, "Xóa thành công");
                 this.fillTable_HDCT(rp_HDCT.getAll_HDCT());
             } else {
