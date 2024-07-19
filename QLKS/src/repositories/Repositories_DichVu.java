@@ -34,7 +34,7 @@ public class Repositories_DichVu {
                 double gia = rs.getDouble(3);
                 String loaiDV = rs.getString(4);
                 String moTa = rs.getString(5);
-                
+
                 model.Model_DichVu m = new Model_DichVu(maDV, tenDV, gia, loaiDV, moTa);
                 list_DV.add(m);
             }
@@ -42,6 +42,44 @@ public class Repositories_DichVu {
         } catch (Exception e) {
             e.printStackTrace();
             return null;
+        }
+    }
+
+    public int them_DV(Model_DichVu m) {
+        sql = "INSERT INTO DICHVU(MADV, TenDichVu, Gia, LoaiDichVu, MoTa)\n"
+                + "VALUES(?,?,?,?,?)";
+        try {
+            con = dbconnect.DBconnect.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setObject(1, m.getMaDV());
+            ps.setObject(2, m.getTenDV());
+            ps.setObject(3, m.getGia());
+            ps.setObject(4, m.getLoaiDV());
+            ps.setObject(5, m.getMoTa());
+            return ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+    public int sua_DV(String maDV, Model_DichVu m) {
+        sql = "UPDATE DICHVU\n"
+                + "SET MADV = ?, TenDichVu = ?, Gia = ?, LoaiDichVu = ?, MoTa = ?\n"
+                + "WHERE MADV = ?";
+        try {
+            con = dbconnect.DBconnect.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setObject(1, m.getMaDV());
+            ps.setObject(2, m.getTenDV());
+            ps.setObject(3, m.getGia());
+            ps.setObject(4, m.getLoaiDV());
+            ps.setObject(5, m.getMoTa());
+            ps.setObject(6, maDV);
+            return ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
         }
     }
 }
