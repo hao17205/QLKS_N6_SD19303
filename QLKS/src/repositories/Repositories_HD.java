@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Repository;
+package repositories;
 
 import dbconnect.DBconnect;
 import Model.Model_TT;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
  *
  * @author ADMIN
  */
-public class Rp_HD {
+public class Repositories_HD {
 
     private Connection con = null;
     private PreparedStatement pr = null;
@@ -83,7 +83,7 @@ public class Rp_HD {
         }
     }
 
-    public int xoa(String maHD) {
+    public int xoaHD(String maHD) {
         sql = "DELETE FROM HOADON Where MAHD = ?";
         try {
             con = DBconnect.getConnection();
