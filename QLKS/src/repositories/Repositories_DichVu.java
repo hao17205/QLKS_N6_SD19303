@@ -82,4 +82,16 @@ public class Repositories_DichVu {
             return 0;
         }
     }
+    public int xoa(String maDV){
+        sql = "delete from DICHVU where MADV = ?";
+        try {
+            con = dbconnect.DBconnect.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setObject(1, maDV);
+            return ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
 }

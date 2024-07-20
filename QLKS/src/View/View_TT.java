@@ -235,6 +235,7 @@ public class View_TT extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tbl_HD);
 
+        btn_TK.setBackground(new java.awt.Color(255, 204, 153));
         btn_TK.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btn_TK.setText("Tìm Kiếm");
         btn_TK.addActionListener(new java.awt.event.ActionListener() {
