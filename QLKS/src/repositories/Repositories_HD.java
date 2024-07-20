@@ -50,14 +50,17 @@ public class Repositories_HD {
         return listHoaDon;
     }
 
-    public ArrayList<Model_TT> timkiem_MHD(String maHDcantim) {
-        sql = "SELECT MAHD, MANV, MAKH, SoDienThoai, DiaChi, SoPhongDat, TrangThai, NgayXuatDon, NgayThanhToan, Thue, TienCoc, TongTien FROM HOADON\n"
-                + "where MAHD like ?";
+    public ArrayList<Model_TT> timkiem_MHD(String searchTerm) {
+        String sql = "SELECT MAHD, MANV, MAKH, SoDienThoai, DiaChi, SoPhongDat, TrangThai, NgayXuatDon, NgayThanhToan, Thue, TienCoc, TongTien FROM HOADON\n";
+
+        sql += "WHERE MAHD LIKE ? OR SoDienThoai LIKE ?";
+
         ArrayList<Model_TT> listHoaDon = new ArrayList<>();
         try {
             con = DBconnect.getConnection();
             pr = con.prepareStatement(sql);
-            pr.setObject(1, '%' + maHDcantim + '%');
+            pr.setObject(1, '%' + searchTerm + '%');
+            pr.setObject(2, '%' + searchTerm + '%');
             rs = pr.executeQuery();
             while (rs.next()) {
                 String maHD = rs.getString("MAHD");
@@ -79,41 +82,66 @@ public class Repositories_HD {
             return listHoaDon;
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
+            return new ArrayList<>();
         }
     }
 
     public int xoaHD(String maHD) {
-        sql = "DELETE FROM HOADON Where MAHD = ?";
+        String xoaHDChiTiet = "DELETE FROM HOADONCHITIET WHERE MAHD = ?";
+        String xoaHD = "DELETE FROM HOADON WHERE MAHD = ?";
+        Connection con = null;
+        PreparedStatement pr1 = null;
+        PreparedStatement pr2 = null;
+
         try {
             con = DBconnect.getConnection();
-            pr = con.prepareStatement(sql);
-            pr.setObject(1, maHD);
-            return pr.executeUpdate();
+            con.setAutoCommit(false);
 
+            pr1 = con.prepareStatement(xoaHDChiTiet);
+            pr1.setObject(1, maHD);
+            pr1.executeUpdate();
+
+            pr2 = con.prepareStatement(xoaHD);
+            pr2.setObject(1, maHD);
+            int result = pr2.executeUpdate();
+
+            con.commit();
+            return result;
         } catch (Exception e) {
             e.printStackTrace();
+            try {
+                if (con != null) {
+                    con.rollback();
+                }
+            } catch (SQLException rollbackEx) {
+                rollbackEx.printStackTrace();
+            }
             return 0;
+        } finally {
+            try {
+                if (pr1 != null) {
+                    pr1.close();
+                }
+                if (pr2 != null) {
+                    pr2.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException closeEx) {
+                closeEx.printStackTrace();
+            }
         }
     }
 
-    public int suaHoaDon(String maHD, Model_TT hoaDon) {
-        sql = "Update HoaDon set MAKH = ?, MANV = ?, SoDienThoai = ?, DiaChi = ?, SoPhongDat = ?, TrangThai = ?, NgayXuatDon = ?, NgayThanhToan = ?, Thue = ?, TienCoc = ?, TongTien = ? Where MAHD = ?";
+    public int suaHoaDon(String maHD, String soDienThoai, String diaChi) {
+        String sql = "UPDATE HoaDon SET SoDienThoai = ?, DiaChi = ? WHERE MAHD = ?";
         try {
-            con = DBconnect.getConnection();
-            pr = con.prepareStatement(sql);
-            pr.setObject(1, hoaDon.getMaKH());
-            pr.setObject(2, hoaDon.getMaNV());
-            pr.setObject(3, hoaDon.getSoDienThoai());
-            pr.setObject(4, hoaDon.getDiaChi());
-            pr.setObject(5, hoaDon.getSoPhongDat());
-            pr.setObject(6, hoaDon.getTrangThai());
-            pr.setObject(7, hoaDon.getNgayXuatDon());
-            pr.setObject(8, hoaDon.getNgayThanhToan());
-            pr.setObject(9, hoaDon.getThue());
-            pr.setObject(10, hoaDon.getTienCoc());
-            pr.setObject(11, hoaDon.getTongTien());
-            pr.setObject(12, maHD);
+            Connection con = DBconnect.getConnection();
+            PreparedStatement pr = con.prepareStatement(sql);
+            pr.setObject(1, soDienThoai);
+            pr.setObject(2, diaChi);
+            pr.setObject(3, maHD);
             return pr.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
