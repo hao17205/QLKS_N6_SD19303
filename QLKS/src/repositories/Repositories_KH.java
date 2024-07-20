@@ -1,0 +1,82 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package repositories;
+import java.sql.*;
+import java.util.ArrayList;
+import Model.Model_QLKH;
+import dbconnect.DBconnect;
+/**
+ *
+ * @author PC
+ */
+public class Repositories_KH {
+    private Connection con = null;
+    private PreparedStatement ps = null;
+    private ResultSet rs = null;
+    private String sql = null;
+    
+    public ArrayList<Model_QLKH> getAll_KH(){
+        ArrayList<Model_QLKH> list_KhachHang = new ArrayList<>();
+        
+        sql = "Select MAKH, TenKhachHang, NgaySinh, CCCD, SoDienThoai, Email, GioiTinh, DiaChi from KHACHHANG";
+        try {
+            con = DBconnect.getConnection();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                String maKhachHang;
+                String hoTen;
+                String ngaySinh;
+                String Cccd;
+                String Sdt;
+                String Email;
+                int gioiTinh;
+                String diaChi;
+                
+                maKhachHang = rs.getString(1);
+                hoTen = rs.getString(2);
+                ngaySinh = rs.getString(3);
+                Cccd = rs.getString(4);
+                Sdt = rs.getString(5);
+                Email = rs.getString(6);
+                gioiTinh = rs.getInt(7);
+                diaChi = rs.getString(8);
+                
+                Model_QLKH m = new Model_QLKH(maKhachHang, hoTen, ngaySinh, Cccd, Sdt, Email, gioiTinh, diaChi);
+                list_KhachHang.add(m);
+            }
+            return list_KhachHang;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    
+    public int them_KH(Model_QLKH m){
+       sql = "insert into KHACHHANG(MAKH, TenKhachHang, NgaySinh, CCCD, SoDienThoai, Email, GioiTinh, DiaChi )\n" +
+"values(?,?,?,?,?,?,?,?)";
+       
+        try {
+            con = DBconnect.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setObject(1, m.getMaKhachHang());
+            ps.setObject(2, m.getHoTen());
+            ps.setObject(3, m.getNgaySinh());
+            ps.setObject(4, m.getCccd());
+            ps.setObject(5, m.getSdt());
+            ps.setObject(6, m.getEmail());
+            ps.setObject(7, m.getGioiTinh());
+            ps.setObject(8, m.getDiaChi());
+            
+            return ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        }    
+    }
+
+                       
+}

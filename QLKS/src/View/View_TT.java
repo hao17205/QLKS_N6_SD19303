@@ -244,6 +244,7 @@ public class View_TT extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tbl_HD);
 
+<<<<<<< HEAD
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -260,6 +261,16 @@ public class View_TT extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
                 .addContainerGap())
         );
+=======
+        btn_TK.setBackground(new java.awt.Color(255, 204, 153));
+        btn_TK.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        btn_TK.setText("Tìm Kiếm");
+        btn_TK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_TKActionPerformed(evt);
+            }
+        });
+>>>>>>> aa728f3dc27601c8050e34c8fdf338e76e8c6013
 
         jPanel5.setBackground(new java.awt.Color(153, 255, 153));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
