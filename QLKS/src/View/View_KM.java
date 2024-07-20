@@ -67,8 +67,6 @@ public class View_KM extends javax.swing.JFrame {
         txt_PTGG = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         txt_MT = new javax.swing.JTextArea();
-        txt_NBD = new com.toedter.calendar.JDateChooser();
-        txt_NKT = new com.toedter.calendar.JDateChooser();
         tbn_Them = new javax.swing.JButton();
         tbn_Sua = new javax.swing.JButton();
         tbn_Xoa = new javax.swing.JButton();
@@ -119,10 +117,6 @@ public class View_KM extends javax.swing.JFrame {
         txt_MT.setColumns(20);
         txt_MT.setRows(5);
         jScrollPane1.setViewportView(txt_MT);
-
-        txt_NBD.setDateFormatString("yyyy-MM-dd");
-
-        txt_NKT.setDateFormatString("yyyy-MM-dd");
 
         tbn_Them.setText("Thêm");
 
@@ -180,11 +174,8 @@ public class View_KM extends javax.swing.JFrame {
                                 .addGap(38, 38, 38)
                                 .addComponent(jLabel5)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txt_NKT, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
-                            .addComponent(txt_NBD, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txt_PTGG))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(txt_PTGG, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,16 +185,13 @@ public class View_KM extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel1)
                         .addComponent(txt_MaKM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel4)
-                    .addComponent(txt_NBD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel5)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(txt_TenKM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(txt_NKT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2)
+                        .addComponent(txt_TenKM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -402,8 +390,6 @@ public class View_KM extends javax.swing.JFrame {
     private javax.swing.JButton tbn_Xoa;
     private javax.swing.JTextArea txt_MT;
     private javax.swing.JTextField txt_MaKM;
-    private com.toedter.calendar.JDateChooser txt_NBD;
-    private com.toedter.calendar.JDateChooser txt_NKT;
     private javax.swing.JTextField txt_PTGG;
     private javax.swing.JTextField txt_TenKM;
     private javax.swing.JTextField txt_TimKiem;
@@ -413,20 +399,7 @@ public class View_KM extends javax.swing.JFrame {
         txt_TenKM.setText(tbl_KM.getValueAt(i, 1).toString());
         txt_PTGG.setText(tbl_KM.getValueAt(i, 2).toString());
         mol = (DefaultTableModel) tbl_KM.getModel();
-        try {
-             
-            Date date = new SimpleDateFormat("yyyy-MM-dd").parse(mol.getValueAt(i, 3).toString());
-            txt_NBD.setDate(date);
-        } catch (ParseException ex) {
-            Logger.getLogger(View_KM.class.getName()).log(Level.SEVERE, null, ex);
-        }
-         try {
-             
-            Date date1 = new SimpleDateFormat("yyyy-MM-dd").parse(mol.getValueAt(i, 4).toString());
-            txt_NKT.setDate(date1);
-        } catch (ParseException ex) {
-            Logger.getLogger(View_KM.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       
         txt_MT.setText(tbl_KM.getValueAt(i, 5).toString());
     }
 }

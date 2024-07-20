@@ -67,7 +67,7 @@
                       <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="65" max="32767" attributes="0"/>
+                      <EmptySpace pref="90" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
@@ -335,7 +335,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="Xóa" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jButton2" alignment="0" max="32767" attributes="0"/>
+                              <Component id="tbn_Cancel" alignment="0" max="32767" attributes="0"/>
                               <Component id="tbn_ThemDV" alignment="0" max="32767" attributes="0"/>
                               <Component id="tbn_Sửa" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -353,7 +353,7 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="Xóa" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                          <Component id="tbn_Cancel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="21" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -384,12 +384,12 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="X&#xf3;aActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton2">
+                <Component class="javax.swing.JButton" name="tbn_Cancel">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="&#x110;&#x1eb7;t D&#x1ecb;ch V&#x1ee5;"/>
+                    <Property name="text" type="java.lang.String" value="Cancel"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tbn_CancelActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
