@@ -50,14 +50,14 @@ public class Repositories_HD {
         return listHoaDon;
     }
 
-    public ArrayList<Model_TT> timkiem_MHD(String maHDcantim) {
+    public ArrayList<Model_TT> timkiem_MHD(String sdt) {
         sql = "SELECT MAHD, MANV, MAKH, SoDienThoai, DiaChi, SoPhongDat, TrangThai, NgayXuatDon, NgayThanhToan, Thue, TienCoc, TongTien FROM HOADON\n"
-                + "where MAHD like ?";
+                + "where SoDienThoai like ?";
         ArrayList<Model_TT> listHoaDon = new ArrayList<>();
         try {
             con = DBconnect.getConnection();
             pr = con.prepareStatement(sql);
-            pr.setObject(1, '%' + maHDcantim + '%');
+            pr.setObject(1, '%' + sdt + '%');
             rs = pr.executeQuery();
             while (rs.next()) {
                 String maHD = rs.getString("MAHD");
@@ -84,18 +84,46 @@ public class Repositories_HD {
     }
 
     public int xoaHD(String maHD) {
-        sql = "DELETE FROM HOADON Where MAHD = ?";
-        try {
-            con = DBconnect.getConnection();
-            pr = con.prepareStatement(sql);
-            pr.setObject(1, maHD);
-            return pr.executeUpdate();
+    String xoaHDChiTiet = "DELETE FROM HOADONCHITIET WHERE MAHD = ?";
+    String xoaHD = "DELETE FROM HOADON WHERE MAHD = ?";
+    Connection con = null;
+    PreparedStatement pr1 = null;
+    PreparedStatement pr2 = null;
 
-        } catch (Exception e) {
-            e.printStackTrace();
-            return 0;
+    try {
+        con = DBconnect.getConnection();
+        con.setAutoCommit(false); 
+
+        pr1 = con.prepareStatement(xoaHDChiTiet);
+        pr1.setObject(1, maHD);
+        pr1.executeUpdate();
+
+        pr2 = con.prepareStatement(xoaHD);
+        pr2.setObject(1, maHD);
+        int result = pr2.executeUpdate();
+
+        con.commit(); 
+        return result;
+    } catch (Exception e) {
+        e.printStackTrace();
+        try {
+            if (con != null) {
+                con.rollback(); 
+            }
+        } catch (SQLException rollbackEx) {
+            rollbackEx.printStackTrace();
+        }
+        return 0;
+    } finally {
+        try {
+            if (pr1 != null) pr1.close();
+            if (pr2 != null) pr2.close();
+            if (con != null) con.close();
+        } catch (SQLException closeEx) {
+            closeEx.printStackTrace();
         }
     }
+}
 
     public int suaHoaDon(String maHD, Model_TT hoaDon) {
         sql = "Update HoaDon set MAKH = ?, MANV = ?, SoDienThoai = ?, DiaChi = ?, SoPhongDat = ?, TrangThai = ?, NgayXuatDon = ?, NgayThanhToan = ?, Thue = ?, TienCoc = ?, TongTien = ? Where MAHD = ?";
