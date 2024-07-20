@@ -420,7 +420,7 @@
                         <BevelBorder/>
                       </Border>
                     </Property>
-                    <Property name="dateFormatString" type="java.lang.String" value="yyyy-MMM-dd"/>
+                    <Property name="dateFormatString" type="java.lang.String" value="yyyy-MM-dd"/>
                   </Properties>
                 </Component>
                 <Component class="com.toedter.calendar.JDateChooser" name="jdc_NTT">
@@ -430,7 +430,7 @@
                         <BevelBorder/>
                       </Border>
                     </Property>
-                    <Property name="dateFormatString" type="java.lang.String" value="yyyy-MMM-dd"/>
+                    <Property name="dateFormatString" type="java.lang.String" value="yyyy-MM-dd"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -602,6 +602,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="T&#xec;m Ki&#x1ebf;m"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_TKActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txt_TK">
                 </Component>
@@ -1021,7 +1024,7 @@
                         <BevelBorder/>
                       </Border>
                     </Property>
-                    <Property name="dateFormatString" type="java.lang.String" value="yyyy-MMM-dd"/>
+                    <Property name="dateFormatString" type="java.lang.String" value="yyyy-MM-dd"/>
                   </Properties>
                 </Component>
                 <Component class="com.toedter.calendar.JDateChooser" name="jdc_CO">
@@ -1031,7 +1034,7 @@
                         <BevelBorder/>
                       </Border>
                     </Property>
-                    <Property name="dateFormatString" type="java.lang.String" value="yyyy-MMM-dd"/>
+                    <Property name="dateFormatString" type="java.lang.String" value="yyyy-MM-dd"/>
                   </Properties>
                 </Component>
                 <Component class="com.toedter.calendar.JDateChooser" name="jdc_NTT1">
@@ -1041,7 +1044,7 @@
                         <BevelBorder/>
                       </Border>
                     </Property>
-                    <Property name="dateFormatString" type="java.lang.String" value="yyyy-MMM-dd"/>
+                    <Property name="dateFormatString" type="java.lang.String" value="yyyy-MM-dd"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -1239,6 +1242,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="T&#xec;m Ki&#x1ebf;m"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_TK1ActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btn_S1">
                   <Properties>
