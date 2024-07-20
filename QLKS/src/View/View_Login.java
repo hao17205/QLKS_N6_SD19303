@@ -197,13 +197,14 @@ public class View_Login extends javax.swing.JFrame {
         }
         if(taiKhoan.equals("admin") && matKhau.equals("123456")){
             JOptionPane.showMessageDialog(this, "Đăng nhập thành công!");
+            View_TrangChu home = new View_TrangChu();
+            home.setVisible(true);
+            this.dispose();
         }else{
             JOptionPane.showMessageDialog(this, "Đăng nhập thất bại!");
         }
         // code nhảy form
-        View_TrangChu home = new View_TrangChu();
-        home.setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_btn_LoginActionPerformed
 
     /**
