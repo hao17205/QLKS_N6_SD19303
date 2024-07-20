@@ -270,6 +270,15 @@ public class View_TT extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel8.setText("Ngày Thanh Toán:");
 
+<<<<<<< HEAD
+=======
+        jdc_NXHD.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jdc_NXHD.setDateFormatString("yyyy-MM-dd");
+
+        jdc_NTT.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jdc_NTT.setDateFormatString("yyyy-MM-dd");
+
+>>>>>>> 5b8cd05005bf7d32b2b6af195e1001bff172490c
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -351,6 +360,11 @@ public class View_TT extends javax.swing.JFrame {
         btn_TK.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btn_TK.setForeground(new java.awt.Color(255, 51, 51));
         btn_TK.setText("Tìm Kiếm");
+        btn_TK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_TKActionPerformed(evt);
+            }
+        });
 
         btn_S.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btn_S.setForeground(new java.awt.Color(255, 51, 51));
@@ -510,6 +524,18 @@ public class View_TT extends javax.swing.JFrame {
         jLabel19.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel19.setText("Ngày Thanh Toán:");
 
+<<<<<<< HEAD
+=======
+        jdc_CI.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jdc_CI.setDateFormatString("yyyy-MM-dd");
+
+        jdc_CO.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jdc_CO.setDateFormatString("yyyy-MM-dd");
+
+        jdc_NTT1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jdc_NTT1.setDateFormatString("yyyy-MM-dd");
+
+>>>>>>> 5b8cd05005bf7d32b2b6af195e1001bff172490c
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
@@ -642,6 +668,11 @@ public class View_TT extends javax.swing.JFrame {
         btn_TK1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btn_TK1.setForeground(new java.awt.Color(0, 0, 255));
         btn_TK1.setText("Tìm Kiếm");
+        btn_TK1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_TK1ActionPerformed(evt);
+            }
+        });
 
         btn_S1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btn_S1.setForeground(new java.awt.Color(0, 0, 204));
@@ -877,6 +908,37 @@ public class View_TT extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btn_S1ActionPerformed
+
+    private void btn_TKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_TKActionPerformed
+        // TODO add your handling code here:
+        String searchTerm = txt_TK.getText().trim();
+
+        if (searchTerm.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập mã hóa đơn hoặc số điện thoại để tìm kiếm.");
+            return;
+        }
+
+        ArrayList<Model_TT> results = rp_HD.timkiem_MHD(searchTerm);
+
+        if (results.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Không tìm thấy kết quả.");
+        } else {
+            JOptionPane.showMessageDialog(this, "Tìm thấy kết quả - KQ in trên bảng");
+            this.fillTable_HD(results);
+        }
+    }//GEN-LAST:event_btn_TKActionPerformed
+
+    private void btn_TK1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_TK1ActionPerformed
+        // TODO add your handling code here:
+        String maHDCT = txt_TK1.getText().trim();
+
+        if (rp_HDCT.timkiem_MHDCT(maHDCT).isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Không tìm thấy Mã");
+        } else {
+            JOptionPane.showMessageDialog(this, "Tìm thấy ngành - KQ in trên bảng");
+            this.fillTable_HDCT(rp_HDCT.timkiem_MHDCT(maHDCT));
+        }
+    }//GEN-LAST:event_btn_TK1ActionPerformed
 
     /**
      * @param args the command line arguments

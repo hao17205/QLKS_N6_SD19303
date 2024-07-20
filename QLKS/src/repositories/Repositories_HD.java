@@ -50,14 +50,17 @@ public class Repositories_HD {
         return listHoaDon;
     }
 
-    public ArrayList<Model_TT> timkiem_MHD(String sdt) {
-        sql = "SELECT MAHD, MANV, MAKH, SoDienThoai, DiaChi, SoPhongDat, TrangThai, NgayXuatDon, NgayThanhToan, Thue, TienCoc, TongTien FROM HOADON\n"
-                + "where SoDienThoai like ?";
+    public ArrayList<Model_TT> timkiem_MHD(String searchTerm) {
+        String sql = "SELECT MAHD, MANV, MAKH, SoDienThoai, DiaChi, SoPhongDat, TrangThai, NgayXuatDon, NgayThanhToan, Thue, TienCoc, TongTien FROM HOADON\n";
+
+        sql += "WHERE MAHD LIKE ? OR SoDienThoai LIKE ?";
+
         ArrayList<Model_TT> listHoaDon = new ArrayList<>();
         try {
             con = DBconnect.getConnection();
             pr = con.prepareStatement(sql);
-            pr.setObject(1, '%' + sdt + '%');
+            pr.setObject(1, '%' + searchTerm + '%');
+            pr.setObject(2, '%' + searchTerm + '%');
             rs = pr.executeQuery();
             while (rs.next()) {
                 String maHD = rs.getString("MAHD");
@@ -79,7 +82,7 @@ public class Repositories_HD {
             return listHoaDon;
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
+            return new ArrayList<>();
         }
     }
 
