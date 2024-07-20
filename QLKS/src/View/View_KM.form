@@ -244,6 +244,19 @@
             </Component>
           </SubComponents>
         </Container>
+<<<<<<< HEAD
+=======
+        <Component class="org.netbeans.modules.form.InvalidComponent" name="txt_NBD">
+          <Properties>
+            <Property name="dateFormatString" type="java.lang.String" value="yyyy-MM-dd"/>
+          </Properties>
+        </Component>
+        <Component class="org.netbeans.modules.form.InvalidComponent" name="txt_NKT">
+          <Properties>
+            <Property name="dateFormatString" type="java.lang.String" value="yyyy-MM-dd"/>
+          </Properties>
+        </Component>
+>>>>>>> 8f60ca5d19c20fac735802e1c8092eee0f62d0a4
         <Component class="javax.swing.JButton" name="tbn_Them">
           <Properties>
             <Property name="text" type="java.lang.String" value="Th&#xea;m"/>

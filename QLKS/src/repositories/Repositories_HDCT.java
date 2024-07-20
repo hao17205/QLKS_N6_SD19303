@@ -101,26 +101,26 @@ public class Repositories_HDCT {
     }
     
     public int suaHoaDonChiTiet(String maHDCT, Model_TT hoaDonChiTiet) {
-    sql = "Update HoaDonChiTiet set MAKM = ?, MAHD = ?, MA_DDV = ?, MA_P = ?, CheckIn = ?, CheckOut = ?, GiaBanDau = ?, GiaSauKhuyenMai = ?, TongGiaDichVu = ?, TongTienPhong = ?, NgayThanhToan = ? Where MA_HDCT = ?";
-    try {
-        con = DBconnect.getConnection();
-        pr = con.prepareStatement(sql);
-        pr.setObject(1, hoaDonChiTiet.getMaKM());
-        pr.setObject(2, hoaDonChiTiet.getMaHD());
-        pr.setObject(3, hoaDonChiTiet.getMaDDV());
-        pr.setObject(4, hoaDonChiTiet.getMaP());
-        pr.setObject(5, hoaDonChiTiet.getCheckIn());
-        pr.setObject(6, hoaDonChiTiet.getCheckOut());
-        pr.setObject(7, hoaDonChiTiet.getGiaBanDau());
-        pr.setObject(8, hoaDonChiTiet.getGiaSauKhuyenMai());
-        pr.setObject(9, hoaDonChiTiet.getTongGiaDichVu());
-        pr.setObject(10, hoaDonChiTiet.getTongTienPhong());
-        pr.setObject(11, hoaDonChiTiet.getNgayThanhToan());
-        pr.setObject(12, maHDCT);
-        return pr.executeUpdate();
-    } catch (Exception e) {
-        e.printStackTrace();
-        return 0;
+        sql = "Update HoaDonChiTiet set MAKM = ?, MAHD = ?, MA_DDV = ?, MA_P = ?, CheckIn = ?, CheckOut = ?, GiaBanDau = ?, GiaSauKhuyenMai = ?, TongGiaDichVu = ?, TongTienPhong = ?, NgayThanhToan = ? Where MA_HDCT = ?";
+        try {
+            con = DBconnect.getConnection();
+            pr = con.prepareStatement(sql);
+            pr.setObject(1, hoaDonChiTiet.getMaKM());
+            pr.setObject(2, hoaDonChiTiet.getMaHD());
+            pr.setObject(3, hoaDonChiTiet.getMaDDV());
+            pr.setObject(4, hoaDonChiTiet.getMaP());
+            pr.setObject(5, hoaDonChiTiet.getCheckIn());
+            pr.setObject(6, hoaDonChiTiet.getCheckOut());
+            pr.setObject(7, hoaDonChiTiet.getGiaBanDau());
+            pr.setObject(8, hoaDonChiTiet.getGiaSauKhuyenMai());
+            pr.setObject(9, hoaDonChiTiet.getTongGiaDichVu());
+            pr.setObject(10, hoaDonChiTiet.getTongTienPhong());
+            pr.setObject(11, hoaDonChiTiet.getNgayThanhToan());
+            pr.setObject(12, maHDCT);
+            return pr.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        }
     }
-}
 }
