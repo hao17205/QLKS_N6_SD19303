@@ -67,8 +67,8 @@ public class View_KM extends javax.swing.JFrame {
         txt_PTGG = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         txt_MT = new javax.swing.JTextArea();
-        txt_NBD = new com.toedter.calendar.JDateChooser();
-        txt_NKT = new com.toedter.calendar.JDateChooser();
+        txt_NBD = new org.netbeans.modules.form.InvalidComponent();
+        txt_NKT = new org.netbeans.modules.form.InvalidComponent();
         tbn_Them = new javax.swing.JButton();
         tbn_Sua = new javax.swing.JButton();
         tbn_Xoa = new javax.swing.JButton();
@@ -119,10 +119,6 @@ public class View_KM extends javax.swing.JFrame {
         txt_MT.setColumns(20);
         txt_MT.setRows(5);
         jScrollPane1.setViewportView(txt_MT);
-
-        txt_NBD.setDateFormatString("yyyy-MM-dd");
-
-        txt_NKT.setDateFormatString("yyyy-MM-dd");
 
         tbn_Them.setText("Thêm");
 
@@ -184,7 +180,7 @@ public class View_KM extends javax.swing.JFrame {
                             .addComponent(txt_NKT, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
                             .addComponent(txt_NBD, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txt_PTGG))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -402,8 +398,8 @@ public class View_KM extends javax.swing.JFrame {
     private javax.swing.JButton tbn_Xoa;
     private javax.swing.JTextArea txt_MT;
     private javax.swing.JTextField txt_MaKM;
-    private com.toedter.calendar.JDateChooser txt_NBD;
-    private com.toedter.calendar.JDateChooser txt_NKT;
+    private org.netbeans.modules.form.InvalidComponent txt_NBD;
+    private org.netbeans.modules.form.InvalidComponent txt_NKT;
     private javax.swing.JTextField txt_PTGG;
     private javax.swing.JTextField txt_TenKM;
     private javax.swing.JTextField txt_TimKiem;

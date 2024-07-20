@@ -140,7 +140,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="54" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -252,12 +252,12 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="com.toedter.calendar.JDateChooser" name="txt_NBD">
+        <Component class="org.netbeans.modules.form.InvalidComponent" name="txt_NBD">
           <Properties>
             <Property name="dateFormatString" type="java.lang.String" value="yyyy-MM-dd"/>
           </Properties>
         </Component>
-        <Component class="com.toedter.calendar.JDateChooser" name="txt_NKT">
+        <Component class="org.netbeans.modules.form.InvalidComponent" name="txt_NKT">
           <Properties>
             <Property name="dateFormatString" type="java.lang.String" value="yyyy-MM-dd"/>
           </Properties>
