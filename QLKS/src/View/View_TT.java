@@ -368,7 +368,8 @@ public class View_TT extends javax.swing.JFrame {
 
         btn_TK.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btn_TK.setForeground(new java.awt.Color(255, 51, 51));
-        btn_TK.setText("Tìm Kiếm");
+        btn_TK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/search.png"))); // NOI18N
+        btn_TK.setText(" Tìm Kiếm");
         btn_TK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_TKActionPerformed(evt);
@@ -377,7 +378,8 @@ public class View_TT extends javax.swing.JFrame {
 
         btn_S.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btn_S.setForeground(new java.awt.Color(255, 51, 51));
-        btn_S.setText("Sửa");
+        btn_S.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/tools.png"))); // NOI18N
+        btn_S.setText(" Sửa");
         btn_S.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_SActionPerformed(evt);
@@ -386,7 +388,8 @@ public class View_TT extends javax.swing.JFrame {
 
         btn_X.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btn_X.setForeground(new java.awt.Color(255, 51, 51));
-        btn_X.setText("Xóa");
+        btn_X.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/remove.png"))); // NOI18N
+        btn_X.setText(" Xóa");
         btn_X.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_XActionPerformed(evt);
@@ -505,6 +508,8 @@ public class View_TT extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Hóa Đơn", jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel9.setBackground(new java.awt.Color(153, 255, 255));
         jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)), "Hóa Đơn Chi Tiết", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 24), new java.awt.Color(0, 0, 255))); // NOI18N
@@ -676,7 +681,7 @@ public class View_TT extends javax.swing.JFrame {
                     .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel31)
                         .addComponent(txt_TTDV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel11.setBackground(new java.awt.Color(153, 255, 255));
@@ -684,7 +689,8 @@ public class View_TT extends javax.swing.JFrame {
 
         btn_TK1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btn_TK1.setForeground(new java.awt.Color(0, 0, 255));
-        btn_TK1.setText("Tìm Kiếm");
+        btn_TK1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/search.png"))); // NOI18N
+        btn_TK1.setText(" Tìm Kiếm");
         btn_TK1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_TK1ActionPerformed(evt);
@@ -693,7 +699,8 @@ public class View_TT extends javax.swing.JFrame {
 
         btn_S1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btn_S1.setForeground(new java.awt.Color(0, 0, 204));
-        btn_S1.setText("Sửa");
+        btn_S1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/tools.png"))); // NOI18N
+        btn_S1.setText(" Sửa");
         btn_S1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_S1ActionPerformed(evt);
@@ -702,7 +709,8 @@ public class View_TT extends javax.swing.JFrame {
 
         btn_X1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btn_X1.setForeground(new java.awt.Color(0, 0, 255));
-        btn_X1.setText("Xóa");
+        btn_X1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/remove.png"))); // NOI18N
+        btn_X1.setText(" Xóa");
         btn_X1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_X1ActionPerformed(evt);
@@ -783,7 +791,7 @@ public class View_TT extends javax.swing.JFrame {
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -810,8 +818,8 @@ public class View_TT extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Hóa Đơn Chi Tiết", jPanel2);
@@ -824,7 +832,7 @@ public class View_TT extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 859, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
