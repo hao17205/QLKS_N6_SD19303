@@ -133,11 +133,7 @@
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="txt_NKT" alignment="0" pref="163" max="32767" attributes="0"/>
-                              <Component id="txt_NBD" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txt_PTGG" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="txt_PTGG" min="-2" pref="163" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="54" max="32767" attributes="0"/>
@@ -154,18 +150,14 @@
                           <Component id="txt_MaKM" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="txt_NBD" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txt_TenKM" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txt_TenKM" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="txt_NKT" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -252,6 +244,8 @@
             </Component>
           </SubComponents>
         </Container>
+<<<<<<< HEAD
+=======
         <Component class="org.netbeans.modules.form.InvalidComponent" name="txt_NBD">
           <Properties>
             <Property name="dateFormatString" type="java.lang.String" value="yyyy-MM-dd"/>
@@ -262,6 +256,7 @@
             <Property name="dateFormatString" type="java.lang.String" value="yyyy-MM-dd"/>
           </Properties>
         </Component>
+>>>>>>> 8f60ca5d19c20fac735802e1c8092eee0f62d0a4
         <Component class="javax.swing.JButton" name="tbn_Them">
           <Properties>
             <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
