@@ -67,7 +67,7 @@ public class Model_DichVu {
 
     
     
-    public Object[] toDaTaRow(){
+    public Object[] toDaTaRow_DV(){
         return new Object[]{ this.maDV, this.tenDV, this.gia, this.loaiDV, this.moTa
             
         };
