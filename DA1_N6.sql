@@ -140,9 +140,12 @@ values('KH01',N'Trần Văn Thuấn',1,'6-21-2001','036205011855','0354233242','
 ('KH05',N'Hoàng văn Nhật',1,'5-3-2001','036206736648','0378886542','HoangNhat2001@gmail.com',N'Nam Định')
 
 select * from KHACHHANG
+<<<<<<< HEAD
 
 --Thêm Dữ liệu bảng loại phòng
 
+=======
+>>>>>>> 3326a02803e37b370d3d51367858f9d74ca3b0e6
 insert into LOAIPHONG(MALP,TenLoaiPhong,LoaiPhong,Gia,MoTa)
 values('P01',N'Phòng 001',N'Phòng Thường','1000000',N'Thường'),
 ('P02',N'Phòng 002',N'Phòng Thường','1000000',N'Thường'),
@@ -216,7 +219,11 @@ set NgayBatDau = '06-01-2024',NgayKetThuc = '08-31-2024'
 where MAKM = 'KM01'
 
 update KHUYENMAI
+<<<<<<< HEAD
 set NgayBatDau = '12-01-2024',NgayKetThuc = '02-28-2025'
+=======
+set NgayBatDau = '12-01-2024',NgayKetThuc = '02-28-2024'
+>>>>>>> 3326a02803e37b370d3d51367858f9d74ca3b0e6
 where MAKM = 'KM02'
 
 update KHUYENMAI
@@ -259,3 +266,9 @@ values('HDCT01','KM01','HD01','DDV01','MP01','07-19-2024 14:00:00','07-20-2024 1
 ('HDCT04','KM01','HD04','DDV04','MP04','07-21-2024 14:00:00','07-22-2024 14:00:00','1200000','1100000','120000','1100000','07-22-2024'),
 ('HDCT05','KM01','HD05','DDV05','MP05','07-21-2024 14:00:00','07-22-2024 14:00:00','22000000','21000000','100000','21000000','07-22-2024')
 select * from HOADONCHITIET
+<<<<<<< HEAD
+=======
+-- xóa cột loại khuyến mại trong bảng khuyến mại
+ALTER TABLE KHUYENMAI
+DROP COLUMN LOAIKHUYENMAI
+>>>>>>> 3326a02803e37b370d3d51367858f9d74ca3b0e6

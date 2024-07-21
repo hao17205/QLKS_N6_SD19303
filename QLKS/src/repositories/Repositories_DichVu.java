@@ -65,17 +65,16 @@ public class Repositories_DichVu {
 
     public int sua_DV(String maDV, Model_DichVu m) {
         sql = "UPDATE DICHVU\n"
-                + "SET MADV = ?, TenDichVu = ?, Gia = ?, LoaiDichVu = ?, MoTa = ?\n"
+                + "SET TenDichVu = ?, Gia = ?, LoaiDichVu = ?, MoTa = ?\n"
                 + "WHERE MADV = ?";
         try {
             con = dbconnect.DBconnect.getConnection();
             ps = con.prepareStatement(sql);
-            ps.setObject(1, m.getMaDV());
-            ps.setObject(2, m.getTenDV());
-            ps.setObject(3, m.getGia());
-            ps.setObject(4, m.getLoaiDV());
-            ps.setObject(5, m.getMoTa());
-            ps.setObject(6, maDV);
+            ps.setObject(1, m.getTenDV());
+            ps.setObject(2, m.getGia());
+            ps.setObject(3, m.getLoaiDV());
+            ps.setObject(4, m.getMoTa());
+            ps.setObject(5, maDV);
             return ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -92,6 +91,31 @@ public class Repositories_DichVu {
         } catch (Exception e) {
             e.printStackTrace();
             return 0;
+        }
+    }
+    public ArrayList<model.Model_DichVu> timKiem(String timKiem){
+                ArrayList<model.Model_DichVu> list_DV = new ArrayList<>();
+        sql = "SELECT MADV, TenDichVu, Gia,  LoaiDichVu, MoTa FROM DICHVU WHERE MADV LIKE ?";
+
+        try {
+            con = dbconnect.DBconnect.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, "%" + timKiem + "%");
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                String maDV = rs.getString(1);
+                String tenDV = rs.getString(2);
+                double gia = rs.getDouble(3);
+                String loaiDV = rs.getString(4);
+                String moTa = rs.getString(5);
+
+                model.Model_DichVu m = new Model_DichVu(maDV, tenDV, gia, loaiDV, moTa);
+                list_DV.add(m);
+            }
+            return list_DV;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
         }
     }
 }
