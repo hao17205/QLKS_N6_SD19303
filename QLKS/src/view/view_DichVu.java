@@ -33,6 +33,11 @@ public class view_DichVu extends javax.swing.JFrame {
         cbo_LoaiDV.addItem("DV VIP");
         cbo_LoaiDV.addItem("DV Thường");
         this.fillTable(rp.getAll_DV());
+        
+         i = rp.getAll_DV().size();
+        this.showDaTa_DV(i-1);
+        tbl_DV.setRowSelectionInterval(i-1, i-1);
+        
 
     }
 
@@ -75,7 +80,11 @@ public class view_DichVu extends javax.swing.JFrame {
         tbn_Sửa = new javax.swing.JButton();
         Xóa = new javax.swing.JButton();
         tbn_Cancel = new javax.swing.JButton();
+        tbn_Reset = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        tbn_TK = new javax.swing.JButton();
+        txt_TK = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -233,17 +242,25 @@ public class view_DichVu extends javax.swing.JFrame {
             }
         });
 
+        tbn_Reset.setText("Reset");
+        tbn_Reset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbn_ResetActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+            .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Xóa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tbn_Cancel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tbn_ThemDV, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tbn_Sửa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Xóa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tbn_Cancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tbn_ThemDV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tbn_Sửa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tbn_Reset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -256,30 +273,64 @@ public class view_DichVu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Xóa)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tbn_Reset)
+                .addGap(12, 12, 12)
                 .addComponent(tbn_Cancel)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel6.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel6.setText("DỊCH VỤ");
 
+        jPanel3.setBackground(new java.awt.Color(102, 255, 102));
+
+        tbn_TK.setText("Tìm Kiếm");
+        tbn_TK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbn_TKActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(67, 67, 67)
+                .addComponent(txt_TK)
+                .addGap(18, 18, 18)
+                .addComponent(tbn_TK)
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tbn_TK)
+                    .addComponent(txt_TK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(90, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel6)
                 .addGap(264, 264, 264))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -287,12 +338,14 @@ public class view_DichVu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel6)
                 .addGap(4, 4, 4)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(96, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Dịch Vụ", jPanel1);
@@ -375,7 +428,8 @@ public class view_DichVu extends javax.swing.JFrame {
     private void tbl_DVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_DVMouseClicked
         // TODO add your handling code here:
         i = tbl_DV.getSelectedRow();
-        this.showDaTa();
+        this.showDaTa_DV(i);
+        txt_MaDV.disable();
     }//GEN-LAST:event_tbl_DVMouseClicked
 
     private void cbo_LoaiDVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbo_LoaiDVActionPerformed
@@ -398,6 +452,32 @@ public class view_DichVu extends javax.swing.JFrame {
         tc.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_tbn_CancelActionPerformed
+
+    private void tbn_ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbn_ResetActionPerformed
+        // TODO add your handling code here:
+        txt_MaDV.setText("");
+        txt_TenDV.setText("");
+        txt_Gia.setText("");
+        txt_MT.setText("");
+        txt_MaDV.setEnabled(true);
+        this.fillTable(rp.getAll_DV());
+    }//GEN-LAST:event_tbn_ResetActionPerformed
+
+    private void tbn_TKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbn_TKActionPerformed
+        // TODO add your handling code here:
+        String timKiem = txt_TK.getText().trim();
+        if (timKiem.isEmpty()) {
+             JOptionPane.showMessageDialog(this, "bạn chưa nhập mã dịch vụ");
+        }else{
+            ArrayList<Model_DichVu> KQTK = rp.timKiem(timKiem);
+            if (KQTK.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Mã không tồn tại");
+            }else{
+                JOptionPane.showMessageDialog(this, "đã thấy dữ liệu");
+                this.fillTable(KQTK);
+            }
+        }
+    }//GEN-LAST:event_tbn_TKActionPerformed
 
     /**
      * @param args the command line arguments
@@ -445,25 +525,29 @@ public class view_DichVu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable tbl_DV;
     private javax.swing.JButton tbn_Cancel;
+    private javax.swing.JButton tbn_Reset;
     private javax.swing.JButton tbn_Sửa;
+    private javax.swing.JButton tbn_TK;
     private javax.swing.JButton tbn_ThemDV;
     private javax.swing.JTextField txt_Gia;
     private javax.swing.JTextArea txt_MT;
     private javax.swing.JTextField txt_MaDV;
+    private javax.swing.JTextField txt_TK;
     private javax.swing.JTextField txt_TenDV;
     // End of variables declaration//GEN-END:variables
-    private void showDaTa() {
+    private void showDaTa_DV(int i) {
         txt_MaDV.setText(tbl_DV.getValueAt(i, 0).toString());
         txt_TenDV.setText(tbl_DV.getValueAt(i, 1).toString());
         txt_Gia.setText(tbl_DV.getValueAt(i, 2).toString());
-        txt_MT.setText(tbl_DV.getValueAt(i, 4).toString());
         cbo_LoaiDV.setSelectedItem(tbl_DV.getValueAt(i, 3));
+        txt_MT.setText(tbl_DV.getValueAt(i, 4).toString());
     }
 
     private Model_DichVu readForm() {
@@ -474,15 +558,24 @@ public class view_DichVu extends javax.swing.JFrame {
            return null;
         }
         String tenDV = txt_TenDV.getText().trim();
-        if (maDV.isEmpty()) {
+        if (tenDV.isEmpty()) {
             JOptionPane.showMessageDialog(this, "chưa điền tên dịch vụ");
            txt_TenDV.requestFocus();
            return null;
         }
-        double gia = Double.parseDouble(txt_Gia.getText().trim().toString());
+        String checkTrongGia = txt_Gia.getText().trim();
+        double gia ;
+        if (checkTrongGia.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Bạn chưa nhập giá dịch vụ");
+            txt_Gia.requestFocus();
+            return null;
+        }else{
+            gia = Double.parseDouble(checkTrongGia);
+        }
+        
         String loaiDV = cbo_LoaiDV.getSelectedItem().toString().trim();
         String moTa = txt_MT.getText().trim();
-        if (maDV.isEmpty()) {
+        if (moTa.isEmpty()) {
             JOptionPane.showMessageDialog(this, "chưa điền mô tả");
            txt_MT.requestFocus();
            return null;

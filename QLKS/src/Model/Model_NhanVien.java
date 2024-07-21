@@ -10,7 +10,6 @@ package Model;
  */
 public class Model_NhanVien {
     private String maNV;
-    private String maTK;
     private String tenNV;
     private String ngaySinh;
     private int gioiTinh;
@@ -22,9 +21,8 @@ public class Model_NhanVien {
     public Model_NhanVien() {
     }
 
-    public Model_NhanVien(String maNV, String maTK, String tenNV, String ngaySinh, int gioiTinh, String sdt, String email, String diaChi, String chucVu) {
+    public Model_NhanVien(String maNV, String tenNV, String ngaySinh, int gioiTinh, String sdt, String email, String diaChi, String chucVu) {
         this.maNV = maNV;
-        this.maTK = maTK;
         this.tenNV = tenNV;
         this.ngaySinh = ngaySinh;
         this.gioiTinh = gioiTinh;
@@ -40,14 +38,6 @@ public class Model_NhanVien {
 
     public void setMaNV(String maNV) {
         this.maNV = maNV;
-    }
-
-    public String getMaTK() {
-        return maTK;
-    }
-
-    public void setMaTK(String maTK) {
-        this.maTK = maTK;
     }
 
     public String getTenNV() {
@@ -105,11 +95,10 @@ public class Model_NhanVien {
     public void setChucVu(String chucVu) {
         this.chucVu = chucVu;
     }
-    
-    public Object[] toDataRow(){
+    public Object[] toDataRow_NV(){
         return new Object[]{
-            this.getMaNV(),this.getMaTK(),this.getTenNV(),this.getNgaySinh(),this.getGioiTinh()== 1? "Nam":"Nữ",this.getSdt(),this.getEmail(),
-            this.getDiaChi(),this.getChucVu()
-        };
+            this.getMaNV(),this.getTenNV(),this.getNgaySinh(),this.getGioiTinh()==1?"Nam":"Nữ",this.getSdt(),this.getEmail(),this.getDiaChi(),
+            this.getChucVu()
+    };
                 }
 }
