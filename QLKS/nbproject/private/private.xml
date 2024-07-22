@@ -7,6 +7,10 @@
 =======
         <group>
 <<<<<<< HEAD
+            <file>file:/D:/DuAn1/QLKS/src/View/View_QLKH.java</file>
+            <file>file:/D:/DuAn1/QLKS/src/View/view_DichVu.java</file>
+=======
+<<<<<<< HEAD
             <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/repositories/Repositories_HD.java</file>
             <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/View/View_TrangChu.java</file>
             <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/View/View_TT.java</file>
@@ -14,8 +18,14 @@
             <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/View/View_DatPhong.java</file>
             <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/View/View_Login.java</file>
 =======
+>>>>>>> b32965ba421200672de5e57e7f983a37c216d32f
             <file>file:/D:/DuAn1/QLKS/src/View/View_NhanVien.java</file>
+            <file>file:/D:/DuAn1/QLKS/src/View/View_DatPhong.java</file>
+            <file>file:/D:/DuAn1/QLKS/src/View/View_Login.java</file>
             <file>file:/D:/DuAn1/QLKS/src/Model/Model_NhanVien.java</file>
+            <file>file:/D:/DuAn1/QLKS/src/View/View_TT.java</file>
+            <file>file:/D:/DuAn1/QLKS/src/View/View_KM.java</file>
+            <file>file:/D:/DuAn1/QLKS/src/View/View_TrangChu.java</file>
             <file>file:/D:/DuAn1/QLKS/src/repositories/Repositories_NhanVien.java</file>
 >>>>>>> d65f10824538fe564eb15d30e6247978e89650ac
         </group>
