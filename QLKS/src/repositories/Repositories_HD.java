@@ -148,4 +148,21 @@ public class Repositories_HD {
             return 0;
         }
     }
+
+    public boolean checkTrungSoDienThoai(String soDienThoai) {
+        String sql = "SELECT COUNT(*) FROM HoaDon WHERE SoDienThoai = ?";
+        try {
+            Connection con = DBconnect.getConnection();
+            PreparedStatement pr = con.prepareStatement(sql);
+            pr.setString(1, soDienThoai);
+            ResultSet rs = pr.executeQuery();
+            if (rs.next()) {
+                return rs.getInt(1) > 0; 
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 }

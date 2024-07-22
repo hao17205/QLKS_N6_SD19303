@@ -15,6 +15,8 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.tree.DefaultTreeSelectionModel;
 import model.Model_KM;
 import repositories.Repositories_KM;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 /**
  *
@@ -34,8 +36,8 @@ public class View_KM extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.fillTable(rp.getAll_KM());
         i = rp.getAll_KM().size();
-        this.showDaTa(i-1);
-        tbl_KM.setRowSelectionInterval(i-1, i-1);
+        this.showDaTa(i - 1);
+        tbl_KM.setRowSelectionInterval(i - 1, i - 1);
     }
 
     private void fillTable(ArrayList<model.Model_KM> list) {
@@ -104,6 +106,12 @@ public class View_KM extends javax.swing.JFrame {
         jLabel5.setText("Ngày Kết Thúc:");
 
         jLabel6.setText("Phần Trăm Giảm Giá:");
+
+        txt_NKT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_NKTActionPerformed(evt);
+            }
+        });
 
         tbn_Them.setText("Thêm");
         tbn_Them.addActionListener(new java.awt.event.ActionListener() {
@@ -282,16 +290,13 @@ public class View_KM extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(77, 77, 77)
+                .addGap(48, 48, 48)
                 .addComponent(jScrollPane2)
-                .addContainerGap())
+                .addGap(41, 41, 41))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
         );
 
         jLabel7.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
@@ -304,26 +309,27 @@ public class View_KM extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(230, 230, 230))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(280, 280, 280))))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(28, 28, 28)
                 .addComponent(jLabel7)
-                .addGap(35, 35, 35)
+                .addGap(33, 33, 33)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -362,17 +368,37 @@ public class View_KM extends javax.swing.JFrame {
         // TODO add your handling code here:
         int chon = JOptionPane.showConfirmDialog(this, "bạn có muốn thêm khuyến mại không");
         if (chon == 0) {
-               if (this.readForm()!= null) {
-            if (rp.them_KM(readForm())>0) {
-                JOptionPane.showMessageDialog(this, "thêm thành công");
-                this.fillTable(rp.getAll_KM());
-            }else{
-                JOptionPane.showMessageDialog(this, "thêm thất bại");
+            if (this.readForm() != null) {
+
+                if (rp.them_KM(readForm()) > 0) {
+                    JOptionPane.showMessageDialog(this, "thêm thành công");
+                    this.fillTable(rp.getAll_KM());
+                } else {
+                    JOptionPane.showMessageDialog(this, "thêm thất bại ");
+
+                }
+
             }
-            
         }
-        }
-     
+        /*if (chon == 0) {
+            if (this.readForm() != null) {
+                i = tbl_KM.getSelectedRow();
+                String ma = tbl_KM.getValueAt(i, 0).toString();
+                if (rp.checkTrung_KM(ma) != null) {
+                    JOptionPane.showMessageDialog(this, "Mã đã tồn tại");
+                    txt_MaKM.requestFocus();
+                } else {
+                    if (rp.them_KM(this.readForm()) > 0) {
+                        JOptionPane.showMessageDialog(this, "thêm thành công");
+                        this.fillTable(rp.getAll_KM());
+                    } else {
+                        JOptionPane.showMessageDialog(this, "thêm thất bại");
+                    }
+                }
+
+            }
+        }*/
+
     }//GEN-LAST:event_tbn_ThemActionPerformed
 
     private void tbn_SuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbn_SuaActionPerformed
@@ -380,15 +406,15 @@ public class View_KM extends javax.swing.JFrame {
         i = tbl_KM.getSelectedRow();
         int chon = JOptionPane.showConfirmDialog(this, "bạn có muốn sửa không?");
         if (chon == 0) {
-            if(i == -1){
+            if (i == -1) {
                 JOptionPane.showMessageDialog(this, "bạn chưa chọn dòng dữ liệu muốn sửa");
-            }else{
-                if (this.readForm()!= null) {
+            } else {
+                if (this.readForm() != null) {
                     String maKH = tbl_KM.getValueAt(i, 0).toString();
-                    if (rp.sua_KM(maKH, this.readForm())>0) {
+                    if (rp.sua_KM(maKH, this.readForm()) > 0) {
                         JOptionPane.showMessageDialog(this, "sửa thành công");
                         this.fillTable(rp.getAll_KM());
-                    }else{
+                    } else {
                         JOptionPane.showMessageDialog(this, "sửa thất bại");
                     }
                 }
@@ -403,13 +429,13 @@ public class View_KM extends javax.swing.JFrame {
         if (chon == 0) {
             if (i == -1) {
                 JOptionPane.showMessageDialog(this, "Bạn chưa chọn dữ liệu muốn xóa");
-            }else{
-                if (this.readForm()!= null) {
-                    String maKM = tbl_KM.getValueAt(i,0).toString();
-                    if (rp.xoa_KM(maKM)>0) {
+            } else {
+                if (this.readForm() != null) {
+                    String maKM = tbl_KM.getValueAt(i, 0).toString();
+                    if (rp.xoa_KM(maKM) > 0) {
                         JOptionPane.showMessageDialog(this, "xóa thành công");
                         this.fillTable(rp.getAll_KM());
-                    }else{
+                    } else {
                         JOptionPane.showMessageDialog(this, "xóa thất bại");
                     }
                 }
@@ -428,7 +454,7 @@ public class View_KM extends javax.swing.JFrame {
         txt_timkiem.setText("");
         txt_MaKM.setEnabled(true);
         this.fillTable(rp.getAll_KM());
-        
+
     }//GEN-LAST:event_tbn_ResetActionPerformed
 
     private void tbn_CancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbn_CancelActionPerformed
@@ -443,17 +469,21 @@ public class View_KM extends javax.swing.JFrame {
         String maTK = txt_timkiem.getText().trim();
         if (maTK.isEmpty()) {
             JOptionPane.showMessageDialog(this, "bạn chưa nhập mã khuyến mại");
-        }else{
+        } else {
             ArrayList<Model_KM> KQTK = rp.timKiem_KM(maTK);
             if (KQTK.isEmpty()) {
-                 JOptionPane.showMessageDialog(this, "Mã không tồn tại");
-            }else{
-            
+                JOptionPane.showMessageDialog(this, "Mã không tồn tại");
+            } else {
+
                 JOptionPane.showMessageDialog(this, "đã thấy dữ liệu");
                 this.fillTable(KQTK);
             }
         }
     }//GEN-LAST:event_tbn_TKActionPerformed
+
+    private void txt_NKTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_NKTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_NKTActionPerformed
 
     /**
      * @param args the command line arguments
@@ -531,44 +561,69 @@ public class View_KM extends javax.swing.JFrame {
 
     private Model_KM readForm() {
         String maKM = txt_MaKM.getText().trim();
-        if(maKM.isEmpty()){
+        if (maKM.isEmpty()) {
             JOptionPane.showMessageDialog(this, "bạn chưa nhập mã khuyến mại");
             txt_MaKM.requestFocus();
             return null;
         }
         String tenKM = txt_TenKM.getText().trim();
-        if(tenKM.isEmpty()){
+        if (tenKM.isEmpty()) {
             JOptionPane.showMessageDialog(this, "bạn chưa nhập tên khuyến mại");
             txt_TenKM.requestFocus();
             return null;
         }
-        
+
         String checkPTGG = txt_PTGG.getText().trim();
         double pTGG;
-        
+
         if (checkPTGG.isEmpty()) {
             JOptionPane.showMessageDialog(this, "bạn chưa nhập số phần trăm giảm giá");
             txt_PTGG.requestFocus();
             return null;
-        }else{
-            pTGG = Double.parseDouble(checkPTGG);
+        } else {
+            try {
+                pTGG = Double.parseDouble(checkPTGG);
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "nhập sai định dạng phần trăm giảm giá");
+                txt_PTGG.requestFocus();
+                return null;
+            }
         }
+
         String ngayBD = txt_NBD.getText().trim();
-        if(ngayBD.isEmpty()){
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+        if (ngayBD.isEmpty()) {
             JOptionPane.showMessageDialog(this, "bạn chưa nhập ngày bắt đầu khuyến mại");
             txt_MaKM.requestFocus();
             return null;
         }
-        
+        try {
+            Date date = dateFormat.parse(ngayBD);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "kiểu dữ liệu ngày bắt đầu không hợp lệ");
+            txt_NBD.requestFocus();
+            return null;
+        }
+
         String ngayKT = txt_NKT.getText().trim();
-        
-        if(ngayKT.isEmpty()){
+
+        if (ngayKT.isEmpty()) {
             JOptionPane.showMessageDialog(this, "bạn chưa nhập ngày kết thúc khuyến mại");
             txt_MaKM.requestFocus();
             return null;
         }
+        try {
+            Date date = dateFormat.parse(ngayKT);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "kiểu dữ liệu ngày kết thúc không hợp lệ");
+            txt_NKT.requestFocus();
+            return null;
+        }
+
         String moTa = txt_MT.getText().trim();
-        if(moTa.isEmpty()){
+        if (moTa.isEmpty()) {
             JOptionPane.showMessageDialog(this, "bạn chưa nhập mô tả khuyến mại");
             txt_MaKM.requestFocus();
             return null;

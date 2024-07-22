@@ -115,4 +115,28 @@ public class Repositories_KM {
             return null;
         }
     }
+    public Model_KM checkTrung_KM(String ma_New){
+        sql = "SELECT MAKM, TenKhuyenMai, PhanTramGiamGia, NgayBatDau, NgayKetThuc, Mota FROM KHUYENMAI WHERE MAKM = ?";
+        Model_KM kM = null;
+        try {
+            con = dbconnect.DBconnect.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setObject(1, ma_New);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                String maKM = rs.getString(1);
+                String tenKM = rs.getString(2);
+                double pTGG = rs.getDouble(3);
+                String ngayBD = rs.getString(4);
+                String ngayKT = rs.getString(5);
+                String moTa = rs.getString(6);
+                kM = new Model_KM(maKM, tenKM, pTGG, ngayBD, ngayKT, moTa);
+                
+            }
+            return  kM;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

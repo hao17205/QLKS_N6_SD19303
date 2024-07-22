@@ -19,7 +19,11 @@ public class View_TrangChu extends javax.swing.JFrame {
     public View_TrangChu() {
         initComponents();
         this.setLocationRelativeTo(null);
+<<<<<<< HEAD
       
+=======
+     
+>>>>>>> d65f10824538fe564eb15d30e6247978e89650ac
 
     }
 

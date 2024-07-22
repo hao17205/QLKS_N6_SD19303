@@ -570,7 +570,14 @@ public class view_DichVu extends javax.swing.JFrame {
             txt_Gia.requestFocus();
             return null;
         }else{
-            gia = Double.parseDouble(checkTrongGia);
+            try {
+                gia = Double.parseDouble(checkTrongGia);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "nhập sai định dạng giá dịch vụ");
+            txt_Gia.requestFocus();
+            return null;
+            }
+            
         }
         
         String loaiDV = cbo_LoaiDV.getSelectedItem().toString().trim();
