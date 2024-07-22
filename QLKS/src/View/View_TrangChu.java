@@ -19,9 +19,7 @@ public class View_TrangChu extends javax.swing.JFrame {
     public View_TrangChu() {
         initComponents();
         this.setLocationRelativeTo(null);
-        cbo_LP.removeAllItems();
-        cbo_LP.addItem("Phòng thường");
-        cbo_LP.addItem("Phòng VIP");
+     
 
     }
 
