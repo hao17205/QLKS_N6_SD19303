@@ -14,14 +14,14 @@ public class Model_KM {
     private String maKM;
     private String tenKM;
     private double pTGG;
-    private Date ngayBD;
-    private Date ngayKT;
+    private String ngayBD;
+    private String ngayKT;
     private String moTa;
 
     public Model_KM() {
     }
 
-    public Model_KM(String maKM, String tenKM, double pTGG, Date ngayBD, Date ngayKT, String moTa) {
+    public Model_KM(String maKM, String tenKM, double pTGG, String ngayBD, String ngayKT, String moTa) {
         this.maKM = maKM;
         this.tenKM = tenKM;
         this.pTGG = pTGG;
@@ -54,21 +54,22 @@ public class Model_KM {
         this.pTGG = pTGG;
     }
 
-    public Date getNgayBD() {
+    public String getNgayBD() {
         return ngayBD;
     }
 
-    public void setNgayBD(Date ngayBD) {
+    public void setNgayBD(String ngayBD) {
         this.ngayBD = ngayBD;
     }
 
-    public Date getNgayKT() {
+    public String getNgayKT() {
         return ngayKT;
     }
 
-    public void setNgayKT(Date ngayKT) {
+    public void setNgayKT(String ngayKT) {
         this.ngayKT = ngayKT;
     }
+
     public String getMoTa() {
         return moTa;
     }
@@ -80,4 +81,5 @@ public class Model_KM {
     public Object[] toDaTaRow_KM(){
         return new Object[]{this.maKM, this.tenKM, this.pTGG, this.ngayBD, this.ngayKT, this.moTa};
     }
+    
 }
