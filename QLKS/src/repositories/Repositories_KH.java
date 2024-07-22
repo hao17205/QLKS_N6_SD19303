@@ -4,7 +4,6 @@
  */
 package repositories;
 import Model.Model_QLKH;
-import dbconnect.DBconnect;
 import java.sql.*;
 import java.util.ArrayList;
 /**
@@ -22,7 +21,7 @@ public class Repositories_KH {
         
         sql = "Select MAKH, TenKhachHang, NgaySinh, CCCD, SoDienThoai, Email, GioiTinh, DiaChi from KHACHHANG";
         try {
-            con = DBconnect.getConnection();
+            con = dbconnect.DBconnect.getConnection();
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
             
@@ -60,7 +59,7 @@ public class Repositories_KH {
 "values(?,?,?,?,?,?,?,?)";
        
         try {
-            con = DBconnect.getConnection();
+            con = dbconnect.DBconnect.getConnection();
             ps = con.prepareStatement(sql);
             ps.setObject(1, m.getMaKhachHang());
             ps.setObject(2, m.getHoTen());
@@ -82,7 +81,7 @@ public class Repositories_KH {
         sql ="Delete  from KHACHHANG where MAKH = ?";
         
         try {
-            con = DBconnect.getConnection();
+            con = dbconnect.DBconnect.getConnection();
             ps = con.prepareStatement(sql);
             ps.setObject(1, maKhachhang);
             return ps.executeUpdate();
@@ -96,7 +95,7 @@ public class Repositories_KH {
        sql = "Update KHACHHANG set TenKhachHang = ?, NgaySinh =?, CCCD = ?, SoDienThoai = ?, Email = ?, GioiTinh = ?,DiaChi = ? where MAKH = ?";
        
         try {
-            con = DBconnect.getConnection();
+            con = dbconnect.DBconnect.getConnection();
             ps = con.prepareStatement(sql);
             
             ps.setObject(1, m.getHoTen());
@@ -115,14 +114,16 @@ public class Repositories_KH {
         }    
     }
     
-    public ArrayList<Model_QLKH> timKiem_KH(String maKH){
+    public ArrayList<Model_QLKH> timKiem_KH(String timKiemKhachHang){
         ArrayList<Model_QLKH> list_KH = new ArrayList<>();
         sql = "select MAKH, TenKhachHang , NgaySinh, CCCD , SoDienThoai , Email , GioiTinh ,DiaChi from KHACHHANG\n" +
-"where MAKH like ?";
+"where MAKH like ? or SoDienThoai like ? or Email like ?";
         try {
-            con = DBconnect.getConnection();
+            con = dbconnect.DBconnect.getConnection();
             ps = con.prepareStatement(sql);
-            ps.setObject(1, "%" + maKH + "%");
+            ps.setObject(1, "%" + timKiemKhachHang + "%");
+            ps.setObject(2,"%" + timKiemKhachHang + "%" );
+            ps.setObject(3,"%" + timKiemKhachHang + "%" );
             rs = ps.executeQuery();
             
             while(rs.next()){

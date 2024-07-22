@@ -104,6 +104,7 @@ public class View_TT extends javax.swing.JFrame {
         txt_TK = new javax.swing.JTextField();
         btn_S = new javax.swing.JButton();
         btn_X = new javax.swing.JButton();
+        btn_Rs = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_HD = new javax.swing.JTable();
@@ -139,6 +140,7 @@ public class View_TT extends javax.swing.JFrame {
         btn_TK1 = new javax.swing.JButton();
         btn_S1 = new javax.swing.JButton();
         btn_X1 = new javax.swing.JButton();
+        btn_S2 = new javax.swing.JButton();
         jPanel12 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbl_HDCT = new javax.swing.JTable();
@@ -300,12 +302,12 @@ public class View_TT extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(11, 11, 11)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jdc_NTT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jdc_NXHD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel8)
-                        .addComponent(jLabel3)))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel8)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jdc_NTT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jdc_NXHD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -396,6 +398,16 @@ public class View_TT extends javax.swing.JFrame {
             }
         });
 
+        btn_Rs.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btn_Rs.setForeground(new java.awt.Color(255, 51, 51));
+        btn_Rs.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/reset.png"))); // NOI18N
+        btn_Rs.setText("Reset");
+        btn_Rs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_RsActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -410,6 +422,8 @@ public class View_TT extends javax.swing.JFrame {
                 .addGap(100, 100, 100)
                 .addComponent(btn_S)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_Rs)
+                .addGap(148, 148, 148)
                 .addComponent(btn_X)
                 .addGap(123, 123, 123))
         );
@@ -423,7 +437,8 @@ public class View_TT extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_S)
-                    .addComponent(btn_X))
+                    .addComponent(btn_X)
+                    .addComponent(btn_Rs))
                 .addGap(9, 9, 9))
         );
 
@@ -470,7 +485,7 @@ public class View_TT extends javax.swing.JFrame {
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 416, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -715,6 +730,16 @@ public class View_TT extends javax.swing.JFrame {
             }
         });
 
+        btn_S2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btn_S2.setForeground(new java.awt.Color(0, 0, 204));
+        btn_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/reset.png"))); // NOI18N
+        btn_S2.setText("Reset");
+        btn_S2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_S2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
@@ -723,12 +748,14 @@ public class View_TT extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(txt_TK1, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_TK1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_TK1, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
                 .addGap(31, 31, 31))
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGap(100, 100, 100)
                 .addComponent(btn_S1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_S2)
+                .addGap(152, 152, 152)
                 .addComponent(btn_X1)
                 .addGap(123, 123, 123))
         );
@@ -742,7 +769,8 @@ public class View_TT extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_S1)
-                    .addComponent(btn_X1))
+                    .addComponent(btn_X1)
+                    .addComponent(btn_S2))
                 .addGap(9, 9, 9))
         );
 
@@ -844,12 +872,33 @@ public class View_TT extends javax.swing.JFrame {
         // TODO add your handling code here:
         i = tbl_HD.getSelectedRow();
         this.showData_HD(i);
+        txt_MaHD.setEnabled(false);
+        txt_MaKH.setEnabled(false);
+        txt_MaNV.setEnabled(false);
+        txt_SoPD.setEnabled(false);
+        rdo_CTT.setEnabled(false);
+        rdo_DTT.setEnabled(false);
+        jdc_NXHD.setEnabled(false);
+        jdc_NTT.setEnabled(false);
+        txt_T.setEnabled(false);
+        txt_TC.setEnabled(false);
+        txt_TT.setEnabled(false);
     }//GEN-LAST:event_tbl_HDMouseClicked
 
     private void tbl_HDCTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_HDCTMouseClicked
         // TODO add your handling code here:
         i = tbl_HDCT.getSelectedRow();
         this.showData_HDCT(i);
+        txt_MaHDCT.setEnabled(false);
+        txt_MaHD1.setEnabled(false);
+        txt_MaKM.setEnabled(false);
+        txt_MaDDV.setEnabled(false);
+        txt_MaP.setEnabled(false);
+        jdc_NTT1.setEnabled(false);
+        txt_GBD.setEnabled(false);
+        txt_GSKM.setEnabled(false);
+        txt_TTDV.setEnabled(false);
+        txt_TTP.setEnabled(false);
     }//GEN-LAST:event_tbl_HDCTMouseClicked
 
     private void btn_SActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SActionPerformed
@@ -864,14 +913,19 @@ public class View_TT extends javax.swing.JFrame {
                 String soDienThoai = txt_SDT.getText();
                 String diaChi = txt_DiaChi.getText();
 
-                if (rp_HD.suaHoaDon(maHD, soDienThoai, diaChi) > 0) {
-                    JOptionPane.showMessageDialog(this, "Sửa thành công");
-                    this.fillTable_HD(rp_HD.getAll_HD());
+                if (rp_HD.checkTrungSoDienThoai(soDienThoai)) {
+                    JOptionPane.showMessageDialog(this, "Số điện thoại đã tồn tại. Vui lòng nhập số điện thoại khác.");
                 } else {
-                    JOptionPane.showMessageDialog(this, "Dữ liệu nhập vào không hợp lệ, vui lòng kiểm tra lại(chỉ sửa được SDT và Địa Chỉ)");
+                    if (rp_HD.suaHoaDon(maHD, soDienThoai, diaChi) > 0) {
+                        JOptionPane.showMessageDialog(this, "Sửa thành công");
+                        this.fillTable_HD(rp_HD.getAll_HD());
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Dữ liệu nhập vào không hợp lệ, vui lòng kiểm tra lại(chỉ sửa được SDT và Địa Chỉ)");
+                    }
                 }
             }
         }
+
     }//GEN-LAST:event_btn_SActionPerformed
 
     private void btn_XActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_XActionPerformed
@@ -963,6 +1017,43 @@ public class View_TT extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_TK1ActionPerformed
 
+    private void btn_RsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RsActionPerformed
+        // TODO add your handling code here:
+        txt_MaHD.setText("");
+        txt_MaKH.setText("");
+        txt_MaNV.setText("");
+        txt_SDT.setText("");
+        txt_DiaChi.setText("");
+        txt_SoPD.setText("");
+        rdo_CTT.setSelected(false);
+        rdo_DTT.setSelected(false);
+        jdc_CI.setDate(null);
+        jdc_CO.setDate(null);
+        txt_T.setText("");
+        txt_TC.setText("");
+        txt_TT.setText("");
+        fillTable_HD(rp_HD.getAll_HD());
+        txt_MaHD.setEnabled(true);
+    }//GEN-LAST:event_btn_RsActionPerformed
+
+    private void btn_S2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_S2ActionPerformed
+        // TODO add your handling code here:
+        txt_MaHDCT.setText("");
+        txt_MaHD1.setText("");
+        txt_MaKM.setText("");
+        txt_MaDDV.setText("");
+        txt_MaP.setText("");
+        jdc_CI.setDate(null);
+        jdc_CO.setDate(null);
+        jdc_NTT1.setDate(null);
+        txt_GBD.setText("");
+        txt_GSKM.setText("");
+        txt_TTDV.setText("");
+        txt_TTP.setText("");
+        fillTable_HDCT(rp_HDCT.getAll_HDCT());
+        txt_MaHDCT.setEnabled(true);
+    }//GEN-LAST:event_btn_S2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1014,8 +1105,10 @@ public class View_TT extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_Rs;
     private javax.swing.JButton btn_S;
     private javax.swing.JButton btn_S1;
+    private javax.swing.JButton btn_S2;
     private javax.swing.JButton btn_TK;
     private javax.swing.JButton btn_TK1;
     private javax.swing.JButton btn_X;
