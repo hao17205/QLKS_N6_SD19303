@@ -157,4 +157,46 @@ public class Repositories_NhanVien {
            return null;
        }
    }
+   
+   //Code Check trùng
+   
+   public Model_NhanVien checkTrung(String maNV_Moi){
+       sql = "select MANV,TenNV,NgaySinh,GioiTinh,SoDienThoai,Email,DiaChi,ChucVu from NHANVIEN \n" +
+"where MANV=?";
+       Model_NhanVien nv = null;
+       try {
+            con = dbconnect.DBconnect.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setObject(1, maNV_Moi);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                 String maNV;
+                 String tenNV;
+                 String ngaySinh;
+                 int gioiTinh;
+                 String sdt;
+                 String email;
+                 String diaChi;
+                 String chucVu;
+                 
+                 maNV = rs.getString(1);
+                 tenNV = rs.getString(2);
+                 ngaySinh = rs.getString(3);
+                 gioiTinh = rs.getInt(4);
+                 sdt = rs.getString(5);
+                 email = rs.getString(6);
+                 diaChi = rs.getString(7);
+                 chucVu = rs.getString(8);
+                 
+                 Model_NhanVien NV = new Model_NhanVien(maNV, tenNV, ngaySinh, gioiTinh, sdt, email, diaChi, chucVu);
+                 
+            }
+            return nv;
+           
+       } catch (Exception e) {
+           e.printStackTrace();
+           return null;
+       }
+   }
 }
