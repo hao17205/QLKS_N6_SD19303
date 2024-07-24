@@ -95,12 +95,16 @@ public class Repositories_DichVu {
     }
     public ArrayList<model.Model_DichVu> timKiem(String timKiem){
                 ArrayList<model.Model_DichVu> list_DV = new ArrayList<>();
-        sql = "SELECT MADV, TenDichVu, Gia,  LoaiDichVu, MoTa FROM DICHVU WHERE MADV LIKE ?";
+        sql = "SELECT MADV, TenDichVu, Gia,  LoaiDichVu, MoTa FROM DICHVU WHERE MADV LIKE ? or TenDichVu like ? or gia like ? or MoTa like ? or LoaiDichVu like ?";
 
         try {
             con = dbconnect.DBconnect.getConnection();
             ps = con.prepareStatement(sql);
             ps.setString(1, "%" + timKiem + "%");
+            ps.setString(2, "%" + timKiem + "%");
+            ps.setString(3, "%" + timKiem + "%");
+            ps.setString(4, "%" + timKiem + "%");
+            ps.setString(5, "%" + timKiem + "%");
             rs = ps.executeQuery();
             while (rs.next()) {
                 String maDV = rs.getString(1);
