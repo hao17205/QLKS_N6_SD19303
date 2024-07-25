@@ -117,19 +117,21 @@ public class Repositories_NhanVien {
     
     //code nút Tìm kiếm
     
-   public ArrayList<Model_NhanVien> timKiem( String maNV){
+   public ArrayList<Model_NhanVien> timKiem( String timKiemNV){
        ArrayList<Model_NhanVien> list_NV = new ArrayList<>();
        sql = "select maNV,TenNV,NgaySinh,GioiTinh,SoDienThoai,Email,DiaChi,ChucVu from NhanVien\n" +
-"where maNV like ?";
+"where maNV like ? or soDienThoai like ? or email like ?";
        
        try {
            con = dbconnect.DBconnect.getConnection();
            ps = con.prepareStatement(sql);
-           ps.setString(1,"%" +maNV+"%");
+           ps.setString(1,"%" +timKiemNV+"%");
+           ps.setString(2,"%" +timKiemNV+"%");
+           ps.setString(3,"%" +timKiemNV+"%");
            rs = ps.executeQuery();
            
            while(rs.next()){
-                 String maNhanVien;
+                 String maNV;
                  String tenNV;
                  String ngaySinh;
                  int gioiTinh;
@@ -138,7 +140,7 @@ public class Repositories_NhanVien {
                  String diaChi;
                  String chucVu;
                  
-                 maNhanVien = rs.getString(1);
+                 maNV = rs.getString(1);
                  tenNV = rs.getString(2);
                  ngaySinh = rs.getString(3);
                  gioiTinh = rs.getInt(4);
@@ -147,9 +149,8 @@ public class Repositories_NhanVien {
                  diaChi = rs.getString(7);
                  chucVu = rs.getString(8);
                  
-                Model_NhanVien NV = new Model_NhanVien(maNV, tenNV, ngaySinh, gioiTinh, sdt, email, diaChi, chucVu);
+                Model_NhanVien NV = new Model_NhanVien( maNV,tenNV,  ngaySinh, gioiTinh, sdt,  email, diaChi,  chucVu);
                 list_NV.add(NV);
-               
            }
            return list_NV;
        } catch (Exception e) {
