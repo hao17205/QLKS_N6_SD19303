@@ -55,5 +55,20 @@ public class Repositories_TTPhong {
         }
         
     }
+    public int sua_TT(String maPhong,String tinhTrang){
+        sql = "UPDATE PHONG SET TinhTrang = ? WHERE MA_P = ?";
+        try {
+            con = DBconnect.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, tinhTrang);
+            ps.setString(2, maPhong);
+            
+            return ps.executeUpdate();
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
     
 }

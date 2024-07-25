@@ -38,13 +38,13 @@ public class View_TrangChu extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         lb_home = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        lb_NhanVien = new javax.swing.JLabel();
+        lb_KhachHang = new javax.swing.JLabel();
+        lb_KhuyenMai = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        lb_DichVu = new javax.swing.JLabel();
+        lb_ThongKe = new javax.swing.JLabel();
+        lb_ThanhToan = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -88,42 +88,47 @@ public class View_TrangChu extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/nhân viên.png"))); // NOI18N
-        jLabel3.setText("NHÂN VIÊN");
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        lb_NhanVien.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        lb_NhanVien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/nhân viên.png"))); // NOI18N
+        lb_NhanVien.setText("NHÂN VIÊN");
+        lb_NhanVien.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
+                lb_NhanVienMouseClicked(evt);
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/khách hàng.png"))); // NOI18N
-        jLabel4.setText("KHÁCH HÀNG");
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/sale.png"))); // NOI18N
-        jLabel5.setText("KHUYẾN MẠI");
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/dich vụ.png"))); // NOI18N
-        jLabel6.setText("DỊCH VỤ");
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+        lb_KhachHang.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        lb_KhachHang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/khách hàng.png"))); // NOI18N
+        lb_KhachHang.setText("KHÁCH HÀNG");
+        lb_KhachHang.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
+                lb_KhachHangMouseClicked(evt);
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/thống kê.png"))); // NOI18N
-        jLabel7.setText("THỐNG KÊ");
+        lb_KhuyenMai.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        lb_KhuyenMai.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/sale.png"))); // NOI18N
+        lb_KhuyenMai.setText("KHUYẾN MẠI");
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/thanh toán.png"))); // NOI18N
-        jLabel8.setText("THANH TOÁN");
-        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+        lb_DichVu.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        lb_DichVu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/dich vụ.png"))); // NOI18N
+        lb_DichVu.setText("DỊCH VỤ");
+        lb_DichVu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel8MouseClicked(evt);
+                lb_DichVuMouseClicked(evt);
+            }
+        });
+
+        lb_ThongKe.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        lb_ThongKe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/thống kê.png"))); // NOI18N
+        lb_ThongKe.setText("THỐNG KÊ");
+
+        lb_ThanhToan.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        lb_ThanhToan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/thanh toán.png"))); // NOI18N
+        lb_ThanhToan.setText("THANH TOÁN");
+        lb_ThanhToan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_ThanhToanMouseClicked(evt);
             }
         });
 
@@ -146,13 +151,13 @@ public class View_TrangChu extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lb_ThanhToan)
+                    .addComponent(lb_NhanVien)
+                    .addComponent(lb_ThongKe)
+                    .addComponent(lb_DichVu, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
+                    .addComponent(lb_KhachHang)
+                    .addComponent(lb_KhuyenMai)
                     .addComponent(lb_home)
                     .addComponent(jLabel1))
                 .addContainerGap(27, Short.MAX_VALUE))
@@ -167,17 +172,17 @@ public class View_TrangChu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lb_home)
                 .addGap(31, 31, 31)
-                .addComponent(jLabel3)
+                .addComponent(lb_NhanVien)
                 .addGap(30, 30, 30)
-                .addComponent(jLabel6)
+                .addComponent(lb_DichVu)
                 .addGap(33, 33, 33)
-                .addComponent(jLabel4)
+                .addComponent(lb_KhachHang)
                 .addGap(33, 33, 33)
-                .addComponent(jLabel5)
+                .addComponent(lb_KhuyenMai)
                 .addGap(33, 33, 33)
-                .addComponent(jLabel8)
+                .addComponent(lb_ThanhToan)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel7)
+                .addComponent(lb_ThongKe)
                 .addGap(28, 28, 28)
                 .addComponent(jLabel9)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -191,13 +196,13 @@ public class View_TrangChu extends javax.swing.JFrame {
 
         tbl_bang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Mã Phòng", "Tình Trạng Phòng", "Tầng", "Giá"
+                "Mã Phòng", "Tình Trạng Phòng", "Tầng", "Giá", "null", "Title 6", "Title 7"
             }
         ));
         tbl_bang.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -403,12 +408,12 @@ public class View_TrangChu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+    private void lb_ThanhToanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_ThanhToanMouseClicked
         // TODO add your handling code here:
         View_TT tt = new View_TT();
         tt.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel8MouseClicked
+    }//GEN-LAST:event_lb_ThanhToanMouseClicked
 
     private void lb_homeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_homeMouseEntered
         // TODO add your handling code here:
@@ -419,24 +424,24 @@ public class View_TrangChu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_lb_homeMouseExited
 
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+    private void lb_DichVuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_DichVuMouseClicked
         // TODO add your handling code here:
         view_DichVu dv = new view_DichVu();
         dv.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel6MouseClicked
+    }//GEN-LAST:event_lb_DichVuMouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jLabel9MouseClicked
 
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+    private void lb_NhanVienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_NhanVienMouseClicked
         // TODO add your handling code here:
         View_NhanVien nv = new View_NhanVien();
         nv.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel3MouseClicked
+    }//GEN-LAST:event_lb_NhanVienMouseClicked
 
     private void btn_xoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_xoaActionPerformed
       i = tbl_bang.getSelectedRow();
@@ -458,9 +463,7 @@ public class View_TrangChu extends javax.swing.JFrame {
 
     private void btn_datPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_datPhongActionPerformed
         // TODO add your handling code here:
-        View_DatPhong datPhong = new View_DatPhong();
-        datPhong.setVisible(true);
-        this.dispose();
+        
         
     }//GEN-LAST:event_btn_datPhongActionPerformed
 
@@ -519,6 +522,13 @@ public class View_TrangChu extends javax.swing.JFrame {
        }
     }//GEN-LAST:event_btn_timKiemActionPerformed
 
+    private void lb_KhachHangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_KhachHangMouseClicked
+        // TODO add your handling code here:
+        View_QLKH qlks = new View_QLKH();
+        qlks.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lb_KhachHangMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -566,12 +576,6 @@ public class View_TrangChu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -579,6 +583,12 @@ public class View_TrangChu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JLabel lb_DichVu;
+    private javax.swing.JLabel lb_KhachHang;
+    private javax.swing.JLabel lb_KhuyenMai;
+    private javax.swing.JLabel lb_NhanVien;
+    private javax.swing.JLabel lb_ThanhToan;
+    private javax.swing.JLabel lb_ThongKe;
     private javax.swing.JLabel lb_home;
     private javax.swing.JTable tbl_bang;
     private javax.swing.JTextField txt_gia;
