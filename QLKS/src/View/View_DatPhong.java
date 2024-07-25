@@ -183,6 +183,8 @@ public class View_DatPhong extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 51, 0));
         jLabel7.setText("Ngày Sinh:");
 
+        jdc_ngaySinh.setDateFormatString("yyyy-MM-dd");
+
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 51, 0));
         jLabel8.setText("Giới Tính:");
@@ -306,7 +308,7 @@ public class View_DatPhong extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
                             .addComponent(txt_diaChi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(49, 49, 49)
+                        .addGap(77, 77, 77)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
                             .addComponent(txt_email, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
