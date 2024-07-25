@@ -423,6 +423,8 @@ public class View_QLKH extends javax.swing.JFrame {
             rdo_Nu.setSelected(true);
         }
         txt_DiaChi.setText(tbl_Bang.getValueAt(i, 7).toString());
+        
+        txt_MaKhachHang.disable();
     }//GEN-LAST:event_tbl_BangMouseClicked
 
     private void btn_SuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SuaActionPerformed
@@ -455,20 +457,27 @@ public class View_QLKH extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_HoTenActionPerformed
 
     private void btn_ThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ThemActionPerformed
-        int chon = JOptionPane.showConfirmDialog(this, "bạn có muốn thêm khách hàng không");
-        if (chon == 0) {
+        int chon = JOptionPane.showConfirmDialog(this, "Bạn có muốn thêm khách hàng không?");
+        if (chon == JOptionPane.YES_OPTION) {
             // Kiểm tra dữ liệu form có hợp lệ hay không
             if (this.readForm() != null) {
-                // Kiểm tra mã khách hàng có bị trùng không
-                if (rp.checkTrung_KH(txt_MaKhachHang.getText()) != null) {
-                    JOptionPane.showMessageDialog(this, "Mã khách hàng đã tồn tại!");
+                String maKhachHangMoi = txt_MaKhachHang.getText().trim();
+                String soDienThoai = txt_Sdt.getText().trim();
+                String cccd = txt_SoCccd.getText().trim();
+                String email = txt_Email.getText().trim();
+
+                // Kiểm tra trùng lặp trên tất cả các trường
+                String errorMessage = rp.checkTrung_KH(maKhachHangMoi, soDienThoai, cccd, email);
+
+                if (errorMessage != null) {
+                    JOptionPane.showMessageDialog(this, errorMessage);
                 } else {
                     // Thực hiện thêm khách hàng
                     if (rp.them_KH(this.readForm()) > 0) {
                         JOptionPane.showMessageDialog(this, "Thêm thành công!");
                         this.fillTable(rp.getAll_KH());
                         // Đặt lại form sau khi thêm
-
+                        resetForm();
                     } else {
                         JOptionPane.showMessageDialog(this, "Thêm thất bại!");
                     }
@@ -569,6 +578,10 @@ public class View_QLKH extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -652,7 +665,10 @@ public class View_QLKH extends javax.swing.JFrame {
             return null;
 
         }
-
+        if (!PhoneNumberValidator.isValidCCCD(Cccd)) {
+                JOptionPane.showMessageDialog(this, "Số CCCD không hợp lệ! Vui lòng nhập đúng 12 chữ số.");
+                return null;
+            }
         Sdt = txt_Sdt.getText().trim();
         if (Sdt.isEmpty()) {
             JOptionPane.showMessageDialog(this, "bạn chưa nhập SDT");
@@ -712,12 +728,33 @@ public class View_QLKH extends javax.swing.JFrame {
     public class PhoneNumberValidator {
 
         private static final String PHONE_PATTERN = "^\\d{10}$";
+        
+        private static final String CCCD_PATTERN = "^\\d{12}$";
 
         public static boolean isValidPhoneNumber(String phoneNumber) {
             Pattern pattern = Pattern.compile(PHONE_PATTERN);
             Matcher matcher = pattern.matcher(phoneNumber);
             return matcher.matches();
         }
+
+        public static boolean isValidCCCD(String cccd) {
+            Pattern pattern = Pattern.compile(CCCD_PATTERN);
+            Matcher matcher = pattern.matcher(cccd);
+            return matcher.matches();
+        }
     }
 
+    private void resetForm() {
+        txt_MaKhachHang.setText("");
+        txt_HoTen.setText("");
+        txt_Sdt.setText("");
+        jdc_NgaySinh.setDate(null);
+        txt_SoCccd.setText("");
+        txt_DiaChi.setText("");
+        txt_Email.setText("");
+
+        buttonGroup1.clearSelection();
+
+        this.fillTable(rp.getAll_KH());
+    }
 }
