@@ -162,40 +162,29 @@ public class Repositories_NhanVien {
    
    //Code Check trùng
    
-   public Model_NhanVien checkTrung(String maNV_Moi){
-       sql = "select MANV,TenNV,NgaySinh,GioiTinh,SoDienThoai,Email,DiaChi,ChucVu from NHANVIEN \n" +
-"where MANV=?";
-       Model_NhanVien nv = null;
+   public String checkTrung(String maNV_Moi, String soDienThoai, String email_moi){
+       sql = "select MANV,SoDienThoai,Email from NHANVIEN where MANV = ? or SoDienThoai = ? or Email = ?";
+     
        try {
             con = dbconnect.DBconnect.getConnection();
             ps = con.prepareStatement(sql);
-            ps.setObject(1, maNV_Moi);
+            ps.setString(1, maNV_Moi);
+            ps.setString(2, soDienThoai);
+            ps.setString(3, email_moi);
             rs = ps.executeQuery();
             
             while(rs.next()){
-                 String maNV;
-                 String tenNV;
-                 Date ngaySinh;
-                 int gioiTinh;
-                 String sdt;
-                 String email;
-                 String diaChi;
-                 String chucVu;
-                 
-                 maNV = rs.getString(1);
-                 tenNV = rs.getString(2);
-                 ngaySinh = rs.getDate(3);
-                 gioiTinh = rs.getInt(4);
-                 sdt = rs.getString(5);
-                 email = rs.getString(6);
-                 diaChi = rs.getString(7);
-                 chucVu = rs.getString(8);
-                 
-                 Model_NhanVien NV = new Model_NhanVien(maNV, tenNV, ngaySinh, gioiTinh, sdt, email, diaChi, chucVu);
-                 
+                if(rs.getString("MaNV").equals(maNV_Moi)){
+                    return "Mã Nhân Viên Đã Tồn Tại";
+                }
+                if(rs.getString("SoDienThoai").equals(soDienThoai)){
+                    return "Số Điện Thoại Đã tồn Tại";
+                }
+                if(rs.getString("Email").equals(email_moi)){
+                    return "Email Đã Tồn Tại";
+                }
             }
-            return nv;
-           
+            return null;         
        } catch (Exception e) {
            e.printStackTrace();
            return null;

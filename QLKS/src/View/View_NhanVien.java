@@ -9,6 +9,8 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import Model.Model_NhanVien;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import repositories.Repositories_NhanVien;
         
 
@@ -18,6 +20,10 @@ public class View_NhanVien extends javax.swing.JFrame {
     private int i = -1;
     public View_NhanVien() {
         initComponents();
+        cbo_chucVu.addItem("Quản Lý");
+        cbo_chucVu.addItem("Nhân Viên Thu Ngân");
+        cbo_chucVu.addItem("Nhân Viên Đặt Phòng");
+        cbo_chucVu.addItem("Bảo Vệ");
         this.fillTable(rp.getAll_NV());
         this.setLocationRelativeTo(null);
     }
@@ -52,7 +58,6 @@ public class View_NhanVien extends javax.swing.JFrame {
         rdo_nam = new javax.swing.JRadioButton();
         rdo_nu = new javax.swing.JRadioButton();
         jLabel11 = new javax.swing.JLabel();
-        txt_chucVu = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         btn_xoa = new javax.swing.JButton();
         btn_sua = new javax.swing.JButton();
@@ -61,6 +66,7 @@ public class View_NhanVien extends javax.swing.JFrame {
         btn_timKiem = new javax.swing.JButton();
         txt_timKiem = new javax.swing.JTextField();
         jdc_ngaySinh = new com.toedter.calendar.JDateChooser();
+        cbo_chucVu = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -201,7 +207,13 @@ public class View_NhanVien extends javax.swing.JFrame {
                                     .addComponent(txt_maNV)
                                     .addComponent(txt_tenNV)
                                     .addComponent(jdc_ngaySinh, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE))))))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(txt_timKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_timKiem)
+                        .addGap(132, 132, 132))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(175, 175, 175)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,13 +221,10 @@ public class View_NhanVien extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(13, 13, 13)
-                                        .addComponent(txt_chucVu, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txt_diaChi, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txt_diaChi, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
+                                    .addComponent(cbo_chucVu, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -224,13 +233,7 @@ public class View_NhanVien extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txt_email, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txt_sdt, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(244, 244, 244))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txt_timKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_timKiem)
-                        .addGap(132, 132, 132))))
+                        .addGap(244, 244, 244))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,7 +265,7 @@ public class View_NhanVien extends javax.swing.JFrame {
                     .addComponent(rdo_nam)
                     .addComponent(rdo_nu)
                     .addComponent(jLabel11)
-                    .addComponent(txt_chucVu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbo_chucVu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(44, 44, 44)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_them)
@@ -338,21 +341,28 @@ public class View_NhanVien extends javax.swing.JFrame {
 
     private void btn_themActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_themActionPerformed
        int chon = JOptionPane.showConfirmDialog(this, "Bạn có muốn thêm nhân viên không");
-        if (chon == 0) {
-            if (this.readForm() != null) {
-                if (rp.checkTrung(txt_maNV.getText()) != null) {
-                    JOptionPane.showMessageDialog(this, "Trùng mã");
-                } else {
-                    if (rp.them_NV(readForm()) > 0) {
-                        JOptionPane.showMessageDialog(this, "Thêm thành công");
+        if (chon == JOptionPane.YES_OPTION) {
+            if(this.readForm() != null){
+                String maNV = txt_maNV.getText().trim();
+                String sdt = txt_sdt.getText().trim();
+                String email = txt_email.getText().trim();
+                //kiểm tra trùng lặp
+                String errorMessage = rp.checkTrung(maNV, sdt, email);
+                if(errorMessage != null){
+                    JOptionPane.showMessageDialog(this, errorMessage);
+                }
+                else{
+                    //Thực hiện thêm NV
+                    if(rp.them_NV(this.readForm())>0){
+                        JOptionPane.showMessageDialog(this, "Thêm Thành Công");
                         this.fillTable(rp.getAll_NV());
-                    } else {
-                        JOptionPane.showMessageDialog(this, "Thêm thất bại ");
-
+                       
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(this, "Thêm Thất Bại");
                     }
                 }
-
-            }
+            }        
         }
     }//GEN-LAST:event_btn_themActionPerformed
 
@@ -486,7 +496,7 @@ public class View_NhanVien extends javax.swing.JFrame {
         txt_sdt.setText(tbl_bang.getValueAt(i, 4).toString());
         txt_email.setText((tbl_bang.getValueAt(i, 5).toString()));
         txt_diaChi.setText(tbl_bang.getValueAt(i, 6).toString());
-        txt_chucVu.setText(tbl_bang.getValueAt(i, 7).toString());
+        cbo_chucVu.setSelectedItem(tbl_bang.getValueAt(i, 7).toString());
     }
     
     Model_NhanVien readForm(){
@@ -522,17 +532,29 @@ public class View_NhanVien extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Bạn Chưa Nhập Số Điện Thoại");
             return null;
         }
+        
+        if (!PhoneNumberValidator.isValidPhoneNumber(sdt)) {
+            JOptionPane.showMessageDialog(this, "Số điện thoại không hợp lệ. Vui lòng nhập đúng định dạng 10 chữ số.");
+            txt_sdt.requestFocus();
+            return null;
+        }
         email = txt_email.getText().trim();
          if(email.isEmpty()){
             JOptionPane.showMessageDialog(this, "Bạn Chưa Nhập email");
             return null;
         }
+         if (!EmailValidator.isValidEmail(email)) {
+            JOptionPane.showMessageDialog(this, "Email không hợp lệ. Vui lòng nhập đúng định dạng @gmail.com.");
+            txt_email.requestFocus();
+            return null;
+        }
+
         diaChi = txt_diaChi.getText().trim();
          if(diaChi.isEmpty()){
             JOptionPane.showMessageDialog(this, "Bạn Chưa Nhập Địa Chỉ");
             return null;
         }
-        chucVu = txt_chucVu.getText().trim();
+        chucVu = cbo_chucVu.getSelectedItem().toString();
          if(chucVu.isEmpty()){
             JOptionPane.showMessageDialog(this, "Bạn Chưa Nhập Chức Vụ");
             return null;
@@ -549,6 +571,7 @@ public class View_NhanVien extends javax.swing.JFrame {
     private javax.swing.JButton btn_timKiem;
     private javax.swing.JButton btn_xoa;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JComboBox<String> cbo_chucVu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
@@ -565,7 +588,6 @@ public class View_NhanVien extends javax.swing.JFrame {
     private javax.swing.JRadioButton rdo_nam;
     private javax.swing.JRadioButton rdo_nu;
     private javax.swing.JTable tbl_bang;
-    private javax.swing.JTextField txt_chucVu;
     private javax.swing.JTextField txt_diaChi;
     private javax.swing.JTextField txt_email;
     private javax.swing.JTextField txt_maNV;
@@ -573,4 +595,27 @@ public class View_NhanVien extends javax.swing.JFrame {
     private javax.swing.JTextField txt_tenNV;
     private javax.swing.JTextField txt_timKiem;
     // End of variables declaration//GEN-END:variables
+
+  public class PhoneNumberValidator {
+
+        private static final String PHONE_PATTERN = "^\\d{10}$";
+
+        public static boolean isValidPhoneNumber(String phoneNumber) {
+            Pattern pattern = Pattern.compile(PHONE_PATTERN);
+            Matcher matcher = pattern.matcher(phoneNumber);
+            return matcher.matches();
+        }
+  }
+    public class EmailValidator {
+
+        private static final String EMAIL_PATTERN = "^[a-zA-Z0-9._%+-]+@gmail\\.com$";
+
+        public static boolean isValidEmail(String email) {
+            Pattern pattern = Pattern.compile(EMAIL_PATTERN);
+            Matcher matcher = pattern.matcher(email);
+            return matcher.matches();
+        }
+    }
+  
+    
 }
