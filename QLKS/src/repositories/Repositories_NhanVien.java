@@ -6,6 +6,7 @@ package repositories;
 import java.sql.*;
 import java.util.ArrayList;
 import Model.Model_NhanVien;
+
 public class Repositories_NhanVien {
     private Connection con = null;
     private PreparedStatement ps = null;
@@ -24,7 +25,7 @@ public class Repositories_NhanVien {
              while (rs.next()) {                
                  String maNV;
                  String tenNV;
-                 String ngaySinh;
+                 Date ngaySinh;
                  int gioiTinh;
                  String sdt;
                  String email;
@@ -33,7 +34,7 @@ public class Repositories_NhanVien {
                  
                  maNV = rs.getString(1);
                  tenNV = rs.getString(2);
-                 ngaySinh = rs.getString(3);
+                 ngaySinh = rs.getDate(3);
                  gioiTinh = rs.getInt(4);
                  sdt = rs.getString(5);
                  email = rs.getString(6);
@@ -133,7 +134,7 @@ public class Repositories_NhanVien {
            while(rs.next()){
                  String maNV;
                  String tenNV;
-                 String ngaySinh;
+                 Date ngaySinh;
                  int gioiTinh;
                  String sdt;
                  String email;
@@ -142,14 +143,14 @@ public class Repositories_NhanVien {
                  
                  maNV = rs.getString(1);
                  tenNV = rs.getString(2);
-                 ngaySinh = rs.getString(3);
+                 ngaySinh = rs.getDate(3);
                  gioiTinh = rs.getInt(4);
                  sdt = rs.getString(5);
                  email = rs.getString(6);
                  diaChi = rs.getString(7);
                  chucVu = rs.getString(8);
                  
-                Model_NhanVien NV = new Model_NhanVien( maNV,tenNV,  ngaySinh, gioiTinh, sdt,  email, diaChi,  chucVu);
+                Model_NhanVien NV = new Model_NhanVien(maNV, tenNV, ngaySinh, gioiTinh, sdt, email, diaChi, chucVu);
                 list_NV.add(NV);
            }
            return list_NV;
@@ -174,7 +175,7 @@ public class Repositories_NhanVien {
             while(rs.next()){
                  String maNV;
                  String tenNV;
-                 String ngaySinh;
+                 Date ngaySinh;
                  int gioiTinh;
                  String sdt;
                  String email;
@@ -183,7 +184,7 @@ public class Repositories_NhanVien {
                  
                  maNV = rs.getString(1);
                  tenNV = rs.getString(2);
-                 ngaySinh = rs.getString(3);
+                 ngaySinh = rs.getDate(3);
                  gioiTinh = rs.getInt(4);
                  sdt = rs.getString(5);
                  email = rs.getString(6);
