@@ -41,6 +41,9 @@ public class Repositories_HDCT {
                 double giaBanDau = rs.getDouble("GiaBanDau");
                 double giaSauKhuyenMai = rs.getDouble("GiaSauKhuyenMai");
                 double tongGiaDichVu = rs.getDouble("TongGiaDichVu");
+                
+                
+                
                 double tongTienPhong = rs.getDouble("TongTienPhong");
                 String ngayThanhToan_HDCT = rs.getString("NgayThanhToan");
 

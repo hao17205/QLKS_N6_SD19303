@@ -20,7 +20,7 @@ public class View_TrangChu extends javax.swing.JFrame {
     public View_TrangChu() {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.fillTable(rp.getAll_TC());
+        
     }
     private void fillTable(ArrayList<Model_TrangChu>list){
         mol = (DefaultTableModel) tbl_bang.getModel();
