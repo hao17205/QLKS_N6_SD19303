@@ -24,7 +24,8 @@ public class Repositories_HDCT {
     private String sql = null;
 
     public ArrayList<Model_TT> getAll_HDCT() {
-        sql = "SELECT MA_HDCT, MAKM, MAHD, MA_DDV, MA_P, CheckIn, CheckOut, GiaBanDau, GiaSauKhuyenMai, TongGiaDichVu, TongTienPhong, NgayThanhToan FROM HOADONCHITIET";
+        sql = "SELECT HDCT.MA_HDCT,  HDCT.MAHD, HDCT.MA_P, HDCT.CheckIn, HDCT.CheckOut, HDCT.TienPhong \n"
+                + "          FROM HOADONCHITIET HDCT ";
         ArrayList<Model_TT> listHoaDonChiTiet = new ArrayList<>();
         try {
             con = DBconnect.getConnection();
@@ -32,19 +33,13 @@ public class Repositories_HDCT {
             rs = pr.executeQuery();
             while (rs.next()) {
                 String maHDCT = rs.getString("MA_HDCT");
-                String maKM = rs.getString("MAKM");
                 String maHD_HDCT = rs.getString("MAHD");
-                String maDDV = rs.getString("MA_DDV");
                 String maP = rs.getString("MA_P");
                 Date checkIn = rs.getDate("CheckIn");
                 Date checkOut = rs.getDate("CheckOut");
-                double giaBanDau = rs.getDouble("GiaBanDau");
-                double giaSauKhuyenMai = rs.getDouble("GiaSauKhuyenMai");
-                double tongGiaDichVu = rs.getDouble("TongGiaDichVu");
-                double tongTienPhong = rs.getDouble("TongTienPhong");
-                String ngayThanhToan_HDCT = rs.getString("NgayThanhToan");
+                double tienPhong = rs.getDouble("TienPhong");
 
-                Model_TT tt = new Model_TT(maP, maKM, maP, maP, maP, 0, maP, checkOut, checkOut, giaBanDau, giaBanDau, tongTienPhong, maHDCT, maKM, maHD_HDCT, maDDV, maP, checkIn, checkOut, giaBanDau, giaSauKhuyenMai, tongGiaDichVu, tongTienPhong, checkOut);
+                Model_TT tt = new Model_TT(maP, maP, maP, maP, maP, 0, tienPhong, 0, tienPhong, tienPhong, maP, checkOut, checkOut, tienPhong, tienPhong, tienPhong, tienPhong, maHDCT, maHD_HDCT, maP, checkIn, checkOut, tienPhong);
                 listHoaDonChiTiet.add(tt);
             }
         } catch (Exception e) {
@@ -53,74 +48,64 @@ public class Repositories_HDCT {
         return listHoaDonChiTiet;
     }
 
-    public ArrayList<Model_TT> timkiem_MHDCT(String maHDCTcantim) {
-        sql = "SELECT MA_HDCT, MAKM, MAHD, MA_DDV, MA_P, CheckIn, CheckOut, GiaBanDau, GiaSauKhuyenMai, TongGiaDichVu, TongTienPhong, NgayThanhToan FROM HOADONCHITIET\n"
-                + "where MA_HDCT like ?";
+    public ArrayList<Model_TT> timkiem_MHDCT(String searchTerm) {
+        String sql = "SELECT HDCT.MA_HDCT,  HDCT.MAHD, HDCT.MA_P, HDCT.CheckIn, HDCT.CheckOut, HDCT.TienPhong \n"
+                + "          FROM HOADONCHITIET HDCT "
+                + "WHERE HDCT.MA_HDCT LIKE ? OR HDCT.MAHD LIKE ? OR HDCT.MA_P LIKE ?;";
+
         ArrayList<Model_TT> listHoaDonChiTiet = new ArrayList<>();
         try {
             con = DBconnect.getConnection();
             pr = con.prepareStatement(sql);
-            pr.setObject(1, '%' + maHDCTcantim + '%');
+
+            String searchPattern = '%' + searchTerm + '%';
+            pr.setString(1, searchPattern);
+            pr.setString(2, searchPattern);
+            pr.setString(3, searchPattern);
+
             rs = pr.executeQuery();
             while (rs.next()) {
                 String maHDCT = rs.getString("MA_HDCT");
-                String maKM = rs.getString("MAKM");
-                String maHD_HDCT = rs.getString("MAHD");
-                String maDDV = rs.getString("MA_DDV");
+                String maHD = rs.getString("MAHD");
                 String maP = rs.getString("MA_P");
                 Date checkIn = rs.getDate("CheckIn");
                 Date checkOut = rs.getDate("CheckOut");
-                double giaBanDau = rs.getDouble("GiaBanDau");
-                double giaSauKhuyenMai = rs.getDouble("GiaSauKhuyenMai");
-                double tongGiaDichVu = rs.getDouble("TongGiaDichVu");
-                double tongTienPhong = rs.getDouble("TongTienPhong");
-                String ngayThanhToan_HDCT = rs.getString("NgayThanhToan");
+                double tienPhong = rs.getDouble("TienPhong");
 
-                Model_TT tt = new Model_TT(maP, maKM, maP, maP, maP, 0, maP, checkOut, checkOut, giaBanDau, giaBanDau, tongTienPhong, maHDCT, maKM, maHD_HDCT, maDDV, maP, checkIn, checkOut, giaBanDau, giaSauKhuyenMai, tongGiaDichVu, tongTienPhong, checkOut);
+                Model_TT tt = new Model_TT(maHD, maP, maP, searchTerm, maHD, 0, tienPhong, 0, tienPhong, tienPhong, maHD, checkOut, checkOut, tienPhong, tienPhong, tienPhong, tienPhong, maHDCT, maHDCT, maP, checkIn, checkOut, tienPhong);
+
                 listHoaDonChiTiet.add(tt);
             }
-            return listHoaDonChiTiet;
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
         }
+        return listHoaDonChiTiet;
     }
 
-    public int xoaHDCT(String maHDCT) {
-        sql = "DELETE FROM HOADONCHITIET Where MA_HDCT = ?";
+    public ArrayList<Model_TT> getHDCTByMaHD(String maHD) {
+        sql = "SELECT HDCT.MA_HDCT,  HDCT.MAHD, HDCT.MA_P, HDCT.CheckIn, HDCT.CheckOut, HDCT.TienPhong "
+                + "FROM HOADONCHITIET HDCT "
+                + "WHERE HDCT.MAHD = ?";
+        ArrayList<Model_TT> listHoaDonChiTiet = new ArrayList<>();
         try {
             con = DBconnect.getConnection();
             pr = con.prepareStatement(sql);
-            pr.setObject(1, maHDCT);
-            return pr.executeUpdate();
+            pr.setString(1, maHD);
+            rs = pr.executeQuery();
+            while (rs.next()) {
+                String maHDCT = rs.getString("MA_HDCT");
+                String maP = rs.getString("MA_P");
+                Date checkIn = rs.getDate("CheckIn");
+                Date checkOut = rs.getDate("CheckOut");
+                double tienPhong = rs.getDouble("TienPhong");
 
+                Model_TT tt = new Model_TT(maHD, maP, maP, maP, maHD, 0, tienPhong, 0, tienPhong, tienPhong, maHD, checkOut, checkOut, tienPhong, tienPhong, tienPhong, tienPhong, maHDCT, maHD, maP, checkIn, checkOut, tienPhong);
+                listHoaDonChiTiet.add(tt);
+            }
         } catch (Exception e) {
             e.printStackTrace();
-            return 0;
         }
+        return listHoaDonChiTiet;
     }
-    
-    public int suaHoaDonChiTiet(String maHDCT, Model_TT hoaDonChiTiet) {
-        sql = "Update HoaDonChiTiet set MAKM = ?, MAHD = ?, MA_DDV = ?, MA_P = ?, CheckIn = ?, CheckOut = ?, GiaBanDau = ?, GiaSauKhuyenMai = ?, TongGiaDichVu = ?, TongTienPhong = ?, NgayThanhToan = ? Where MA_HDCT = ?";
-        try {
-            con = DBconnect.getConnection();
-            pr = con.prepareStatement(sql);
-            pr.setObject(1, hoaDonChiTiet.getMaKM());
-            pr.setObject(2, hoaDonChiTiet.getMaHD());
-            pr.setObject(3, hoaDonChiTiet.getMaDDV());
-            pr.setObject(4, hoaDonChiTiet.getMaP());
-            pr.setObject(5, hoaDonChiTiet.getCheckIn());
-            pr.setObject(6, hoaDonChiTiet.getCheckOut());
-            pr.setObject(7, hoaDonChiTiet.getGiaBanDau());
-            pr.setObject(8, hoaDonChiTiet.getGiaSauKhuyenMai());
-            pr.setObject(9, hoaDonChiTiet.getTongGiaDichVu());
-            pr.setObject(10, hoaDonChiTiet.getTongTienPhong());
-            pr.setObject(11, hoaDonChiTiet.getNgayThanhToan());
-            pr.setObject(12, maHDCT);
-            return pr.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return 0;
-        }
-    }
+
 }
