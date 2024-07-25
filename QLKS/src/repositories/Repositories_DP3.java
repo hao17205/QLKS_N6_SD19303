@@ -8,6 +8,7 @@ import Model.Model_DP3;
 
 
 
+
 /**
  *
  * @author Chi Dat
@@ -39,6 +40,9 @@ public class Repositories_DP3 {
             ps.setDate(4, new java.sql.Date(dp3.getCheckIn().getTime()));
             ps.setDate(5, new java.sql.Date(dp3.getCheckIn().getTime()));
             ps.executeUpdate();
+            
+            Repositories_TTPhong rp_TTPhong = new Repositories_TTPhong();
+            rp_TTPhong.sua_TT(dp3.getMaPhong(), "Đang sử dụng");
             
             return 1;
             
