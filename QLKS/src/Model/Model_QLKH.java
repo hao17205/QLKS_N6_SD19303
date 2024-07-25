@@ -4,6 +4,8 @@
  */
 package Model;
 
+import java.util.Date;
+
 /**
  *
  * @author PC
@@ -11,7 +13,7 @@ package Model;
 public class Model_QLKH {
     private String maKhachHang;
     private String hoTen;
-    private String ngaySinh;
+    private Date ngaySinh;
     private String Cccd;
     private String Sdt;
     private String Email;
@@ -21,7 +23,7 @@ public class Model_QLKH {
     public Model_QLKH() {
     }
 
-    public Model_QLKH(String maKhachHang, String hoTen, String ngaySinh, String Cccd, String Sdt, String Email, int gioiTinh, String diaChi) {
+    public Model_QLKH(String maKhachHang, String hoTen, Date ngaySinh, String Cccd, String Sdt, String Email, int gioiTinh, String diaChi) {
         this.maKhachHang = maKhachHang;
         this.hoTen = hoTen;
         this.ngaySinh = ngaySinh;
@@ -48,11 +50,11 @@ public class Model_QLKH {
         this.hoTen = hoTen;
     }
 
-    public String getNgaySinh() {
+    public Date getNgaySinh() {
         return ngaySinh;
     }
 
-    public void setNgaySinh(String ngaySinh) {
+    public void setNgaySinh(Date ngaySinh) {
         this.ngaySinh = ngaySinh;
     }
 
@@ -95,7 +97,8 @@ public class Model_QLKH {
     public void setDiaChi(String diaChi) {
         this.diaChi = diaChi;
     }
-    
+
+      
     public Object[] toDataRow_KH(){
         return new Object[]{this.getMaKhachHang(), this.getHoTen(), this.getNgaySinh(), this.getCccd(), this.getSdt(), this.getEmail(), this.getGioiTinh()==1?"Nam":"Nữ", this.getDiaChi()};
     }

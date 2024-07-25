@@ -103,7 +103,7 @@ public class Repositories_DP2 {
 }
 
 // đóng
-    // hàm gpt
+    // hàm check ma KH
 //    private boolean isKhachHangExists(String maKH) {
 //    String sql = "SELECT COUNT(*) FROM KHACHHANG WHERE MAKH = ?";
 //    try (Connection con = dbconnect.DBconnect.getConnection(); // Tạo kết nối mới ở đây

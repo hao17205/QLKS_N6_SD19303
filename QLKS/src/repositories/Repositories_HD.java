@@ -21,7 +21,10 @@ public class Repositories_HD {
     private String sql = null;
 
     public ArrayList<Model_TT> getAll_HD() {
-        sql = "SELECT MAHD, MANV, MAKH, SoDienThoai, DiaChi, SoPhongDat, TrangThai, NgayXuatDon, NgayThanhToan, Thue, TienCoc, TongTien FROM HOADON";
+        sql = "SELECT HD.MAHD, NV.TenNV, KH.TenKhachHang, HD.SoDienThoai, HD.DiaChi, HD.SoPhongDat, HD.GiaBanDau, HD.KhuyenMai, HD.TongTienDV, HD.TongTienPhong, HD.TrangThai, HD.NgayXuatDon, HD.NgayThanhToan, HD.Thue, HD.TienCoc, HD.TongTien, HD.SoTienCanThanhToan\n"
+                + "          FROM HOADON HD \n"
+                + "          JOIN KHACHHANG KH ON HD.MAKH = KH.MAKH \n"
+                + "          JOIN NHANVIEN NV ON HD.MANV = NV.MANV;";
         ArrayList<Model_TT> listHoaDon = new ArrayList<>();
         try {
             con = DBconnect.getConnection();
@@ -29,19 +32,24 @@ public class Repositories_HD {
             rs = pr.executeQuery();
             while (rs.next()) {
                 String maHD = rs.getString("MAHD");
-                String maNV = rs.getString("MANV");
-                String maKH = rs.getString("MAKH");
+                String tenNV = rs.getString("TenNV");
+                String tenKH = rs.getString("TenKhachHang");
                 String soDienThoai = rs.getString("SoDienThoai");
                 String diaChi = rs.getString("DiaChi");
                 int soPhongDat = rs.getInt("SoPhongDat");
+                double giaBanDau = rs.getDouble("GiaBanDau");
+                int khuyenMai = rs.getInt("KhuyenMai");
+                double tongTienDV = rs.getDouble("TongTienDV");
+                double tongTienPhong = rs.getDouble("TongTienPhong");
                 String trangThai = rs.getString("TrangThai");
                 Date ngayXuatDon = rs.getDate("NgayXuatDon");
                 Date ngayThanhToan = rs.getDate("NgayThanhToan");
                 double thue = rs.getDouble("Thue");
                 double tienCoc = rs.getDouble("TienCoc");
                 double tongTien = rs.getDouble("TongTien");
+                double soTienCanThanhToan = rs.getDouble("SoTienCanThanhToan");
 
-                Model_TT tt = new Model_TT(maHD, maKH, maNV, soDienThoai, diaChi, soPhongDat, trangThai, ngayXuatDon, ngayThanhToan, thue, tienCoc, tongTien, maHD, maKH, maHD, maNV, maKH, ngayXuatDon, ngayXuatDon, tienCoc, tienCoc, tongTien, tongTien, ngayThanhToan);
+                Model_TT tt = new Model_TT(maHD, tenNV, tenKH, soDienThoai, diaChi, soPhongDat, giaBanDau, khuyenMai, tongTienDV, tongTienPhong, trangThai, ngayXuatDon, ngayThanhToan, thue, tienCoc, tongTien, soTienCanThanhToan, maHD, maHD, maHD, ngayXuatDon, ngayXuatDon, tienCoc);
                 listHoaDon.add(tt);
             }
         } catch (Exception e) {
@@ -51,118 +59,45 @@ public class Repositories_HD {
     }
 
     public ArrayList<Model_TT> timkiem_MHD(String searchTerm) {
-        String sql = "SELECT MAHD, MANV, MAKH, SoDienThoai, DiaChi, SoPhongDat, TrangThai, NgayXuatDon, NgayThanhToan, Thue, TienCoc, TongTien FROM HOADON\n";
-
-        sql += "WHERE MAHD LIKE ? OR SoDienThoai LIKE ?";
-
+        sql = "SELECT HD.MAHD, NV.TenNV, KH.TenKhachHang, HD.SoDienThoai, HD.DiaChi, HD.SoPhongDat, HD.GiaBanDau, HD.KhuyenMai, HD.TongTienDV, HD.TongTienPhong, HD.TrangThai, HD.NgayXuatDon, HD.NgayThanhToan, HD.Thue, HD.TienCoc, HD.TongTien, HD.SoTienCanThanhToan\n"
+                + "FROM HOADON HD\n"
+                + "JOIN KHACHHANG KH ON HD.MAKH = KH.MAKH\n"
+                + "JOIN NHANVIEN NV ON HD.MANV = NV.MANV\n"
+                + "WHERE HD.MAHD LIKE ? OR HD.SoDienThoai LIKE ? OR KH.TenKhachHang LIKE ? OR NV.TenNV LIKE ?;";
         ArrayList<Model_TT> listHoaDon = new ArrayList<>();
         try {
             con = DBconnect.getConnection();
             pr = con.prepareStatement(sql);
             pr.setObject(1, '%' + searchTerm + '%');
             pr.setObject(2, '%' + searchTerm + '%');
+            pr.setObject(3, '%' + searchTerm + '%');
+            pr.setObject(4, '%' + searchTerm + '%');
             rs = pr.executeQuery();
             while (rs.next()) {
                 String maHD = rs.getString("MAHD");
-                String maNV = rs.getString("MANV");
-                String maKH = rs.getString("MAKH");
+                String tenNV = rs.getString("TenNV");
+                String tenKH = rs.getString("TenKhachHang");
                 String soDienThoai = rs.getString("SoDienThoai");
                 String diaChi = rs.getString("DiaChi");
                 int soPhongDat = rs.getInt("SoPhongDat");
+                double giaBanDau = rs.getDouble("GiaBanDau");
+                int khuyenMai = rs.getInt("KhuyenMai");
+                double tongTienDV = rs.getDouble("TongTienDV");
+                double tongTienPhong = rs.getDouble("TongTienPhong");
                 String trangThai = rs.getString("TrangThai");
                 Date ngayXuatDon = rs.getDate("NgayXuatDon");
                 Date ngayThanhToan = rs.getDate("NgayThanhToan");
                 double thue = rs.getDouble("Thue");
                 double tienCoc = rs.getDouble("TienCoc");
                 double tongTien = rs.getDouble("TongTien");
+                double soTienCanThanhToan = rs.getDouble("SoTienCanThanhToan");
 
-                Model_TT tt = new Model_TT(maHD, maKH, maNV, soDienThoai, diaChi, soPhongDat, trangThai, ngayXuatDon, ngayThanhToan, thue, tienCoc, tongTien, maHD, maKH, maHD, maNV, maKH, ngayXuatDon, ngayXuatDon, tienCoc, tienCoc, tongTien, tongTien, ngayThanhToan);
+                Model_TT tt = new Model_TT(maHD, tenNV, tenKH, soDienThoai, diaChi, soPhongDat, giaBanDau, soPhongDat, tongTienDV, tongTienPhong, trangThai, ngayXuatDon, ngayThanhToan, thue, tienCoc, tongTien, soTienCanThanhToan, maHD, maHD, maHD, ngayXuatDon, ngayXuatDon, tienCoc);
                 listHoaDon.add(tt);
             }
-            return listHoaDon;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return new ArrayList<>();
-        }
-    }
-
-    public int xoaHD(String maHD) {
-        String xoaHDChiTiet = "DELETE FROM HOADONCHITIET WHERE MAHD = ?";
-        String xoaHD = "DELETE FROM HOADON WHERE MAHD = ?";
-        Connection con = null;
-        PreparedStatement pr1 = null;
-        PreparedStatement pr2 = null;
-
-        try {
-            con = DBconnect.getConnection();
-            con.setAutoCommit(false);
-
-            pr1 = con.prepareStatement(xoaHDChiTiet);
-            pr1.setObject(1, maHD);
-            pr1.executeUpdate();
-
-            pr2 = con.prepareStatement(xoaHD);
-            pr2.setObject(1, maHD);
-            int result = pr2.executeUpdate();
-
-            con.commit();
-            return result;
-        } catch (Exception e) {
-            e.printStackTrace();
-            try {
-                if (con != null) {
-                    con.rollback();
-                }
-            } catch (SQLException rollbackEx) {
-                rollbackEx.printStackTrace();
-            }
-            return 0;
-        } finally {
-            try {
-                if (pr1 != null) {
-                    pr1.close();
-                }
-                if (pr2 != null) {
-                    pr2.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException closeEx) {
-                closeEx.printStackTrace();
-            }
-        }
-    }
-
-    public int suaHoaDon(String maHD, String soDienThoai, String diaChi) {
-        String sql = "UPDATE HoaDon SET SoDienThoai = ?, DiaChi = ? WHERE MAHD = ?";
-        try {
-            Connection con = DBconnect.getConnection();
-            PreparedStatement pr = con.prepareStatement(sql);
-            pr.setObject(1, soDienThoai);
-            pr.setObject(2, diaChi);
-            pr.setObject(3, maHD);
-            return pr.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return 0;
-        }
-    }
-
-    public boolean checkTrungSoDienThoai(String soDienThoai) {
-        String sql = "SELECT COUNT(*) FROM HoaDon WHERE SoDienThoai = ?";
-        try {
-            Connection con = DBconnect.getConnection();
-            PreparedStatement pr = con.prepareStatement(sql);
-            pr.setString(1, soDienThoai);
-            ResultSet rs = pr.executeQuery();
-            if (rs.next()) {
-                return rs.getInt(1) > 0; 
-            }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return false;
+        return listHoaDon;
     }
-
 }

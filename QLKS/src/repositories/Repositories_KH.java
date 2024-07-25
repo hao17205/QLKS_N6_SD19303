@@ -28,7 +28,7 @@ public class Repositories_KH {
             while(rs.next()){
                 String maKhachHang;
                 String hoTen;
-                String ngaySinh;
+                Date ngaySinh;
                 String Cccd;
                 String Sdt;
                 String Email;
@@ -37,7 +37,7 @@ public class Repositories_KH {
                 
                 maKhachHang = rs.getString(1);
                 hoTen = rs.getString(2);
-                ngaySinh = rs.getString(3);
+                ngaySinh = rs.getDate(3);
                 Cccd = rs.getString(4);
                 Sdt = rs.getString(5);
                 Email = rs.getString(6);
@@ -117,19 +117,20 @@ public class Repositories_KH {
     public ArrayList<Model_QLKH> timKiem_KH(String timKiemKhachHang){
         ArrayList<Model_QLKH> list_KH = new ArrayList<>();
         sql = "select MAKH, TenKhachHang , NgaySinh, CCCD , SoDienThoai , Email , GioiTinh ,DiaChi from KHACHHANG\n" +
-"where MAKH like ? or SoDienThoai like ? or Email like ?";
+"where MAKH like ? or SoDienThoai like ? or Email like ? or CCCD like ?";
         try {
             con = dbconnect.DBconnect.getConnection();
             ps = con.prepareStatement(sql);
             ps.setObject(1, "%" + timKiemKhachHang + "%");
             ps.setObject(2,"%" + timKiemKhachHang + "%" );
             ps.setObject(3,"%" + timKiemKhachHang + "%" );
+            ps.setObject(4,"%" + timKiemKhachHang + "%" );
             rs = ps.executeQuery();
             
             while(rs.next()){
                 String maKhachHang;
                 String hoTen;
-                String ngaySinh;
+                Date ngaySinh;
                 String Cccd;
                 String Sdt;
                 String Email;
@@ -138,7 +139,7 @@ public class Repositories_KH {
                 
                 maKhachHang = rs.getString(1);
                 hoTen = rs.getString(2);
-                ngaySinh = rs.getString(3);
+                ngaySinh = rs.getDate(3);
                 Cccd = rs.getString(4);
                 Sdt = rs.getString(5);
                 Email = rs.getString(6);
@@ -149,6 +150,42 @@ public class Repositories_KH {
                 list_KH.add(m);
             }
             return list_KH;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    
+    public Model_QLKH checkTrung_KH(String maKhachHang_moi){
+        sql = "SELECT MAKH, TenKhachHang , NgaySinh, CCCD , SoDienThoai , Email , GioiTinh ,DiaChi FROM KHACHHANG WHERE MAKH = ?";
+        Model_QLKH kH = null;
+        try {
+            con = dbconnect.DBconnect.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setObject(1, maKhachHang_moi);
+            rs = ps.executeQuery();
+            
+           while(rs.next()){
+                String maKhachHang;
+                String hoTen;
+                Date ngaySinh;
+                String Cccd;
+                String Sdt;
+                String Email;
+                int gioiTinh;
+                String diaChi;
+                
+                maKhachHang = rs.getString(1);
+                hoTen = rs.getString(2);
+                ngaySinh = rs.getDate(3);
+                Cccd = rs.getString(4);
+                Sdt = rs.getString(5);
+                Email = rs.getString(6);
+                gioiTinh = rs.getInt(7);
+                diaChi = rs.getString(8);
+                kH = new Model_QLKH(maKhachHang, hoTen, ngaySinh, Cccd, Sdt, Email, gioiTinh, diaChi);
+           }
+           return kH;
         } catch (Exception e) {
             e.printStackTrace();
             return null;
