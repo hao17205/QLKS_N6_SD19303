@@ -1,50 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
-<<<<<<< HEAD
-=======
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
-        <group/>
-=======
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/repositories/Repositories_DP3.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/Model/Model_DP3.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/repositories/Repositories_DatPhong1.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/Model/Model_TT.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/Model/Model_DSPhong.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/repositories/Repositories_DichVu.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/repositories/Repositories_HD.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/repositories/Repositories_DP2.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/View/View_TT.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/dbconnect/DBconnect.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/View/View_QLKH.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/View/View_DatPhong3.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/repositories/Repositories_HDCT.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/View/view_DichVu.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/repositories/Repositories_TTPhong.java</file>
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-            <file>file:/D:/javaaaaaaa/QLKS/src/View/View_TrangChu.java</file>
-            <file>file:/D:/javaaaaaaa/QLKS/src/View/View_KM.java</file>
-            <file>file:/D:/javaaaaaaa/QLKS/src/View/View_DatPhong.java</file>
-            <file>file:/D:/javaaaaaaa/QLKS/src/repositories/Repositories_TK.java</file>
-            <file>file:/D:/javaaaaaaa/QLKS/src/View/View_ThongKe.java</file>
-=======
-            <file>file:/D:/DuAn1/QLKS/src/Model/Model_TT.java</file>
->>>>>>> 95fff8a7536226cc2a3337b47e9a103f4abc5239
-            <file>file:/D:/DuAn1/QLKS/src/View/View_QLKH.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/repositories/Repositories_TrangChu.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/View/View_NhanVien.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/View/View_TrangChu.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/repositories/Repositories_NhanVien.java</file>
->>>>>>> eced0bf08acf2254d596091933b19103fca8c2d9
->>>>>>> d0e21d522c326ff89cf2a3a8a51e34939ec4311a
+            <file>file:/E:/FPT%20Polytechnic/DA1/QuanLyKhachSan/QLKS/src/repositories/Repositories_HDCT.java</file>
+            <file>file:/E:/FPT%20Polytechnic/DA1/QuanLyKhachSan/QLKS/src/View/View_TT.java</file>
         </group>
->>>>>>> 7d1a730e5bd6f204e67404e8c94e96abcbf8742f
     </open-files>
->>>>>>> 1891b94b26e570fa565002517ac79f6a33a9f2c8
 </project-private>
