@@ -262,7 +262,7 @@ public class View_QLKH extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txt_Sdt, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
                             .addComponent(jdc_NgaySinh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -335,6 +335,12 @@ public class View_QLKH extends javax.swing.JFrame {
         btn_TimKiem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_TimKiemActionPerformed(evt);
+            }
+        });
+
+        txt_TimKiem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_TimKiemActionPerformed(evt);
             }
         });
 
@@ -548,6 +554,10 @@ public class View_QLKH extends javax.swing.JFrame {
         txt_MaKhachHang.setEnabled(true);
         this.fillTable(rp.getAll_KH());
     }//GEN-LAST:event_btn_ResetActionPerformed
+
+    private void txt_TimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_TimKiemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_TimKiemActionPerformed
 
     /**
      * @param args the command line arguments
