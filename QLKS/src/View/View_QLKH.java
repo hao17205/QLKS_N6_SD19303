@@ -530,8 +530,8 @@ public class View_QLKH extends javax.swing.JFrame {
 
     private void btn_ThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ThoatActionPerformed
         // TODO add your handling code here:
-        View_DatPhong3 dp3 = new View_DatPhong3();
-        dp3.setVisible(true);
+        View_TrangChu tt5 = new View_TrangChu();
+        tt5.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_ThoatActionPerformed
 
