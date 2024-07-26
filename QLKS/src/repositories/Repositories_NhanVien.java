@@ -121,7 +121,7 @@ public class Repositories_NhanVien {
    public ArrayList<Model_NhanVien> timKiem( String timKiemNV){
        ArrayList<Model_NhanVien> list_NV = new ArrayList<>();
        sql = "select maNV,TenNV,NgaySinh,GioiTinh,SoDienThoai,Email,DiaChi,ChucVu from NhanVien\n" +
-"where maNV like ? or soDienThoai like ? or email like ?";
+"where maNV like ? or soDienThoai like ? or email like ? or chucVu like ?";
        
        try {
            con = dbconnect.DBconnect.getConnection();
@@ -129,6 +129,7 @@ public class Repositories_NhanVien {
            ps.setString(1,"%" +timKiemNV+"%");
            ps.setString(2,"%" +timKiemNV+"%");
            ps.setString(3,"%" +timKiemNV+"%");
+           ps.setString(4,"%" +timKiemNV+"%");
            rs = ps.executeQuery();
            
            while(rs.next()){
