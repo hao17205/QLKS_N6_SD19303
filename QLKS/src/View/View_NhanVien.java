@@ -67,6 +67,7 @@ public class View_NhanVien extends javax.swing.JFrame {
         txt_timKiem = new javax.swing.JTextField();
         jdc_ngaySinh = new com.toedter.calendar.JDateChooser();
         cbo_chucVu = new javax.swing.JComboBox<>();
+        btn_reset = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -175,6 +176,16 @@ public class View_NhanVien extends javax.swing.JFrame {
 
         jdc_ngaySinh.setDateFormatString("yyyy-MM-dd");
 
+        btn_reset.setBackground(new java.awt.Color(204, 0, 204));
+        btn_reset.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_reset.setForeground(new java.awt.Color(242, 242, 242));
+        btn_reset.setText("Reset");
+        btn_reset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_resetActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -195,7 +206,9 @@ public class View_NhanVien extends javax.swing.JFrame {
                                 .addGap(29, 29, 29)
                                 .addComponent(btn_sua)
                                 .addGap(18, 18, 18)
-                                .addComponent(btn_xoa))
+                                .addComponent(btn_xoa)
+                                .addGap(18, 18, 18)
+                                .addComponent(btn_reset, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -272,7 +285,8 @@ public class View_NhanVien extends javax.swing.JFrame {
                     .addComponent(btn_sua)
                     .addComponent(btn_xoa)
                     .addComponent(btn_timKiem)
-                    .addComponent(txt_timKiem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_timKiem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_reset, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
@@ -416,6 +430,19 @@ public class View_NhanVien extends javax.swing.JFrame {
            }
         }
     }//GEN-LAST:event_btn_xoaActionPerformed
+
+    private void btn_resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_resetActionPerformed
+        txt_maNV.setText("");
+        txt_tenNV.setText("");
+        jdc_ngaySinh.setDate(null);
+        txt_sdt.setText("");
+        txt_email.setText("");
+        txt_diaChi.setText("");
+               
+        buttonGroup1.clearSelection();
+
+        this.fillTable(rp.getAll_NV());
+    }//GEN-LAST:event_btn_resetActionPerformed
 
     /**
      * @param args the command line arguments
@@ -566,6 +593,7 @@ public class View_NhanVien extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_cancel;
+    private javax.swing.JButton btn_reset;
     private javax.swing.JButton btn_sua;
     private javax.swing.JButton btn_them;
     private javax.swing.JButton btn_timKiem;
@@ -617,5 +645,17 @@ public class View_NhanVien extends javax.swing.JFrame {
         }
     }
   
-    
+      private void resetForm() {
+        txt_maNV.setText("");
+        txt_tenNV.setText("");
+        jdc_ngaySinh.setDate(null);
+        txt_sdt.setText("");
+        txt_email.setText("");
+        txt_diaChi.setText("");
+               
+        buttonGroup1.clearSelection();
+
+        this.fillTable(rp.getAll_NV());
+    }
+
 }
