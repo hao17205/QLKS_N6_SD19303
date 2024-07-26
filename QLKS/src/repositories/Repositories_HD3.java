@@ -36,36 +36,49 @@ public class Repositories_HD3 {
             return 0;
         }
     }
-    public Model_HD3  checkTung_HD3(String maHDmoi){
-        sql = "select MAHD,MANV,MAKH,SoDienThoai,DiaChi,TienCoc from HOADON\n" +
+//    public Model_HD3  checkTung_HD3(String maHDmoi){
+//        sql = "select MAHD,MANV,MAKH,SoDienThoai,DiaChi,TienCoc from HOADON\n" +
+//"where MAHD = ?";
+//        Model_HD3 hd = null;
+//        try {
+//            con = dbconnect.DBconnect.getConnection();
+//            ps = con.prepareStatement(sql);
+//            ps.setObject(1, maHDmoi);
+//            rs = ps.executeQuery();
+//            while(rs.next()){
+//                String maHD;
+//                String maNV;
+//                String maKH;
+//                String soDienThoai;
+//                String diaChi;
+//                String tienCoc;
+//                 maHD = rs.getString(1);
+//                 maNV = rs.getString(2);
+//                 maKH = rs.getString(3);
+//                 soDienThoai = rs.getString(4);
+//                 diaChi = rs.getString(5);
+//                 tienCoc = rs.getString(6);
+//                 hd = new Model_HD3(maHD, maNV, maKH, soDienThoai, diaChi, 0);
+//            }return hd;
+//            
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            return null;
+//        }
+//        
+//    }
+    public boolean checkTrung_HD3(String maHD){
+        sql = "select MAHD from HOADON\n" +
 "where MAHD = ?";
-        Model_HD3 hd = null;
         try {
-            con = dbconnect.DBconnect.getConnection();
+            con = DBconnect.getConnection();
             ps = con.prepareStatement(sql);
-            ps.setObject(1, maHDmoi);
+            ps.setString(1, maHD);
             rs = ps.executeQuery();
-            while(rs.next()){
-                String maHD;
-                String maNV;
-                String maKH;
-                String soDienThoai;
-                String diaChi;
-                String tienCoc;
-                 maHD = rs.getString(1);
-                 maNV = rs.getString(2);
-                 maKH = rs.getString(3);
-                 soDienThoai = rs.getString(4);
-                 diaChi = rs.getString(5);
-                 tienCoc = rs.getString(6);
-                 hd = new Model_HD3(maHD, maNV, maKH, soDienThoai, diaChi, 0);
-            }return hd;
-            
+            return rs.next();
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
+            return false;
         }
-        
     }
-    
 }

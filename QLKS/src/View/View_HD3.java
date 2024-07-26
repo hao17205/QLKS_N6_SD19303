@@ -177,19 +177,25 @@ public class View_HD3 extends javax.swing.JFrame {
 
     private void btn_HoaDonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_HoaDonActionPerformed
         // TODO add your handling code here:
-        
-        if(this.readForm_HD3()== null){
-
-            JOptionPane.showMessageDialog(this, "Mã Hóa Đơn đã tồn tại");
-            
-        }else{
-            if(rp_HD3.them_HD3(this.readForm_HD3())>0){
-                JOptionPane.showMessageDialog(this, "Tạo hóa đơn thành công");
-            }else{
-                JOptionPane.showMessageDialog(this, "Tạo hóa đơn thất bại");
+         int chon = JOptionPane.showConfirmDialog(this, "Bạn muốn tạo hóa đơn mới");
+        if (chon == JOptionPane.YES_OPTION) {
+            Model_HD3 hd3 = this.readForm_HD3();
+            if (hd3 != null) {
+                String maHD = hd3.getMaHD();
+                if (rp_HD3.checkTrung_HD3(maHD)) {
+                    JOptionPane.showMessageDialog(this, "Hóa Đơn đã tồn tại");
+                } else {
+                    if (rp_HD3.them_HD3(hd3) > 0) {
+                        JOptionPane.showMessageDialog(this, "Thêm thành công");
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Thêm thất bại");
+                    }
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Thêm thất bại");
             }
         }
-    
+        
     }//GEN-LAST:event_btn_HoaDonActionPerformed
 
     private void btn_CheckTTKHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CheckTTKHActionPerformed

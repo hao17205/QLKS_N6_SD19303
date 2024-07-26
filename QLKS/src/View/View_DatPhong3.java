@@ -362,19 +362,25 @@ public class View_DatPhong3 extends javax.swing.JFrame {
         // TODO add your handling code here:
         int chon = JOptionPane.showConfirmDialog(this, "Bạn muốn lưu thông tin không");
         if(chon == 0){
-            
-       
-        if(this.readForm_DP3()==null){
-            JOptionPane.showMessageDialog(this, "Lưu thông tin thất bại");
+            Model_DP3 dp3 = this.readForm_DP3();
+            if(dp3 != null){
+                String maHDCT1 = txt_maHDCT.getText().trim();
+                if(rp_DP3.checkTrung_DP3(maHDCT1)){
+                    JOptionPane.showMessageDialog(this, "Mã HĐCT đã tồn tại");
+                }else{
+                    if(rp_DP3.them_DP3(dp3) > 0){
+                        JOptionPane.showMessageDialog(this, "Thêm thành công");
+                    }else{
+                        JOptionPane.showMessageDialog(this, "thêm thất bại");
+                    }
+                }
         }else{
-            if(rp_DP3.them_DP3(this.readForm_DP3())>0){
-                JOptionPane.showMessageDialog(this, "thêm thành công");
-            }else{
                 JOptionPane.showMessageDialog(this, "thêm thất bại");
             }
-        }
-        }
+            
+       
         
+        } 
     }//GEN-LAST:event_btn_LuuActionPerformed
 
     private void btn_CheckTTKHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CheckTTKHActionPerformed
