@@ -4,7 +4,10 @@
  */
 package View;
 
+import Model.Model_LG;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import repositories.Repositories_LG;
 
 /**
  *
@@ -12,12 +15,17 @@ import javax.swing.JOptionPane;
  */
 public class View_Login extends javax.swing.JFrame {
 
+    private repositories.Repositories_LG rp_LG = new Repositories_LG();
+    private DefaultTableModel mol = new DefaultTableModel();
+    private int i;
+
     /**
      * Creates new form View_Login
      */
     public View_Login() {
         initComponents();
         this.setLocationRelativeTo(null);
+
     }
 
     /**
@@ -41,7 +49,8 @@ public class View_Login extends javax.swing.JFrame {
         btn_Login = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
+        btn_Reset = new javax.swing.JButton();
+        btn_Thoat = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("LOGIN");
@@ -76,9 +85,24 @@ public class View_Login extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 204));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setText("RESET");
+        btn_Reset.setBackground(new java.awt.Color(255, 255, 204));
+        btn_Reset.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_Reset.setText("RESET");
+        btn_Reset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ResetActionPerformed(evt);
+            }
+        });
+
+        btn_Thoat.setBackground(new java.awt.Color(204, 255, 204));
+        btn_Thoat.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_Thoat.setForeground(new java.awt.Color(255, 51, 51));
+        btn_Thoat.setText("EXITS");
+        btn_Thoat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ThoatActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -87,26 +111,27 @@ public class View_Login extends javax.swing.JFrame {
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
             .addComponent(jSeparator2)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(154, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(138, 138, 138))
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addGap(38, 38, 38)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_TaiKhoan)
-                            .addComponent(txt_MatKhau, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(117, 117, 117)
-                        .addComponent(btn_Login)
-                        .addGap(71, 71, 71)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(13, Short.MAX_VALUE))
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5))
+                .addGap(38, 38, 38)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txt_TaiKhoan)
+                    .addComponent(txt_MatKhau, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(117, 117, 117)
+                .addComponent(btn_Login)
+                .addGap(39, 39, 39)
+                .addComponent(btn_Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_Thoat, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,9 +151,10 @@ public class View_Login extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_Login)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_Thoat))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -165,7 +191,7 @@ public class View_Login extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(8, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,32 +202,46 @@ public class View_Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LoginActionPerformed
-        String taiKhoan = txt_TaiKhoan.getText();
-        String matKhau = new String(txt_MatKhau.getPassword());
-        
-        StringBuilder sb = new StringBuilder();
-        
-        if(taiKhoan.equals("")){
-            sb.append("tài khoản đang bỏ trống\n");
-        }
-        if(matKhau.equals("")){
-            sb.append("Mật khẩu đang bỏ trống\n");
-        }
-        if(sb.length()>0){
-            JOptionPane.showMessageDialog(this, sb.toString(),"Vui lòng không bỏ trống",JOptionPane.ERROR_MESSAGE);
+        String tenDangNhap = txt_TaiKhoan.getText().trim();
+        String matKhau = new String(txt_MatKhau.getPassword()).trim();
+
+        // Kiểm tra dữ liệu nhập vào
+        if (tenDangNhap.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Bạn chưa nhập tên đăng nhập!");
+            txt_TaiKhoan.requestFocus();
             return;
         }
-        if(taiKhoan.equals("admin") && matKhau.equals("123456")){
-            JOptionPane.showMessageDialog(this, "Đăng nhập thành công!");
-            View_TrangChu home = new View_TrangChu();
-            home.setVisible(true);
-            this.dispose();
-        }else{
-            JOptionPane.showMessageDialog(this, "Đăng nhập thất bại!");
+
+        if (matKhau.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Bạn chưa nhập mật khẩu!");
+            txt_MatKhau.requestFocus();
+            return;
         }
-        // code nhảy form
-        
+
+        // Xác thực thông tin đăng nhập
+        if (rp_LG.checkTrung_taiKhoan(tenDangNhap, matKhau)) {
+            // Đăng nhập thành công
+            JOptionPane.showMessageDialog(this, "Đăng nhập thành công!");
+            View_TrangChu home = new View_TrangChu(); // Thay thế bằng cửa sổ chính của bạn
+            home.setVisible(true);
+            this.dispose(); // Đóng cửa sổ đăng nhập
+        } else {
+            // Đăng nhập thất bại
+            JOptionPane.showMessageDialog(this, "Tên đăng nhập hoặc mật khẩu không đúng!");
+        }
+
     }//GEN-LAST:event_btn_LoginActionPerformed
+
+    private void btn_ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ResetActionPerformed
+        // TODO add your handling code here:
+        txt_TaiKhoan.setText("");
+        txt_MatKhau.setText("");
+    }//GEN-LAST:event_btn_ResetActionPerformed
+
+    private void btn_ThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ThoatActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btn_ThoatActionPerformed
 
     /**
      * @param args the command line arguments
@@ -229,6 +269,9 @@ public class View_Login extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(View_Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -240,7 +283,8 @@ public class View_Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Login;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btn_Reset;
+    private javax.swing.JButton btn_Thoat;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -253,4 +297,26 @@ public class View_Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField txt_MatKhau;
     private javax.swing.JTextField txt_TaiKhoan;
     // End of variables declaration//GEN-END:variables
+
+    private Model_LG readForm() {
+
+        String tenDangNhap;
+        String matKhau;
+
+        tenDangNhap = txt_TaiKhoan.getText().trim();
+        if (tenDangNhap.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "bạn chưa nhập ten");
+            txt_TaiKhoan.requestFocus();
+            return null;
+
+        }
+        matKhau = new String(txt_MatKhau.getPassword()).trim();
+        if (matKhau.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Bạn chưa nhập mật khẩu!");
+            txt_MatKhau.requestFocus();
+            return null;
+        }
+        return new Model_LG(tenDangNhap, matKhau);
+    }
+
 }
