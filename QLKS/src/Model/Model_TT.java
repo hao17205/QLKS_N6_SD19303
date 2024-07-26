@@ -252,13 +252,10 @@ public class Model_TT {
         this.tienPhong = tienPhong;
     }
 
-    
-    
-
- public Object[] toDataRow_HD() {
+    public Object[] toDataRow_HD() {
         return new Object[]{
             this.getMaHD(), this.getTenNV(), this.getTenKH(), this.getSoDienThoai(), this.getDiaChi(),
-            this.getSoPhongDat(), this.getGiaBanDau(),this.getKhuyenMai(), this.getTongTienDichVu(), this.getTongTienPhong(),
+            this.getSoPhongDat(), this.getGiaBanDau(), this.getKhuyenMai(), this.getTongTienDichVu(), this.getTongTienPhong(),
             this.getTrangThai(), this.getNgayXuatDon(), this.getNgayThanhToan(), this.getThue(),
             this.getTienCoc(), this.getTongTien(), this.getSoTienCanThanhToan()
         };
@@ -271,4 +268,22 @@ public class Model_TT {
         };
     }
 
+    public Object[] toDataRow_TT() {
+        return new Object[]{
+            this.getMaHD(), this.getTenNV(), this.getTenKH(), this.getSoDienThoai(), this.getDiaChi(),
+            this.getNgayXuatDon(), this.getThue()
+        };
+    }
+
+    public Object[] toDataRow_TT_DV() {
+        return new Object[]{
+            this.getTongTienDichVu()
+        };
+    }
+
+    public Object[] toDataRow_TT_P() {
+        return new Object[]{
+            this.getSoPhongDat(), this.getTongTienPhong()
+        };
+    }
 }
