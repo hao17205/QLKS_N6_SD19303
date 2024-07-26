@@ -2,26 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-<<<<<<< HEAD
-            <file>file:/E:/FPT%20Polytechnic/DA1/QuanLyKhachSan/QLKS/src/repositories/Repositories_HDCT.java</file>
-            <file>file:/E:/FPT%20Polytechnic/DA1/QuanLyKhachSan/QLKS/src/View/View_TT.java</file>
-=======
-            <file>file:/D:/DuAn1/QLKS/src/View/View_QLKH.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/View/View_NhanVien.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/repositories/Repositories_KM.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/Model/Model_NhanVien.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/View/View_TrangChu.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/View/View_KM.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/dbconnect/DBconnect.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/repositories/Repositories_NhanVien.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/repositories/Repositories_HD.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/repositories/Repositories_HDCT.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/repositories/Repositories_TrangChu.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/repositories/Repositories_KH.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/Model/Model_KM.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/View/View_TT.java</file>
->>>>>>> bf5c9810002cc52032148f69a5d2002566db96e7
-        </group>
+        <group/>
     </open-files>
 </project-private>
