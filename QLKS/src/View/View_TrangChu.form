@@ -91,13 +91,13 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel6" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
+                          <Component id="lb_ThanhToan" min="-2" max="-2" attributes="0"/>
+                          <Component id="lb_NhanVien" min="-2" max="-2" attributes="0"/>
+                          <Component id="lb_ThongKe" min="-2" max="-2" attributes="0"/>
+                          <Component id="lb_DichVu" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
                           <Component id="jLabel9" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
-                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lb_KhachHang" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lb_KhuyenMai" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="lb_home" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -115,17 +115,17 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="lb_home" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lb_NhanVien" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                      <Component id="lb_DichVu" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <Component id="lb_KhachHang" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                      <Component id="lb_KhuyenMai" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                      <Component id="lb_ThanhToan" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                      <Component id="lb_ThongKe" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
@@ -163,7 +163,7 @@
                 <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_homeMouseExited"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel3">
+            <Component class="javax.swing.JLabel" name="lb_NhanVien">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Black" size="18" style="1"/>
@@ -174,10 +174,10 @@
                 <Property name="text" type="java.lang.String" value="NH&#xc2;N VI&#xca;N"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel3MouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_NhanVienMouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel4">
+            <Component class="javax.swing.JLabel" name="lb_KhachHang">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Black" size="18" style="1"/>
@@ -187,8 +187,11 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="KH&#xc1;CH H&#xc0;NG"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_KhachHangMouseClicked"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel5">
+            <Component class="javax.swing.JLabel" name="lb_KhuyenMai">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Black" size="18" style="1"/>
@@ -201,7 +204,7 @@
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator2">
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel6">
+            <Component class="javax.swing.JLabel" name="lb_DichVu">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Black" size="18" style="1"/>
@@ -212,10 +215,10 @@
                 <Property name="text" type="java.lang.String" value="D&#x1eca;CH V&#x1ee4;"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel6MouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_DichVuMouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel7">
+            <Component class="javax.swing.JLabel" name="lb_ThongKe">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Black" size="18" style="1"/>
@@ -226,7 +229,7 @@
                 <Property name="text" type="java.lang.String" value="TH&#x1ed0;NG K&#xca;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel8">
+            <Component class="javax.swing.JLabel" name="lb_ThanhToan">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Black" size="18" style="1"/>
@@ -237,7 +240,7 @@
                 <Property name="text" type="java.lang.String" value="THANH TO&#xc1;N"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel8MouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_ThanhToanMouseClicked"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel9">
@@ -372,15 +375,33 @@
                 <Component class="javax.swing.JTable" name="tbl_bang">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="4" rowCount="4">
+                      <Table columnCount="7" rowCount="4">
                         <Column editable="true" title="M&#xe3; Ph&#xf2;ng" type="java.lang.Object"/>
                         <Column editable="true" title="T&#xec;nh Tr&#x1ea1;ng Ph&#xf2;ng" type="java.lang.Object"/>
                         <Column editable="true" title="T&#x1ea7;ng" type="java.lang.Object"/>
                         <Column editable="true" title="Gi&#xe1;" type="java.lang.Object"/>
+                        <Column editable="true" title="null" type="java.lang.Object"/>
+                        <Column editable="true" title="Title 6" type="java.lang.Object"/>
+                        <Column editable="true" title="Title 7" type="java.lang.Object"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                       <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
                         <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                           <Title/>
                           <Editor/>

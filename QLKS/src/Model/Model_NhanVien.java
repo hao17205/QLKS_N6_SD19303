@@ -4,6 +4,8 @@
  */
 package Model;
 
+import java.util.Date;
+
 /**
  *
  * @author acer
@@ -11,7 +13,7 @@ package Model;
 public class Model_NhanVien {
     private String maNV;
     private String tenNV;
-    private String ngaySinh;
+    private Date ngaySinh;
     private int gioiTinh;
     private String sdt;
     private String email;
@@ -21,7 +23,7 @@ public class Model_NhanVien {
     public Model_NhanVien() {
     }
 
-    public Model_NhanVien(String maNV, String tenNV, String ngaySinh, int gioiTinh, String sdt, String email, String diaChi, String chucVu) {
+    public Model_NhanVien(String maNV, String tenNV, Date ngaySinh, int gioiTinh, String sdt, String email, String diaChi, String chucVu) {
         this.maNV = maNV;
         this.tenNV = tenNV;
         this.ngaySinh = ngaySinh;
@@ -48,11 +50,11 @@ public class Model_NhanVien {
         this.tenNV = tenNV;
     }
 
-    public String getNgaySinh() {
+    public Date getNgaySinh() {
         return ngaySinh;
     }
 
-    public void setNgaySinh(String ngaySinh) {
+    public void setNgaySinh(Date ngaySinh) {
         this.ngaySinh = ngaySinh;
     }
 
@@ -95,6 +97,8 @@ public class Model_NhanVien {
     public void setChucVu(String chucVu) {
         this.chucVu = chucVu;
     }
+
+    
     public Object[] toDataRow_NV(){
         return new Object[]{
             this.getMaNV(),this.getTenNV(),this.getNgaySinh(),this.getGioiTinh()==1?"Nam":"Nữ",this.getSdt(),this.getEmail(),this.getDiaChi(),

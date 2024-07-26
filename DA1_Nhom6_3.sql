@@ -36,6 +36,7 @@ CREATE TABLE LOAIPHONG(
 	LoaiPhong nvarchar(50),
 	Gia float,
 	MoTa nvarchar(500),
+	SONGUOIO INT
 )
 CREATE TABLE DICHVU(
 	MADV varchar(50) primary key,
@@ -68,7 +69,7 @@ CREATE TABLE DATDICHVU(
 	foreign key(MADV) references DICHVU(MADV),
 	foreign key(MAHD) references HOADON(MAHD),
 )
-CREATE TABLE KHUYENMAI(
+/*CREATE TABLE KHUYENMAI(
 	MAKM varchar(50) primary key,
 	TenKhuyenMai nvarchar(250),
 	LoaiKhuyenMai nvarchar(25),
@@ -77,7 +78,7 @@ CREATE TABLE KHUYENMAI(
 	NgayKetThuc Date ,
 	Mota nvarchar(500),
 	TrangThai nvarchar(500),
-)
+)*/
 CREATE TABLE HOADON(
 	MAHD varchar(50) primary key,
 	MAKH varchar(50) ,
@@ -86,6 +87,7 @@ CREATE TABLE HOADON(
 	DiaChi nvarchar(500) ,
 	SoPhongDat int ,
 	GiaBanDau float,
+	KhuyenMai INT,
 	TongTienDV float,
     TongTienPhong float,
 	TrangThai nvarchar(100),
@@ -106,7 +108,7 @@ CREATE TABLE HOADONCHITIET(
 	CheckIn DateTime ,
 	CheckOut DateTime ,
 	TienPhong float ,
-	foreign key(MAKM) references KHUYENMAI(MAKM),
+	
 	foreign key(MAHD) references HOADON(MAHD),
 	foreign key(MA_P) references PHONG(MA_P)
 )
@@ -141,12 +143,15 @@ values('KH01',N'Trần Văn Thuấn',1,'6-21-2001','036205011855','0354233242','
 
 select * from KHACHHANG
 --Thêm Dữ liệu bảng loại phòng
-insert into LOAIPHONG(MALP,LoaiPhong,Gia,MoTa)
-values('LP01',N'Phòng Thường','1000000',N'Thường'),
-('LP02',N'Phòng Thường','1000000',N'Thường'),
-('LP03',N'Phòng Thường','1000000',N'Thường'),
-('LP04',N'Phòng VIP','1850000',N'VIP'),
-('LP05',N'Phòng VIP','1850000',N'VIP')
+insert into LOAIPHONG(MALP,LoaiPhong,Gia,MoTa, SONGUOIO)
+values('LP01',N'Phòng Thường','500000',N'Giường Đơn', 1),
+('LP02',N'Vip','1000000',N'Giường Đơn',1),
+('LP03',N'Hoàng Đế','2000000',N'Giường Đơn',1),
+('LP04',N'Phòng Thường','800000',N'Giường Đôi', 2),
+('LP05',N'Vip','2000000',N'Giường Đôi',2),
+('LP06',N'Hoàng Đế','5000000',N'Giường Đôi',2)
+
+
 
 select * from LOAIPHONG
 
@@ -185,7 +190,7 @@ values('DDV01','P01','DV01',N'Dịch Vụ Dọn Phòng',1,'40000','7-18-2024','4
 select * from DATDICHVU
 
 --Thêm dữ liệu bảng Khuyến Mãi
-insert into KHUYENMAI(MAKM,TenKhuyenMai,LoaiKhuyenMai,PhanTramGiamGia,NgayBatDau,NgayKetThuc,Mota,TrangThai)
+/*insert into KHUYENMAI(MAKM,TenKhuyenMai,LoaiKhuyenMai,PhanTramGiamGia,NgayBatDau,NgayKetThuc,Mota,TrangThai)
 values('KM01', N'Giảm giá mùa hè', N'Giảm giá theo phần trăm', 10, '2024-06-01', '2024-08-31', N'Giảm 10% cho tất cả các dịch vụ',N'Còn Hạn'),
 ('KM02', N'Giảm giá mùa đông', N'Giảm giá theo phần trăm', 15, '2024-12-01', '2024-02-28', N'Giảm 15% cho tất cả các dịch vụ','Sắp Diễn Ra'),
 ('KM03', N'Giảm giá lễ hội', N'Giảm giá theo phần trăm', 20, '2024-11-01', '2024-12-31', N'Giảm 20% cho các dịch vụ trong mùa lễ hội','Còn Hạn'),
@@ -211,7 +216,7 @@ where MAKM = 'KM04'
 update KHUYENMAI
 set NgayBatDau = '01-02-2024',NgayKetThuc = '12-31-2024'
 where MAKM = 'KM05'
-
+*/
 select * from KHUYENMAI
 
 --Thêm Dữ liệu vào Bảng hóa đơn
@@ -220,32 +225,32 @@ select * from KHACHHANG
 select * from DATDICHVU
 select * from DICHVU
 select * from PHONG
-insert into HOADON(MAHD,MAKH,MANV,SoDienThoai,DiaChi,SoPhongDat,GiaBanDau,TongTienDV,TongTienPhong,TrangThai,NgayXuatDon,NgayThanhToan,Thue,TienCoc,TongTien,SoTienCanThanhToan)
-values('HD01','KH01','NV02','0354233242',N'Nam Định',1,'1000000','40000','1040000','Đã Thanh Toán','07-19-2024','07-19-2024','0','100000','940000','940000'),
-('HD02','KH02','NV03','0356785433',N'Hà Nội',1,'1000000','140000','1140000','Đã Thanh Toán','07-20-2024','07-20-2024','0','100000','1040000','1040000'),
-('HD03','KH03','NV03','0378765522',N'Ninh Bình',1,'1000000','50000','1050000','Đã Thanh Toán','07-20-2024','07-20-2024','0','100000','950000','950000'),
-('HD04','KH04','NV02','0398724533',N'Phú Thọ',1,'1850000','140000','1990000','Đã Thanh Toán','07-21-2024','07-21-2024','0','200000','1790000','1790000'),
-('HD05','KH05','NV02','0373547774',N'Hải Dương',1,'1850000','140000','1990000','Đã Thanh Toán','07-22-2024','07-22-2024','0','200000','1790000','1790000')
-
+insert into HOADON(MAHD,MAKH,MANV,SoDienThoai,DiaChi,SoPhongDat,GiaBanDau,KHUYENMAI,TongTienDV,TongTienPhong,TrangThai,NgayXuatDon,NgayThanhToan,Thue,TienCoc,TongTien,SoTienCanThanhToan)
+values('HD01','KH01','NV02','0354233242',N'Nam Định',1,'1000000',5,'40000','1040000','Đã Thanh Toán','07-19-2024','07-19-2024','0','100000','940000','940000'),
+('HD02','KH02','NV03','0356785433',N'Hà Nội',1,'1000000',10,'140000','1140000','Đã Thanh Toán','07-20-2024','07-20-2024','0','100000','1040000','1040000'),
+('HD03','KH03','NV03','0378765522',N'Ninh Bình',1,'1000000',10,'50000','1050000','Đã Thanh Toán','07-20-2024','07-20-2024','0','100000','950000','950000'),
+('HD04','KH04','NV02','0398724533',N'Phú Thọ',1,'1850000',5,'140000','1990000','Đã Thanh Toán','07-21-2024','07-21-2024','0','200000','1790000','1790000'),
+('HD05','KH05','NV02','0373547774',N'Hải Dương',1,'1850000',5,'140000','1990000','Đã Thanh Toán','07-22-2024','07-22-2024','0','200000','1790000','1790000')
+select * from HOADON
 --Thêm Dữ liệu Hóa Đơn Chi Tiết
 select * from NHANVIEN
 select * from KHACHHANG
 select * from DATDICHVU
 select * from PHONG
 select * from LOAIPHONG
-<<<<<<< HEAD
-insert into HOADONCHITIET(MA_HDCT,MAKM,MAHD,MA_P,CheckIn,CheckOut,TienPhong)
-values('HDCT01','KM01','HD01','P01','07-19-2024 14:00:00','07-20-2024 14:00:00','940000'),
-('HDCT02','KM01','HD02','P02','07-18-2024 14:00:00','07-19-2024 14:00:00','1040000'),
-('HDCT03','KM01','HD03','P03','07-20-2024 14:00:00','07-21-2024 14:00:00','950000'),
-('HDCT04','KM01','HD04','P04','07-21-2024 14:00:00','07-22-2024 14:00:00','1790000'),
-('HDCT05','KM01','HD05','P05','07-21-2024 14:00:00','07-22-2024 14:00:00','1790000')
-=======
-insert into HOADONCHITIET(MA_HDCT,MAKM,MAHD,MA_P,CheckIn,CheckOut,TienPhong,NgayThanhToan)
-values('HDCT01','KM01','HD01','P01','07-19-2024 14:00:00','07-20-2024 14:00:00','940000','07-20-2024'),
-('HDCT02','KM01','HD02','P02','07-18-2024 14:00:00','07-19-2024 14:00:00','1040000','07-19-2024'),
-('HDCT03','KM01','HD03','P03','07-20-2024 14:00:00','07-21-2024 14:00:00','950000','07-21-2024'),
-('HDCT04','KM01','HD04','P04','07-21-2024 14:00:00','07-22-2024 14:00:00','1790000','07-22-2024'),
-('HDCT05','KM01','HD05','P05','07-21-2024 14:00:00','07-22-2024 14:00:00','1790000','07-22-2024')
-
->>>>>>> 1891b94b26e570fa565002517ac79f6a33a9f2c8
+insert into HOADONCHITIET(MA_HDCT,MAHD,MA_P,CheckIn,CheckOut,TienPhong)
+values('HDCT01','HD01','P01','07-19-2024 14:00:00','07-20-2024 14:00:00','940000'),
+('HDCT02','HD02','P02','07-18-2024 14:00:00','07-19-2024 14:00:00','1040000'),
+('HDCT03','HD03','P03','07-20-2024 14:00:00','07-21-2024 14:00:00','950000'),
+('HDCT04','HD04','P04','07-21-2024 14:00:00','07-22-2024 14:00:00','1790000'),
+('HDCT05','HD05','P05','07-21-2024 14:00:00','07-22-2024 14:00:00','1790000');
+-- select
+SELECT * FROM TAIKHOAN
+SELECT * FROM NHANVIEN
+SELECT * FROM KHACHHANG
+SELECT * FROM DICHVU
+SELECT * FROM PHONG
+SELECT * FROM LOAIPHONG
+SELECT * FROM DATDICHVU
+SELECT * FROM HOADON
+SELECT * FROM HOADONCHITIET
