@@ -178,10 +178,10 @@ public class View_HD3 extends javax.swing.JFrame {
     private void btn_HoaDonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_HoaDonActionPerformed
         // TODO add your handling code here:
         
-        if(this.readForm_HD3()!= null){
-            if(rp_HD3.checkTung_HD3(txt_MaHD.getText())!= null){
-                JOptionPane.showMessageDialog(this, "Mã Hóa Đơn đã tồn tại");
-            }
+        if(this.readForm_HD3()== null){
+
+            JOptionPane.showMessageDialog(this, "Mã Hóa Đơn đã tồn tại");
+            
         }else{
             if(rp_HD3.them_HD3(this.readForm_HD3())>0){
                 JOptionPane.showMessageDialog(this, "Tạo hóa đơn thành công");
