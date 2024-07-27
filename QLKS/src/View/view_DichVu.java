@@ -28,17 +28,17 @@ public class view_DichVu extends javax.swing.JFrame {
      */
     public view_DichVu() {
         initComponents();
-        /*this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(null);
         cbo_LoaiDV.removeAllItems();
         cbo_LoaiDV.addItem("DV Thường+Vip");
         cbo_LoaiDV.addItem("DV VIP");
         cbo_LoaiDV.addItem("DV Thường");
-        this.fillTable(rp.getAll_DV());
-        this.fillTableDDV(rp.getAll_DV());
-        i = rp.getAll_DV().size();
-        this.showDaTa_DV(i - 1);
-        tbl_DV.setRowSelectionInterval(i - 1, i - 1);
-*/
+       // this.fillTable(rp.getAll_DV());
+       // this.fillTableDDV(rp.getAll_DV());
+       // i = rp.getAll_DV().size();
+      //  this.showDaTa_DV(i - 1);
+      //  tbl_DV.setRowSelectionInterval(i - 1, i - 1);
+
     }
 
     /*private void fillTable(ArrayList<model.Model_DichVu> list) {
@@ -49,16 +49,20 @@ public class view_DichVu extends javax.swing.JFrame {
 
         }
     }
-<<<<<<< HEAD:QLKS/src/view/view_DichVu.java
 
+<<<<<<< HEAD
+
+=======
 =======
 <<<<<<< HEAD:QLKS/src/view/view_DichVu.java
 
     // haaaaaaaaaaaaaaaaaaaaa    
 =======
 >>>>>>> ac41e8a70cd48c9e60fef344b7ee986603c4bbee:QLKS/src/View/view_DichVu.java
+>>>>>>> 74f9c276e2257c5e2fd1b0b9557a3d50f9a170ab
     
->>>>>>> 80559f7a84693bb8e2566d22c6830e3a46e09d95:QLKS/src/View/view_DichVu.java
+    
+
     private void fillTableDDV(ArrayList<Model_DichVu> list) {
         mol = (DefaultTableModel) tbl_DDV.getModel();
         mol.setRowCount(0);
@@ -67,7 +71,6 @@ public class view_DichVu extends javax.swing.JFrame {
 
         }
     }
-<<<<<<< HEAD:QLKS/src/view/view_DichVu.java
     
     private void fillTable_CTTKH(ArrayList<Model_DichVu> list){
         mol = (DefaultTableModel) tbl_KH.getModel();
@@ -80,8 +83,12 @@ public class view_DichVu extends javax.swing.JFrame {
 =======
 =======
     */
+<<<<<<< HEAD
+
+=======
 >>>>>>> 80559f7a84693bb8e2566d22c6830e3a46e09d95:QLKS/src/View/view_DichVu.java
 >>>>>>> ac41e8a70cd48c9e60fef344b7ee986603c4bbee:QLKS/src/View/view_DichVu.java
+>>>>>>> 74f9c276e2257c5e2fd1b0b9557a3d50f9a170ab
 
     /**
      * This method is called from within the constructor to initialize the form.
