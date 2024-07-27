@@ -48,13 +48,13 @@ public class View_Login extends javax.swing.JFrame {
         txt_MatKhau = new javax.swing.JPasswordField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-<<<<<<< HEAD
+
         jButton1 = new javax.swing.JButton();
         btn_Login = new javax.swing.JButton();
-=======
+
         btn_Reset = new javax.swing.JButton();
         btn_Thoat = new javax.swing.JButton();
->>>>>>> c56277f472acc8e641cb7ef27582ea0d05774a83
+
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("LOGIN");
@@ -80,11 +80,11 @@ public class View_Login extends javax.swing.JFrame {
 
         txt_MatKhau.setText("jPasswordField1");
 
-<<<<<<< HEAD
+
         jButton1.setBackground(new java.awt.Color(255, 255, 204));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setText("RESET");
-=======
+
         btn_Login.setBackground(new java.awt.Color(255, 204, 153));
         btn_Login.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_Login.setText("ĐĂNG NHẬP");
@@ -112,7 +112,7 @@ public class View_Login extends javax.swing.JFrame {
                 btn_ThoatActionPerformed(evt);
             }
         });
->>>>>>> c56277f472acc8e641cb7ef27582ea0d05774a83
+
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -127,7 +127,7 @@ public class View_Login extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
+
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,7 +141,7 @@ public class View_Login extends javax.swing.JFrame {
                         .addGap(308, 308, 308)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(13, Short.MAX_VALUE))
-=======
+
                     .addComponent(jLabel4)
                     .addComponent(jLabel5))
                 .addGap(38, 38, 38)
@@ -157,7 +157,7 @@ public class View_Login extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btn_Thoat, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
->>>>>>> c56277f472acc8e641cb7ef27582ea0d05774a83
+
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,18 +176,18 @@ public class View_Login extends javax.swing.JFrame {
                     .addComponent(txt_MatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
+
                 .addGap(9, 9, 9)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(159, Short.MAX_VALUE))
-=======
+
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_Login)
                     .addComponent(btn_Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_Thoat))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
->>>>>>> c56277f472acc8e641cb7ef27582ea0d05774a83
+
         );
 
         btn_Login.setBackground(new java.awt.Color(255, 204, 153));
