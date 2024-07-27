@@ -13,7 +13,7 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 import repositories.Repositories_DP3;
 import Model.Model_DSPhong;
-import view.view_DichVu;
+
 /**
  *
  * @author Chi Dat
@@ -31,7 +31,7 @@ public class View_DatPhong3 extends javax.swing.JFrame {
     public View_DatPhong3() {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.fillTable_DSPhong(rp_DSP.getAll_DSPhong());
+        //this.fillTable_DSPhong(rp_DSP.getAll_DSPhong());
         
     }
     // đẩy dữ liệu lên bảng thông tin phòng 
@@ -462,9 +462,7 @@ public class View_DatPhong3 extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_TimKiemActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        view.view_DichVu dv = new view_DichVu();
-        dv.setVisible(true);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
