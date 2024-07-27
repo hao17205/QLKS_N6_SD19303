@@ -51,6 +51,9 @@ public class view_DichVu extends javax.swing.JFrame {
 
         }
     }
+<<<<<<< HEAD
+    // haaaaaaaaaaaaaaaaaaaaaa
+=======
     
     private void fillTableDDV(ArrayList<Model_DichVu> list) {
         mol = (DefaultTableModel) tbl_DDV.getModel();
@@ -68,6 +71,7 @@ public class view_DichVu extends javax.swing.JFrame {
             mol.addRow(x.toDaTaRow_CTT());
     }
     }
+>>>>>>> c56277f472acc8e641cb7ef27582ea0d05774a83
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -446,11 +450,16 @@ public class view_DichVu extends javax.swing.JFrame {
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+<<<<<<< HEAD
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE))
+=======
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_TKDDV, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tbn_TKDDV))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+>>>>>>> c56277f472acc8e641cb7ef27582ea0d05774a83
         );
 
         jPanel7.setBackground(new java.awt.Color(255, 204, 204));
@@ -663,8 +672,13 @@ public class view_DichVu extends javax.swing.JFrame {
                 .addGap(2, 2, 2)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+<<<<<<< HEAD
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(134, 134, 134))
+=======
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 156, Short.MAX_VALUE)
                 .addContainerGap())
+>>>>>>> c56277f472acc8e641cb7ef27582ea0d05774a83
         );
 
         jTabbedPane1.addTab("Đặt Dịch Vụ", jPanel5);

@@ -39,10 +39,19 @@ public class Repositories_HDCT {
                 String maP = rs.getString("MA_P");
                 Date checkIn = rs.getDate("CheckIn");
                 Date checkOut = rs.getDate("CheckOut");
-<<<<<<< HEAD
 
                 double tienPhong = rs.getDouble("TienPhong");
 
+<<<<<<< HEAD
+                double tongTienPhong = rs.getDouble("TongTienPhong");
+                String ngayThanhToan_HDCT = rs.getString("NgayThanhToan");
+
+                //double tienPhong = rs.getDouble("TienPhong");
+
+                double tienPhong = rs.getDouble("TienPhong");
+
+=======
+>>>>>>> c56277f472acc8e641cb7ef27582ea0d05774a83
 
                 Model_TT tt = new Model_TT(maP, maP, maP, maP, maP, 0, tienPhong, 0, tienPhong, tienPhong, maP, checkOut, checkOut, tienPhong, tienPhong, tienPhong, tienPhong, maHDCT, maHD_HDCT, maP, checkIn, checkOut, tienPhong);
 =======
