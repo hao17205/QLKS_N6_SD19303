@@ -576,7 +576,7 @@ public class view_DichVu extends javax.swing.JFrame {
                     .addComponent(jLabel13))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-<<<<<<< HEAD
+
                     .addComponent(btn_tinhToan)
                     .addComponent(btn_cancel)
                     .addComponent(btn_luu))
@@ -628,7 +628,7 @@ public class view_DichVu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32))
-=======
+
                     .addComponent(jLabel11)
                     .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_cancel))
@@ -645,7 +645,7 @@ public class view_DichVu extends javax.swing.JFrame {
                     .addComponent(jLabel14)
                     .addComponent(txt_maPhong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(8, Short.MAX_VALUE))
->>>>>>> ddbe87edaaf5a2e737366ed8b5ee5f593fd2390c
+
         );
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
