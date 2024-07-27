@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.util.Date;
+
 /**
  *
  * @author rinbo
@@ -72,4 +74,106 @@ public class Model_DichVu {
             
         };
     }
+    // MoDel Đặt Dịch Vụ
+    private String maDDV;
+    private String maP;
+    private int soLuong;
+    private Date ngayDat;
+    private double tongTien;
+    private String maHD;
+
+    public Model_DichVu(String maDDV, String maP,String maDV, String tenDV, int soLuong, double gia, Date ngayDat, double tongTien, String maHD) {
+        this.maDDV = maDDV;
+        this.maP = maP;
+        this.maDV = maDV;
+        this.tenDV = tenDV;  
+        this.soLuong = soLuong;
+        this.gia = gia;
+        this.ngayDat = ngayDat;
+        this.tongTien = tongTien;
+        this.maHD = maHD;
+    }
+
+    public String getMaDDV() {
+        return maDDV;
+    }
+
+    public void setMaDDV(String maDDV) {
+        this.maDDV = maDDV;
+    }
+
+    public String getMaP() {
+        return maP;
+    }
+
+    public void setMaP(String maP) {
+        this.maP = maP;
+    }
+
+    public int getSoLuong() {
+        return soLuong;
+    }
+
+    public void setSoLuong(int soLuong) {
+        this.soLuong = soLuong;
+    }
+
+    public Date getNgayDat() {
+        return ngayDat;
+    }
+
+    public void setNgayDat(Date ngayDat) {
+        this.ngayDat = ngayDat;
+    }
+
+    public double getTongTien() {
+        return tongTien;
+    }
+
+    public void setTongTien(double tongTien) {
+        this.tongTien = tongTien;
+    }
+
+    public String getMaHD() {
+        return maHD;
+    }
+
+    public void setMaHD(String maHD) {
+        this.maHD = maHD;
+    }
+    
+    public Object[] toDaTaRow_DDV(){
+        return new Object[]{this.maDDV, this.maP, this.maDV, this.tenDV, this.soLuong, this.gia, this.ngayDat, this.tongTien, this.maHD};
+    }
+   // lập model bảng check thông tin
+   
+    private String tenKH;
+    private String SĐT;
+
+    public Model_DichVu(String maHD, String maP, String tenKH, String SĐT) {
+        this.maHD = maHD;
+        this.maP = maP;
+        this.tenKH = tenKH;
+        this.SĐT = SĐT;
+    }
+
+    public String getTenKH() {
+        return tenKH;
+    }
+
+    public void setTenKH(String tenKH) {
+        this.tenKH = tenKH;
+    }
+
+    public String getSĐT() {
+        return SĐT;
+    }
+
+    public void setSĐT(String SĐT) {
+        this.SĐT = SĐT;
+    }
+    public Object[] toDaTaRow_CTT(){
+        return new Object[]{this.maHD, this.maP, this.tenKH, this.SĐT};
+}
+    
 }

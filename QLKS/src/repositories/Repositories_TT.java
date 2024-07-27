@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package repositories;
 
 import Model.Model_TT;
@@ -12,10 +8,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-/**
- *
- * @author ADMIN
- */
 public class Repositories_TT {
 
     private Connection con = null;
@@ -24,7 +16,7 @@ public class Repositories_TT {
     private String sql = null;
 
     public ArrayList<Model_TT> getBasicInfo_HD() {
-        String sql = "SELECT MAHD, MAKH, MaNV, SoDienThoai, DiaChi, NgayXuatDon, TienCoc FROM HOADON WHERE TrangThai IS NULL;";
+        sql = "SELECT MAHD, MAKH, MaNV, SoDienThoai, DiaChi, NgayXuatDon, TienCoc FROM HOADON WHERE TrangThai is Null;";
         ArrayList<Model_TT> listHoaDon = new ArrayList<>();
         try {
             con = DBconnect.getConnection();
@@ -39,22 +31,19 @@ public class Repositories_TT {
                 Date ngayXuatDon = rs.getDate("NgayXuatDon");
                 double tienCoc = rs.getDouble("TienCoc");
 
-                Model_TT tt = new Model_TT(maHD, maNV, maKH, soDienThoai, diaChi, 0, tienCoc, 0, tienCoc, tienCoc, diaChi, ngayXuatDon, ngayXuatDon, tienCoc, tienCoc, tienCoc, tienCoc, maHD, maHD, maNV, ngayXuatDon, ngayXuatDon, tienCoc);
+                Model_TT tt = new Model_TT(maHD, maNV, maKH, soDienThoai, diaChi, 0, 0, 0, 0, 0, "", ngayXuatDon, null, 0, tienCoc, 0, 0, null, null, null, null, null, 0);
                 listHoaDon.add(tt);
             }
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            closeResources();
         }
         return listHoaDon;
     }
 
     public ArrayList<Model_TT> getTongTienDV_HD() {
-        String sql = "SELECT ddv.TongTien * COUNT(hdct.MA_HDCT) AS TongTienDV "
-                + "FROM HOADON hd "
-                + "JOIN HOADONCHITIET hdct ON hd.MAHD = hdct.MAHD "
-                + "JOIN DatDichVu ddv ON hd.MAHD = ddv.MaHD "
-                + "WHERE hd.TrangThai IS NULL "
-                + "GROUP BY ddv.TongTien;";
+        sql = "SELECT SUM(ddv.TongTien) AS TongTienDV FROM HOADON hd JOIN HOADONCHITIET hdct ON hd.MAHD = hdct.MAHD JOIN DatDichVu ddv ON hd.MAHD = ddv.MaHD WHERE hd.TrangThai is Null GROUP BY hd.MAHD;";
         ArrayList<Model_TT> listHoaDon = new ArrayList<>();
         try {
             con = DBconnect.getConnection();
@@ -63,36 +52,52 @@ public class Repositories_TT {
             while (rs.next()) {
                 double tongTienDV = rs.getDouble("TongTienDV");
 
-                Model_TT tt = new Model_TT("", "", "", "", "", 0, tongTienDV, 0, tongTienDV, tongTienDV, "", null, null, tongTienDV, tongTienDV, tongTienDV, tongTienDV, "", "", "", null, null, tongTienDV);
+                Model_TT tt = new Model_TT("", "", "", "", "", 0, 0, 0, tongTienDV, 0, "", null, null, 0, 0, 0, 0, null, null, null, null, null, 0);
                 listHoaDon.add(tt);
             }
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            closeResources();
         }
         return listHoaDon;
     }
 
     public ArrayList<Model_TT> getTongTienPhong_HD() {
-        String sql = "SELECT COUNT(hdct.MA_HDCT) AS SoLuongChiTiet, SUM(hdct.TienPhong) AS TongTienPhong "
-                + "FROM HOADON hd "
-                + "JOIN HOADONCHITIET hdct ON hd.MAHD = hdct.MaHD "
-                + "WHERE hd.TrangThai IS NULL;";
+        sql = "SELECT COUNT(hdct.MA_HDCT) AS SoLuongChiTiet, SUM(hdct.TienPhong) AS TongTienPhong FROM HOADON hd JOIN HOADONCHITIET hdct ON hd.MAHD = hdct.MaHD WHERE hd.TrangThai is Null;";
         ArrayList<Model_TT> listHoaDon = new ArrayList<>();
         try {
             con = DBconnect.getConnection();
             pr = con.prepareStatement(sql);
             rs = pr.executeQuery();
-            while (rs.next()) {
+            if (rs.next()) {
                 int soLuongChiTiet = rs.getInt("SoLuongChiTiet");
                 double tongTienPhong = rs.getDouble("TongTienPhong");
 
-                Model_TT tt = new Model_TT("", "", "", "", "", soLuongChiTiet, tongTienPhong, 0, tongTienPhong, tongTienPhong, "", null, null, tongTienPhong, tongTienPhong, tongTienPhong, tongTienPhong, "", "", "", null, null, tongTienPhong);
+                Model_TT tt = new Model_TT("", "", "", "", "", soLuongChiTiet, 0, 0, 0, tongTienPhong, "", null, null, 0, 0, 0, 0, null, null, null, null, null, 0);
                 listHoaDon.add(tt);
             }
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            closeResources();
         }
         return listHoaDon;
     }
 
+    private void closeResources() {
+        try {
+            if (rs != null) {
+                rs.close();
+            }
+            if (pr != null) {
+                pr.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

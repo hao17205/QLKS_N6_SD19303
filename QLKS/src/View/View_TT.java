@@ -54,15 +54,15 @@ public class View_TT extends javax.swing.JFrame {
         i = rp_HDCT.getAll_HDCT().size();
         this.showData_HDCT(i - 1);
         tbl_HDCT.setRowSelectionInterval(i - 1, i - 1);
-        
+
         i = rp_TT.getBasicInfo_HD().size();
         this.showData_TT(i - 1);
         tbl_HDCT.setRowSelectionInterval(i - 1, i - 1);
-        
+
         i = rp_TT.getTongTienDV_HD().size();
         this.showData_TT_DV(i - 1);
         tbl_HDCT.setRowSelectionInterval(i - 1, i - 1);
-        
+
         i = rp_TT.getTongTienPhong_HD().size();
         this.showData_TT_P(i - 1);
         tbl_HDCT.setRowSelectionInterval(i - 1, i - 1);
@@ -72,7 +72,13 @@ public class View_TT extends javax.swing.JFrame {
         mol = (DefaultTableModel) tbl_HD.getModel();
         mol.setRowCount(0);
         for (Model_TT x : list_HD) {
-            mol.addRow(x.toDataRow_HD());
+            Object[] rowData = x.toDataRow_HD();
+            for (int i = 0; i < rowData.length; i++) {
+                if (rowData[i] == null) {
+                    rowData[i] = ""; // Thay thế giá trị null bằng chuỗi trống
+                }
+            }
+            mol.addRow(rowData);
         }
     }
 
@@ -80,7 +86,13 @@ public class View_TT extends javax.swing.JFrame {
         mol = (DefaultTableModel) tbl_HDCT.getModel();
         mol.setRowCount(0);
         for (Model_TT x : list_HDCT) {
-            mol.addRow(x.toDataRow_HDCT());
+            Object[] rowData = x.toDataRow_HDCT();
+            for (int i = 0; i < rowData.length; i++) {
+                if (rowData[i] == null) {
+                    rowData[i] = ""; // Thay thế giá trị null bằng chuỗi trống
+                }
+            }
+            mol.addRow(rowData);
         }
     }
 
@@ -88,7 +100,13 @@ public class View_TT extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) tbl_HDCT1.getModel();
         model.setRowCount(0);
         for (Model_TT x : list_HDCT) {
-            model.addRow(x.toDataRow_HDCT());
+            Object[] rowData = x.toDataRow_HDCT();
+            for (int i = 0; i < rowData.length; i++) {
+                if (rowData[i] == null) {
+                    rowData[i] = ""; // Thay thế giá trị null bằng chuỗi trống
+                }
+            }
+            model.addRow(rowData);
         }
     }
 
@@ -98,19 +116,19 @@ public class View_TT extends javax.swing.JFrame {
 
         for (Model_TT tt : listHD) {
             model.addRow(new Object[]{
-                tt.getMaHD(),
-                tt.getTenNV(),
-                tt.getTenKH(),
-                tt.getSoDienThoai(),
-                tt.getDiaChi(),
+                tt.getMaHD() == null ? "" : tt.getMaHD(),
+                tt.getTenNV() == null ? "" : tt.getTenNV(),
+                tt.getTenKH() == null ? "" : tt.getTenKH(),
+                tt.getSoDienThoai() == null ? "" : tt.getSoDienThoai(),
+                tt.getDiaChi() == null ? "" : tt.getDiaChi(),
                 tt.getSoPhongDat(),
                 tt.getGiaBanDau(),
                 tt.getKhuyenMai(),
                 tt.getTongTienDichVu(),
                 tt.getTongTienPhong(),
-                tt.getTrangThai(),
-                tt.getNgayXuatDon(),
-                tt.getNgayThanhToan(),
+                tt.getTrangThai() == null ? "" : tt.getTrangThai(),
+                tt.getNgayXuatDon() == null ? "" : tt.getNgayXuatDon(),
+                tt.getNgayThanhToan() == null ? "" : tt.getNgayThanhToan(),
                 tt.getThue(),
                 tt.getTienCoc(),
                 tt.getTongTien(),
@@ -123,7 +141,13 @@ public class View_TT extends javax.swing.JFrame {
         mol = (DefaultTableModel) tbl_ThanhToan.getModel();
         mol.setRowCount(0);
         for (Model_TT x : list_TT) {
-            mol.addRow(x.toDataRow_TT());
+            Object[] rowData = x.toDataRow_TT();
+            for (int i = 0; i < rowData.length; i++) {
+                if (rowData[i] == null) {
+                    rowData[i] = ""; // Thay thế giá trị null bằng chuỗi trống
+                }
+            }
+            mol.addRow(rowData);
         }
     }
 
@@ -131,7 +155,13 @@ public class View_TT extends javax.swing.JFrame {
         mol = (DefaultTableModel) tbl_DV.getModel();
         mol.setRowCount(0);
         for (Model_TT x : list_TT) {
-            mol.addRow(x.toDataRow_TT_DV());
+            Object[] rowData = x.toDataRow_TT_DV();
+            for (int i = 0; i < rowData.length; i++) {
+                if (rowData[i] == null) {
+                    rowData[i] = ""; // Thay thế giá trị null bằng chuỗi trống
+                }
+            }
+            mol.addRow(rowData);
         }
     }
 
@@ -139,7 +169,13 @@ public class View_TT extends javax.swing.JFrame {
         mol = (DefaultTableModel) tbl_P.getModel();
         mol.setRowCount(0);
         for (Model_TT x : list_TT) {
-            mol.addRow(x.toDataRow_TT_P());
+            Object[] rowData = x.toDataRow_TT_P();
+            for (int i = 0; i < rowData.length; i++) {
+                if (rowData[i] == null) {
+                    rowData[i] = ""; // Thay thế giá trị null bằng chuỗi trống
+                }
+            }
+            mol.addRow(rowData);
         }
     }
 
@@ -604,30 +640,33 @@ public class View_TT extends javax.swing.JFrame {
                     .addComponent(txt_TK3, javax.swing.GroupLayout.DEFAULT_SIZE, 1036, Short.MAX_VALUE))
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel19Layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(btn_Tk3, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel19Layout.createSequentialGroup()
                         .addGap(62, 62, 62)
                         .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel19Layout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addComponent(btn_Tk3, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(107, 107, 107))
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel19Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_TK3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel19Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(txt_TK3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btn_Tk3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel19Layout.createSequentialGroup()
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 12, Short.MAX_VALUE))
+                    .addGroup(jPanel19Layout.createSequentialGroup()
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(18, Short.MAX_VALUE))
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         jPanel20.setBackground(new java.awt.Color(255, 255, 255));
@@ -795,7 +834,6 @@ public class View_TT extends javax.swing.JFrame {
 
         buttonGroup1.add(rdo_CTT);
         rdo_CTT.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        rdo_CTT.setSelected(true);
         rdo_CTT.setText("Chưa Thanh Toán");
 
         buttonGroup1.add(rdo_DTT);
@@ -1796,12 +1834,12 @@ public class View_TT extends javax.swing.JFrame {
 
         txt_TC1.setText(tbl_ThanhToan.getValueAt(i, 6).toString());
     }
-    
+
     void showData_TT_DV(int i) {
         txt_TTDV1.setText(tbl_DV.getValueAt(i, 0).toString());
-        
+
     }
-    
+
     void showData_TT_P(int i) {
         txt_SPD.setText(tbl_P.getValueAt(i, 0).toString());
         txt_TTP1.setText(tbl_P.getValueAt(i, 1).toString());
