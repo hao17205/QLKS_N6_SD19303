@@ -631,6 +631,7 @@
                               <Component id="txt_maDV" alignment="0" max="32767" attributes="0"/>
                               <Component id="txt_maHD" alignment="0" max="32767" attributes="0"/>
                           </Group>
+<<<<<<< HEAD
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
@@ -653,6 +654,13 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="spn_SoLuong" min="-2" pref="146" max="-2" attributes="0"/>
                               </Group>
+=======
+                          <EmptySpace pref="320" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="btn_tinhToan" max="32767" attributes="0"/>
+                              <Component id="btn_luu" max="32767" attributes="0"/>
+                              <Component id="btn_cancel" alignment="0" max="32767" attributes="0"/>
+>>>>>>> ddbe87edaaf5a2e737366ed8b5ee5f593fd2390c
                           </Group>
                           <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
                       </Group>
@@ -695,6 +703,24 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txt_tenDV" alignment="3" min="-2" max="-2" attributes="0"/>
+<<<<<<< HEAD
+=======
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jSpinner1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_cancel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel12" alignment="3" min="-2" pref="15" max="-2" attributes="0"/>
+                              <Component id="txt_gia" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+>>>>>>> ddbe87edaaf5a2e737366ed8b5ee5f593fd2390c
                               <Component id="txt_tongTien" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -704,7 +730,11 @@
                               <Component id="btn_cancel" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btn_luu" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
+<<<<<<< HEAD
                           <EmptySpace max="32767" attributes="0"/>
+=======
+                          <EmptySpace pref="8" max="32767" attributes="0"/>
+>>>>>>> ddbe87edaaf5a2e737366ed8b5ee5f593fd2390c
                       </Group>
                   </Group>
                 </DimensionLayout>
