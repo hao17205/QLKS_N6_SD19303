@@ -13,16 +13,16 @@ import repositories.Repositories_LG;
  *
  * @author Chi Dat
  */
-public class View_Login1 extends javax.swing.JFrame {
+public class View_Login extends javax.swing.JFrame {
 
-    private repositories.Repositories_LG rp_LG = new Repositories_LG();
-    private DefaultTableModel mol = new DefaultTableModel();
-    private int i;
+//    private repositories.Repositories_LG rp_LG = new Repositories_LG();
+ //   private DefaultTableModel mol = new DefaultTableModel();
+   // private int i;
 
     /**
      * Creates new form View_Login
      */
-    public View_Login1() {
+    public View_Login() {
         initComponents();
         this.setLocationRelativeTo(null);
 
@@ -202,7 +202,7 @@ public class View_Login1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LoginActionPerformed
-        String tenDangNhap = txt_TaiKhoan.getText().trim();
+        /*String tenDangNhap = txt_TaiKhoan.getText().trim();
         String matKhau = new String(txt_MatKhau.getPassword()).trim();
 
         // Kiểm tra dữ liệu nhập vào
@@ -229,18 +229,19 @@ public class View_Login1 extends javax.swing.JFrame {
             // Đăng nhập thất bại
             JOptionPane.showMessageDialog(this, "Tên đăng nhập hoặc mật khẩu không đúng!");
         }
-
+*/
     }//GEN-LAST:event_btn_LoginActionPerformed
 
     private void btn_ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ResetActionPerformed
-        // TODO add your handling code here:
+      /*  // TODO add your handling code here:
         txt_TaiKhoan.setText("");
         txt_MatKhau.setText("");
+        */
     }//GEN-LAST:event_btn_ResetActionPerformed
 
     private void btn_ThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ThoatActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
+       // System.exit(0);
     }//GEN-LAST:event_btn_ThoatActionPerformed
 
     /**
@@ -260,13 +261,13 @@ public class View_Login1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(View_Login1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(View_Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(View_Login1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(View_Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(View_Login1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(View_Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(View_Login1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(View_Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -288,7 +289,7 @@ public class View_Login1 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new View_Login1().setVisible(true);
+                new View_Login().setVisible(true);
             }
         });
     }
@@ -310,7 +311,7 @@ public class View_Login1 extends javax.swing.JFrame {
     private javax.swing.JTextField txt_TaiKhoan;
     // End of variables declaration//GEN-END:variables
 
-    private Model_LG readForm() {
+   /* private Model_LG readForm() {
 
         String tenDangNhap;
         String matKhau;
@@ -330,5 +331,5 @@ public class View_Login1 extends javax.swing.JFrame {
         }
         return new Model_LG(tenDangNhap, matKhau);
     }
-
+*/
 }
