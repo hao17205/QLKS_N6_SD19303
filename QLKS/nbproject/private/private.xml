@@ -4,47 +4,35 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
 <<<<<<< HEAD
-            <file>file:/D:/DuAn1/QLKS/src/View/View_QLKH.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/View/View_NhanVien.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/View/View_DatPhong3.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/Model/Model_DichVu.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/View/View_KM.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/View/View_TrangChu.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/repositories/Repositories_DichVu.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/View/View_ThongKe.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/repositories/Repositories_NhanVien.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/repositories/Repositories_HD.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/Model/Model_TT.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/repositories/Repositories_HDCT.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/View/view_DichVu.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/Model/Model_KM.java</file>
-            <file>file:/D:/DuAn1/QLKS/src/View/View_TT.java</file>
+            <file>file:/D:/javaaaaaaa/QLKS/src/repositories/Repositories_HDCT.java</file>
+            <file>file:/D:/javaaaaaaa/QLKS/src/View/View_KM.java</file>
+            <file>file:/D:/javaaaaaaa/QLKS/src/View/view_DichVu.java</file>
+            <file>file:/D:/javaaaaaaa/QLKS/src/View/View_Login.java</file>
+            <file>file:/D:/javaaaaaaa/QLKS/src/View/View_DatPhong3.java</file>
+            <file>file:/D:/javaaaaaaa/QLKS/src/repositories/Repositories_KM.java</file>
 =======
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/repositories/Repositories_DP3.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/Model/Model_KM.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/Model/Model_TK.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/Model/Model_DP3.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/View/View_TrangChu.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/Model/Model_DatPhong.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/repositories/Repositories_KH.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/Model/Model_TT.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/Model/Model_DSPhong.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/Model/Model_TrangChu.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/repositories/Repositories_DichVu.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/View/View_Login.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/View/View_ThongKe.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/View/View_NhanVien.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/repositories/Repositories_HD.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/View/View_TT.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/View/View_QLKH.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/View/View_HD3.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/View/View_DatPhong3.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/repositories/Repositories_HD3.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/repositories/Repositories_HDCT.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/View/view_DichVu.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/repositories/Repositories_TTPhong.java</file>
-            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1/QLKS/src/Model/Model_HD3.java</file>
->>>>>>> 1183bbc9d7c44ed3805bc58e30e924f84f7beae3
+<<<<<<< HEAD
+            <file>file:/D:/NEW_JAAAA/QLKS/src/View/view_DichVu.java</file>
+=======
+            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1_N6/QLKS/src/View/View_HD3.java</file>
+            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1_N6/QLKS/src/Model/Model_DatPhong.java</file>
+            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1_N6/QLKS/src/repositories/Repositories_HDCT.java</file>
+            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1_N6/QLKS/src/repositories/Repositories_TTPhong.java</file>
+            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1_N6/QLKS/src/repositories/Repositories_HD.java</file>
+            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1_N6/QLKS/src/View/View_DatPhong3.java</file>
+            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1_N6/QLKS/src/repositories/Repositories_KM.java</file>
+            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1_N6/QLKS/src/repositories/Repositories_KH.java</file>
+            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1_N6/QLKS/src/Model/Model_DSPhong.java</file>
+            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1_N6/QLKS/src/View/View_TT.java</file>
+            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1_N6/QLKS/src/Model/Model_QLKH.java</file>
+            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1_N6/QLKS/src/View/View_KM.java</file>
+            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1_N6/QLKS/src/repositories/Repositories_HD3.java</file>
+            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1_N6/QLKS/src/View/View_Login.java</file>
+            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1_N6/QLKS/src/dbconnect/DBconnect.java</file>
+            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1_N6/QLKS/src/View/View_QLKH.java</file>
+            <file>file:/C:/Users/Chi%20Dat/Desktop/DA1_N6/QLKS/src/repositories/Repositories_DP3.java</file>
+>>>>>>> 2709c8b1f94481e03db3b2ba5e42eb45f0b64da1
+>>>>>>> c56277f472acc8e641cb7ef27582ea0d05774a83
         </group>
     </open-files>
 </project-private>

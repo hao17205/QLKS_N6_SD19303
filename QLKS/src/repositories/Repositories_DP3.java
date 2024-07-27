@@ -77,5 +77,20 @@ public class Repositories_DP3 {
             return 0;
         }
     }
-    
+    public boolean checkTrung_DP3(String maHDCT1){
+        sql = "select MA_HDCT from HOADONCHITIET\n" +
+"where MA_HDCT = ?";
+        try {
+            con = DBconnect.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setObject(1,maHDCT1 );
+            rs = ps.executeQuery();
+            return rs.next();
+                    
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
