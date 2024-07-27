@@ -122,4 +122,30 @@ public class Repositories_DichVu {
             return null;
         }
     }
+    //Getall Thông Tin hóa Đơn
+    public ArrayList<Model_DichVu> getAll_CTTKH(){
+        ArrayList<Model_DichVu> list_CTTKH = new ArrayList<>();
+        sql = "SELECT HOADON.MAHD, MA_P, TenKhachHang, HOADON.SoDienThoai \n" +
+"                     FROM HOADON \n" +
+"                     JOIN HOADONCHITIET ON HOADON.MAHD = HOADONCHITIET.MAHD  \n" +
+"                     JOIN KHACHHANG ON KHACHHANG.MAKH = HOADON.MAKH \n" +
+"                     WHERE TrangThai IS NULL";
+        try {
+            con = dbconnect.DBconnect.getConnection();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {                
+                String maHD = rs.getString(1);
+                String maPhong = rs.getString(2);
+                String tenKH = rs.getString(3);
+                String soDT = rs.getString(4);
+                Model_DichVu m = new Model_DichVu(maHD, maHD, tenKH, soDT);
+                list_CTTKH.add(m);
+            }
+            return list_CTTKH;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

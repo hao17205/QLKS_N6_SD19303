@@ -24,8 +24,10 @@ public class Repositories_HDCT {
     private String sql = null;
 
     public ArrayList<Model_TT> getAll_HDCT() {
-        sql = "SELECT HDCT.MA_HDCT,  HDCT.MAHD, HDCT.MA_P, HDCT.CheckIn, HDCT.CheckOut, HDCT.TienPhong \n"
-                + "          FROM HOADONCHITIET HDCT ";
+        sql = "SELECT HDCT.MA_HDCT, HDCT.MAHD, HDCT.MA_P, HDCT.CheckIn, HDCT.CheckOut, HDCT.TienPhong \n"
+                + "FROM HOADONCHITIET HDCT \n"
+                + "JOIN HOADON HD ON HDCT.MAHD = HD.MAHD \n"
+                + "WHERE HD.TrangThai = 'Đã Thanh Toán';";
         ArrayList<Model_TT> listHoaDonChiTiet = new ArrayList<>();
         try {
             con = DBconnect.getConnection();
@@ -33,16 +35,14 @@ public class Repositories_HDCT {
             rs = pr.executeQuery();
             while (rs.next()) {
                 String maHDCT = rs.getString("MA_HDCT");
-                String maHD_HDCT = rs.getString("MAHD");
+                String maHD = rs.getString("MAHD");
                 String maP = rs.getString("MA_P");
                 Date checkIn = rs.getDate("CheckIn");
                 Date checkOut = rs.getDate("CheckOut");
 
                 double tienPhong = rs.getDouble("TienPhong");
-                double giaBanDau = rs.getDouble("GiaBanDau");
-                double giaSauKhuyenMai = rs.getDouble("GiaSauKhuyenMai");
-                double tongGiaDichVu = rs.getDouble("TongGiaDichVu");
 
+<<<<<<< HEAD
                 double tongTienPhong = rs.getDouble("TongTienPhong");
                 String ngayThanhToan_HDCT = rs.getString("NgayThanhToan");
 
@@ -50,8 +50,15 @@ public class Repositories_HDCT {
 
                 double tienPhong = rs.getDouble("TienPhong");
 
+=======
+>>>>>>> c56277f472acc8e641cb7ef27582ea0d05774a83
 
                 Model_TT tt = new Model_TT(maP, maP, maP, maP, maP, 0, tienPhong, 0, tienPhong, tienPhong, maP, checkOut, checkOut, tienPhong, tienPhong, tienPhong, tienPhong, maHDCT, maHD_HDCT, maP, checkIn, checkOut, tienPhong);
+=======
+                double tienPhong = rs.getDouble("TienPhong");
+
+                Model_TT tt = new Model_TT(maP, maP, maP, maP, maP, 0, tienPhong, 0, tienPhong, tienPhong, maP, checkOut, checkOut, tienPhong, tienPhong, tienPhong, tienPhong, maHDCT, maHD, maP, checkIn, checkOut, tienPhong);
+>>>>>>> 760a1020a55abd0ca60cb045ed6b50f3440ff36a
                 listHoaDonChiTiet.add(tt);
             }
         } catch (Exception e) {
@@ -61,20 +68,20 @@ public class Repositories_HDCT {
     }
 
     public ArrayList<Model_TT> timkiem_MHDCT(String searchTerm) {
-        String sql = "SELECT HDCT.MA_HDCT,  HDCT.MAHD, HDCT.MA_P, HDCT.CheckIn, HDCT.CheckOut, HDCT.TienPhong \n"
-                + "          FROM HOADONCHITIET HDCT "
-                + "WHERE HDCT.MA_HDCT LIKE ? OR HDCT.MAHD LIKE ? OR HDCT.MA_P LIKE ?;";
+        String sql = "SELECT HDCT.MA_HDCT, HDCT.MAHD, HDCT.MA_P, HDCT.CheckIn, HDCT.CheckOut, HDCT.TienPhong \n"
+                + "FROM HOADONCHITIET HDCT \n"
+                + "JOIN HOADON HD ON HDCT.MAHD = HD.MAHD \n"
+                + "WHERE (HDCT.MA_HDCT LIKE ? OR HDCT.MAHD LIKE ? OR HDCT.MA_P LIKE ?) \n"
+                + "AND HD.TrangThai = 'Đã Thanh Toán';";
 
         ArrayList<Model_TT> listHoaDonChiTiet = new ArrayList<>();
         try {
             con = DBconnect.getConnection();
             pr = con.prepareStatement(sql);
-
             String searchPattern = '%' + searchTerm + '%';
             pr.setString(1, searchPattern);
             pr.setString(2, searchPattern);
             pr.setString(3, searchPattern);
-
             rs = pr.executeQuery();
             while (rs.next()) {
                 String maHDCT = rs.getString("MA_HDCT");
@@ -85,7 +92,6 @@ public class Repositories_HDCT {
                 double tienPhong = rs.getDouble("TienPhong");
 
                 Model_TT tt = new Model_TT(maHD, maP, maP, searchTerm, maHD, 0, tienPhong, 0, tienPhong, tienPhong, maHD, checkOut, checkOut, tienPhong, tienPhong, tienPhong, tienPhong, maHDCT, maHDCT, maP, checkIn, checkOut, tienPhong);
-
                 listHoaDonChiTiet.add(tt);
             }
         } catch (Exception e) {
@@ -95,9 +101,12 @@ public class Repositories_HDCT {
     }
 
     public ArrayList<Model_TT> getHDCTByMaHD(String maHD) {
-        sql = "SELECT HDCT.MA_HDCT,  HDCT.MAHD, HDCT.MA_P, HDCT.CheckIn, HDCT.CheckOut, HDCT.TienPhong "
-                + "FROM HOADONCHITIET HDCT "
-                + "WHERE HDCT.MAHD = ?";
+        sql = "SELECT HDCT.MA_HDCT, HDCT.MAHD, HDCT.MA_P, HDCT.CheckIn, HDCT.CheckOut, HDCT.TienPhong \n"
+                + "FROM HOADONCHITIET HDCT \n"
+                + "JOIN HOADON HD ON HDCT.MAHD = HD.MAHD \n"
+                + "WHERE HDCT.MAHD = ? \n"
+                + "AND HD.TrangThai = 'Đã Thanh Toán';";
+
         ArrayList<Model_TT> listHoaDonChiTiet = new ArrayList<>();
         try {
             con = DBconnect.getConnection();
@@ -119,5 +128,4 @@ public class Repositories_HDCT {
         }
         return listHoaDonChiTiet;
     }
-
 }
