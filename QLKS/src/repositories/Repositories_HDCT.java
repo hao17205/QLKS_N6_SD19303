@@ -39,9 +39,17 @@ public class Repositories_HDCT {
                 String maP = rs.getString("MA_P");
                 Date checkIn = rs.getDate("CheckIn");
                 Date checkOut = rs.getDate("CheckOut");
+<<<<<<< HEAD
+
+                double tienPhong = rs.getDouble("TienPhong");
+
+
+                Model_TT tt = new Model_TT(maP, maP, maP, maP, maP, 0, tienPhong, 0, tienPhong, tienPhong, maP, checkOut, checkOut, tienPhong, tienPhong, tienPhong, tienPhong, maHDCT, maHD_HDCT, maP, checkIn, checkOut, tienPhong);
+=======
                 double tienPhong = rs.getDouble("TienPhong");
 
                 Model_TT tt = new Model_TT(maP, maP, maP, maP, maP, 0, tienPhong, 0, tienPhong, tienPhong, maP, checkOut, checkOut, tienPhong, tienPhong, tienPhong, tienPhong, maHDCT, maHD, maP, checkIn, checkOut, tienPhong);
+>>>>>>> 760a1020a55abd0ca60cb045ed6b50f3440ff36a
                 listHoaDonChiTiet.add(tt);
             }
         } catch (Exception e) {

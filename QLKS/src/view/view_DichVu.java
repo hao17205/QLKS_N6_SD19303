@@ -496,7 +496,7 @@ public class view_DichVu extends javax.swing.JFrame {
                     .addComponent(jLabel10)
                     .addComponent(jLabel9))
                 .addGap(23, 23, 23)
-<<<<<<< HEAD
+
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(txt_tenDV, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
                     .addComponent(txt_maDDV, javax.swing.GroupLayout.Alignment.LEADING)
@@ -529,7 +529,7 @@ public class view_DichVu extends javax.swing.JFrame {
                 .addGap(172, 172, 172)
                 .addComponent(btn_cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37))
-=======
+
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txt_tongTien)
                     .addComponent(txt_gia, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -545,7 +545,7 @@ public class view_DichVu extends javax.swing.JFrame {
                     .addComponent(btn_luu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btn_cancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(28, 28, 28))
->>>>>>> ddbe87edaaf5a2e737366ed8b5ee5f593fd2390c
+
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
