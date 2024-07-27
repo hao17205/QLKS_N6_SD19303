@@ -50,7 +50,16 @@ public class view_DichVu extends javax.swing.JFrame {
         }
     }
 
+<<<<<<< HEAD
 
+=======
+=======
+<<<<<<< HEAD:QLKS/src/view/view_DichVu.java
+
+    // haaaaaaaaaaaaaaaaaaaaa    
+=======
+>>>>>>> ac41e8a70cd48c9e60fef344b7ee986603c4bbee:QLKS/src/View/view_DichVu.java
+>>>>>>> 74f9c276e2257c5e2fd1b0b9557a3d50f9a170ab
     
     
 
@@ -70,9 +79,16 @@ public class view_DichVu extends javax.swing.JFrame {
             mol.addRow(x.toDaTaRow_CTT());
     }
     }
+<<<<<<< HEAD:QLKS/src/view/view_DichVu.java
+=======
 =======
     */
+<<<<<<< HEAD
 
+=======
+>>>>>>> 80559f7a84693bb8e2566d22c6830e3a46e09d95:QLKS/src/View/view_DichVu.java
+>>>>>>> ac41e8a70cd48c9e60fef344b7ee986603c4bbee:QLKS/src/View/view_DichVu.java
+>>>>>>> 74f9c276e2257c5e2fd1b0b9557a3d50f9a170ab
 
     /**
      * This method is called from within the constructor to initialize the form.
