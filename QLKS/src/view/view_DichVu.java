@@ -51,9 +51,7 @@ public class view_DichVu extends javax.swing.JFrame {
 
         }
     }
-<<<<<<< HEAD
-    // haaaaaaaaaaaaaaaaaaaaaa
-=======
+
     
     private void fillTableDDV(ArrayList<Model_DichVu> list) {
         mol = (DefaultTableModel) tbl_DDV.getModel();
@@ -71,7 +69,7 @@ public class view_DichVu extends javax.swing.JFrame {
             mol.addRow(x.toDaTaRow_CTT());
     }
     }
->>>>>>> c56277f472acc8e641cb7ef27582ea0d05774a83
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
